@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>180464438307-6r7s1sjnnqflbfcf54mvi6d1sl7aulkd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.180464438307-6r7s1sjnnqflbfcf54mvi6d1sl7aulkd</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>180464438307-fj6f2qjj5dj77ub12lt5m8a78uufps29.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDVxwmdEyWiBdWLurHv-uj1evaTpTaUagY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>180464438307</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.origano</string>
+	<key>PROJECT_ID</key>
+	<string>origanofirewood</string>
+	<key>STORAGE_BUCKET</key>
+	<string>origanofirewood.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:180464438307:ios:cf255b5587ea75fce3b596</string>
+	<key>DATABASE_URL</key>
+	<string>https://origanofirewood.firebaseio.com</string>
+</dict>
+</plist>

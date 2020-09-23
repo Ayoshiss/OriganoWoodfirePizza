@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "180464438307",
+    "firebase_url": "https://origanofirewood.firebaseio.com",
+    "project_id": "origanofirewood",
+    "storage_bucket": "origanofirewood.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180464438307:android:7c93a6eb52ca11b0e3b596",
+        "android_client_info": {
+          "package_name": "com.origano"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180464438307-rl23fdld4rkdkndu0eoh49rlcic0mkti.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.origano",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "180464438307-6vfj1a40qklt9qaf0pvr4p5csg22k6ej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7JnpHQ_HWyiDbnfTl6OO9gozItmhuDuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180464438307-6vfj1a40qklt9qaf0pvr4p5csg22k6ej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
