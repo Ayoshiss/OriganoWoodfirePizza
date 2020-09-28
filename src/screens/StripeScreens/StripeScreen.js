@@ -7,7 +7,7 @@ import {
   ImageBackground,
   ActivityIndicator,
   TouchableOpacity,
-  SafeAreaView
+  SafeAreaView,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -81,7 +81,7 @@ export default class StripeScreen extends PureComponent {
     const {totalPrice} = this.props.route.params;
     axios({
       method: 'POST',
-      url: 'https://origano-pay.herokuapp.com/api/stripePayment/',
+      url: 'https://origanopayment.web.app/api/stripePayment/',
       data: {
         amount: totalPrice * 100,
         currency: 'aud',
@@ -127,9 +127,10 @@ export default class StripeScreen extends PureComponent {
           })
           .then(() => {
             this.props.navigation.navigate('OrderSuccess', {
-              docId: orderId,
+              docID: orderId,
               orderType,
               previousScreen: 'Checkout',
+              dataCart,
             });
             this.setState({
               loading: false,
@@ -169,11 +170,7 @@ export default class StripeScreen extends PureComponent {
           Please, Enter your card details here.
         </Text> */}
         <TouchableOpacity onPress={this.handleCardPayPress}>
-          <Card
-            elevation={2}
-           
-            cornerRadius={20}
-            style={styles.cardView}>
+          <Card elevation={2} cornerRadius={20} style={styles.cardView}>
             <Octicons
               name="credit-card"
               size={24}
@@ -195,11 +192,7 @@ export default class StripeScreen extends PureComponent {
           <TouchableOpacity
             onPress={this.makePayment}
             disabled={this.state.paymentLoading}>
-            <Card
-              elevation={2}
-              
-              cornerRadius={20}
-              style={styles.cardView}>
+            <Card elevation={2} cornerRadius={20} style={styles.cardView}>
               <Octicons
                 name="credit-card"
                 size={24}

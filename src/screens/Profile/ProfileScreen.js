@@ -5,6 +5,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   SafeAreaView,
+  Platform,
+  Image,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -17,7 +19,6 @@ import Icon from 'react-native-vector-icons/Feather';
 import {Card} from 'react-native-shadow-cards';
 import auth from '@react-native-firebase/auth';
 import {RNToasty} from 'react-native-toasty';
-import AsyncStorage from '@react-native-community/async-storage';
 export class ProfileScreen extends Component {
   constructor(props) {
     super(props);
@@ -32,10 +33,11 @@ export class ProfileScreen extends Component {
   }
 
   getUserData = () => {
-    const {phoneNumber, displayName} = auth().currentUser;
+    const {phoneNumber, displayName, photoURL} = auth().currentUser;
     this.setState({
       phoneNumber,
       displayName,
+      photoURL,
     });
     if (phoneNumber !== null) {
       this.setState({phoneVerified: true});
@@ -88,8 +90,8 @@ export class ProfileScreen extends Component {
   };
 
   render() {
-    var {displayName} = this.state;
-
+    var {displayName, photoURL} = this.state;
+    console.log(photoURL);
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.profileUI}>
@@ -102,17 +104,22 @@ export class ProfileScreen extends Component {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            {displayName !== null ? (
-              <Text
-                style={{
-                  fontFamily: 'Lato-Bold',
-                  color: '#EC942A',
-                  fontSize: hp('3%'),
-                }}>
-                {this.getInitials(displayName)}
-              </Text>
+            {photoURL === null ? (
+              displayName !== null && (
+                <Text
+                  style={{
+                    fontFamily: 'Lato-Bold',
+                    color: '#EC942A',
+                    fontSize: hp('3%'),
+                  }}>
+                  {this.getInitials(displayName)}
+                </Text>
+              )
             ) : (
-              <Text></Text>
+              <Image
+                source={{uri: photoURL}}
+                style={{height: hp('15%'), width: hp('15%'), borderRadius: 100}}
+              />
             )}
           </View>
           {this.state.phoneVerified ? (
@@ -208,7 +215,6 @@ export class ProfileScreen extends Component {
         </View>
         <Card
           elevation={2}
-  
           cornerRadius={20}
           style={{
             paddingHorizontal: wp('5%'),
@@ -218,7 +224,7 @@ export class ProfileScreen extends Component {
             marginVertical: hp('34%'),
             minHeight: hp('25%'),
             width: wp('80%'),
-            marginTop: hp("38%")
+            ...(Platform.OS === 'ios' && {marginTop: hp('38%')}),
           }}>
           <TouchableOpacity
             onPress={() => {
@@ -260,7 +266,6 @@ var styles = StyleSheet.create({
     paddingHorizontal: wp('5%'),
     justifyContent: 'flex-start',
     alignItems: 'center',
-    
   },
 
   profileUI: {

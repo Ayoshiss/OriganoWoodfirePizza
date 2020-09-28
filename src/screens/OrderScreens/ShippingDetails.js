@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
+  Platform,
 } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
 import InputTextField from '../../components/profile/InputTextField';
@@ -36,12 +37,27 @@ class ShippingDetails extends Component {
   handleProceed = () => {
     const {dataCart} = this.props.route.params;
     const {chosenDate, totalPrice, deliveryCharge} = this.state;
+    const date1 = chosenDate;
     const date = chosenDate.toString();
+    let splitDate = date.split(' ');
+    let splitTime = splitDate[4].split(':');
+    let splitHour = parseInt(splitTime[0]);
+    let splitMinute = parseInt(splitTime[1]);
+    var a = 0;
+    if (splitHour >= 16 && splitHour <= 21) {
+      a = 1;
+    } else {
+      a = 0;
+    }
     const newDate = new Date();
     if (chosenDate < newDate) {
       RNToasty.Show({
         title: 'Past Date is Selected',
       });
+    } else if (date1.getDay() == 1) {
+      alert('We are closed on Mondays');
+    } else if (a == 0) {
+      alert('Please place your order between 4pm-10pm');
     } else {
       this.props.navigation.navigate('Checkout', {
         dataCart,
@@ -60,16 +76,28 @@ class ShippingDetails extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          <View style={styles.loginTextView}>
+          <View
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: '#EC942A',
+              ...(Platform.OS === 'ios'
+                ? {height: hp('25%')}
+                : {height: hp('30%')}),
+            }}>
             {/* <Image
               source={require('../../asset/origanologo.jpg')}
               style={{height: hp('20%'), width: wp('70%')}}
             /> */}
             <View style={styles.back}>
               <Ionicons
-                name="arrow-back-outline"
+                name={
+                  Platform.OS === 'ios'
+                    ? 'arrow-back-outline'
+                    : 'ios-arrow-round-back'
+                }
                 color="white"
-                size={35}
+                size={Platform.OS === 'ios' ? 35 : 42}
                 onPress={() => this.props.navigation.goBack()}
               />
             </View>
@@ -79,9 +107,7 @@ class ShippingDetails extends Component {
               <Text style={styles.loginText}>Pickup Details</Text>
             )}
           </View>
-          <Card
-            elevation={2}
-            style={styles.cardView}>
+          <Card elevation={2} style={styles.cardView}>
             {preferenceType === 'Delivery' ? (
               <Text style={styles.label}>Shipping Address</Text>
             ) : (
@@ -129,7 +155,6 @@ class ShippingDetails extends Component {
                 type="default"
                 value={this.state.specialInstruction}
                 autoCompleteType="off"
-      
               />
             </View>
             <View style={{marginBottom: hp('4%')}}>
@@ -173,10 +198,7 @@ var styles = StyleSheet.create({
     height: hp('100%'),
   },
   loginTextView: {
-    alignItems: 'center',
-    justifyContent: 'center',
     height: hp('25%'),
-    backgroundColor: '#EC942A',
   },
   loginText: {
     fontSize: hp('5%'),

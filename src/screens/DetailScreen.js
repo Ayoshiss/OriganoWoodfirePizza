@@ -84,11 +84,22 @@ export default class DetailScreen extends React.Component {
         <View style={styles.image_container}>
           <Image source={{uri: this.state.image}} style={styles.image} />
         </View>
-        <View style={styles.back}>
+        <View
+          style={{
+            position: 'absolute',
+            paddingHorizontal: wp('5%'),
+            ...(Platform.OS === 'ios'
+              ? {paddingVertical: hp('6%')}
+              : {paddingVertical: hp('2%')}),
+          }}>
           <Ionicons
-            name="arrow-back-outline"
+            name={
+              Platform.OS === 'ios'
+                ? 'arrow-back-outline'
+                : 'ios-arrow-round-back'
+            }
             color="white"
-            size={35}
+            size={Platform.OS === 'ios' ? 35 : 42}
             onPress={() => this.props.navigation.goBack()}
           />
         </View>
@@ -97,7 +108,13 @@ export default class DetailScreen extends React.Component {
             position: 'absolute',
             alignSelf: 'flex-end',
             paddingRight: wp('5%'),
-            paddingVertical: hp('6%'),
+            ...(Platform.OS === 'ios'
+              ? {
+                  paddingVertical: hp('6%'),
+                }
+              : {
+                  paddingVertical: hp('2%'),
+                }),
           }}>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Cart')}>
@@ -202,7 +219,7 @@ var styles = StyleSheet.create({
     fontFamily: 'Lato-Regular',
     color: 'gray',
     marginVertical: hp('3%'),
-    lineHeight:hp('2.5%'),
+    lineHeight: hp('2.5%'),
   },
   button: {
     justifyContent: 'center',

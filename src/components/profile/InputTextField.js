@@ -16,14 +16,13 @@ class InputTextField extends Component {
             position: 'absolute',
             marginTop: hp('1.5%'),
             marginHorizontal: hp('1%'),
-  
           }}
           color="#EC942A"
         />
 
         <TextInput
           placeholder={this.props.placeholderText}
-          placeholderTextColor="#grey"
+          placeholderTextColor="grey"
           secureTextEntry={this.props.isSecure}
           onChangeText={this.props.onChange}
           autoCapitalize={this.props.autoCapitalize}
@@ -31,7 +30,6 @@ class InputTextField extends Component {
           selectionColor="#d8d8d8"
           autoCompleteType={this.props.autoCompleteType}
           value={this.props.value}
-          
           style={styles.input}></TextInput>
       </View>
     );
@@ -54,7 +52,7 @@ const styles = StyleSheet.create({
     fontSize: hp('2.2%'),
     fontFamily: 'Lato-Regular',
     marginBottom: hp('1.5%'),
-    
-    paddingVertical: hp('1.5%')
+
+    paddingVertical: hp('1.5%'),
   },
 });

@@ -77,18 +77,19 @@ class ForgotPassword extends Component {
             /> */}
             <View style={styles.back}>
               <Ionicons
-                name="arrow-back-outline"
+                name={
+                  Platform.OS === 'ios'
+                    ? 'arrow-back-outline'
+                    : 'ios-arrow-round-back'
+                }
                 color="white"
-                size={40}
+                size={Platform.OS === 'ios' ? 35 : 42}
                 onPress={() => this.props.navigation.goBack()}
               />
             </View>
             <Text style={styles.loginText}>Password Reset</Text>
           </View>
-          <Card
-            elevation={2}
-            cornerRadius={20}
-            style={styles.cardView}>
+          <Card elevation={2} cornerRadius={20} style={styles.cardView}>
             <View style={styles.errorMessageView}>
               {this.state.errorMessage && (
                 <Text style={styles.errorMessage}>

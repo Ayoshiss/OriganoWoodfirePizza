@@ -23,15 +23,15 @@ class OrderSuccess extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      orderedItems: [],
-      isLoading: true,
-      paymentType: '',
-      shippingAddress: '',
-      specialInstruction: '',
-      orderStatus: '',
-      orderId: '',
-      orderType: '',
-      previousScreen: '',
+      orderedItems: this.props.route.params.dataCart,
+      isLoading: false,
+      // paymentType: this.props.route.params.paymentType,
+      // shippingAddress: this.props.route.params.address,
+      specialInstruction: this.props.route.params.specialInstruction,
+      orderStatus: this.props.route.params.orderStatus,
+      orderId: this.props.route.params.docID,
+      orderType: this.props.route.params.orderType,
+      previousScreen: this.props.route.params.previousScreen,
     };
   }
   backAction = () => {
@@ -42,10 +42,11 @@ class OrderSuccess extends Component {
       'hardwareBackPress',
       this.backAction,
     );
-    const {docId, orderType, previousScreen, tabName} = this.props.route.params;
+
+    const {previousScreen, tabName} = this.props.route.params;
 
     var collectionName;
-    this.setState({orderId: docId, orderType, previousScreen});
+    this.setState({previousScreen});
     if (previousScreen == 'Checkout') {
       this.clearCart();
     }
@@ -54,27 +55,27 @@ class OrderSuccess extends Component {
     } else {
       collectionName = 'Orders';
     }
-    firestore()
-      .collection(collectionName)
-      .doc(docId)
-      .get()
-      .then((snapshot) => {
-        const {
-          orderStatus,
-          paymentType,
-          shippingAddress,
-          specialInstruction,
-          dataCart,
-        } = snapshot.data();
-        this.setState({
-          orderedItems: dataCart,
-          shippingAddress,
-          paymentType,
-          specialInstruction,
-          orderStatus,
-          isLoading: false,
-        });
-      });
+    // firestore()
+    //   .collection(collectionName)
+    //   .doc(docId)
+    //   .get()
+    //   .then((snapshot) => {
+    //     const {
+    //       orderStatus,
+    //       paymentType,
+    //       shippingAddress,
+    //       specialInstruction,
+    //       dataCart,
+    //     } = snapshot.data();
+    //     this.setState({
+    //       orderedItems: dataCart,
+    //       shippingAddress,
+    //       paymentType,
+    //       specialInstruction,
+    //       orderStatus,
+    //       isLoading: false,
+    //     });
+    //   });
   }
   componentWillUnmount() {
     this.backHandler.remove();
@@ -152,9 +153,13 @@ class OrderSuccess extends Component {
             }}>
             <View>
               <Ionicons
-                name="arrow-back-outline"
+                name={
+                  Platform.OS === 'ios'
+                    ? 'arrow-back-outline'
+                    : 'ios-arrow-round-back'
+                }
                 color="grey"
-                size={35}
+                size={Platform.OS === 'ios' ? 35 : 42}
                 onPress={this.handleGoBack}
               />
             </View>
@@ -183,7 +188,7 @@ class OrderSuccess extends Component {
               }}>
               Order ID : {this.state.orderId}
             </Text>
-            {this.state.orderedItems.map((item) => {
+            {this.state.orderedItems.map((item, i) => {
               const imageUrl = item.food.image;
               if (item.ingredients) {
                 var toppingsLength = item.ingredients.length;
@@ -197,7 +202,8 @@ class OrderSuccess extends Component {
                 <Card
                   elevation={2}
                   cornerRadius={20}
-                  style={styles.cardView}>
+                  style={styles.cardView}
+                  key={i}>
                   <View style={{width: wp('26%'), alignSelf: 'center'}}>
                     <Image
                       style={{
@@ -275,7 +281,7 @@ class OrderSuccess extends Component {
                             color: '#555',
                           }}>
                           Toppings :{' '}
-                          {item.ingredients.map((ingredient) => {
+                          {item.ingredients.map((ingredient, i) => {
                             count++;
                             let a;
                             if (count === toppingsLength) {
@@ -285,6 +291,7 @@ class OrderSuccess extends Component {
                             }
                             return (
                               <Text
+                                key={i}
                                 style={{
                                   fontFamily: 'Lato-Regular',
                                   color: 'grey',

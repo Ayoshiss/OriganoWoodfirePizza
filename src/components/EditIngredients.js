@@ -14,7 +14,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-community/async-storage';
 class EditIngredients extends Component {
   constructor(props) {
@@ -80,7 +80,21 @@ class EditIngredients extends Component {
           </Text>
         </View>
         <ScrollView style={{height: hp('46.5%')}}>
-        <View style={{...(Platform.OS !== 'android' ? {zIndex:10,flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center'}:{zIndex:10,flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center'})}}>
+          <View
+            style={{
+              ...(Platform.OS !== 'android'
+                ? {
+                    zIndex: 10,
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }
+                : {
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }),
+            }}>
             <DropDownPicker
               items={[
                 {
@@ -111,11 +125,10 @@ class EditIngredients extends Component {
               containerStyle={{
                 height: hp('6%'),
                 width: wp('60%'),
-                
+
                 // marginHorizontal: wp('5%'),
                 marginVertical: hp('2%'),
               }}
-              
               onChangeItem={(item) => {
                 const checkSize = item.value;
                 let temp = 0;
@@ -142,8 +155,8 @@ class EditIngredients extends Component {
             {newDescList.map((item, i) => {
               return (
                 <View
+                  key={i}
                   style={{
-                    
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -165,7 +178,7 @@ class EditIngredients extends Component {
                     }}>
                     <TouchableOpacity
                       onPress={() => this.onChangeQuat(i, false)}>
-                      <Icon
+                      <Ionicons
                         name={'ios-remove-circle'}
                         style={{color: '#EC942A'}}
                         size={30}
@@ -180,7 +193,7 @@ class EditIngredients extends Component {
                     </Text>
                     <TouchableOpacity
                       onPress={() => this.onChangeQuat(i, true)}>
-                      <Icon
+                      <Ionicons
                         name={'ios-add-circle'}
                         style={[{color: '#EC942A'}]}
                         size={30}
@@ -228,10 +241,14 @@ class EditIngredients extends Component {
             alignItems: 'center',
             paddingHorizontal: wp('1.5%'),
           }}>
-          <Icon
-            name="arrow-back-outline"
+          <Ionicons
+            name={
+              Platform.OS === 'ios'
+                ? 'arrow-back-outline'
+                : 'ios-arrow-round-back'
+            }
             color="grey"
-            size={35}
+            size={Platform.OS === 'ios' ? 35 : 42}
             onPress={() => this.setState({toppings: false})}
           />
           <Text
@@ -243,7 +260,15 @@ class EditIngredients extends Component {
             }}>
             Add More Toppings
           </Text>
-          <Icon name="arrow-back-outline" color="white" size={35} />
+          <Ionicons
+            name={
+              Platform.OS === 'ios'
+                ? 'arrow-back-outline'
+                : 'ios-arrow-round-back'
+            }
+            color="white"
+            size={Platform.OS === 'ios' ? 35 : 42}
+          />
         </View>
         <View>
           <FlatList

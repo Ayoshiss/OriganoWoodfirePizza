@@ -47,7 +47,7 @@ class OrdersTab extends Component {
     } else {
       return (
         <ScrollView style={{flex: 1}}>
-          {orders.map((item) => {
+          {orders.map((item, i) => {
             var date = item[2];
             var newDate = date.substr(0, 15);
             var quantity = 0;
@@ -57,6 +57,7 @@ class OrdersTab extends Component {
             });
             return (
               <Card
+                key={i}
                 elevation={2}
                 cornerRadius={20}
                 style={styles.cardView}>
@@ -78,7 +79,8 @@ class OrdersTab extends Component {
                   <TouchableOpacity
                     onPress={() => {
                       this.props.props.navigation.navigate('OrderSuccess', {
-                        docId: item[3],
+                        docID: item[3],
+                        dataCart: item[1],
                         orderType,
                         previousScreen: 'My Orders',
                         tabName,

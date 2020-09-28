@@ -145,7 +145,21 @@ export class HalfPizzaDetailScreen extends Component {
           </Text>
         </View>
         <ScrollView style={{height: hp('55%')}}>
-        <View style={{...(Platform.OS !== 'android' ? {zIndex:10,flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center'}                    :{zIndex:10,flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center'})}}>
+          <View
+            style={{
+              ...(Platform.OS !== 'android'
+                ? {
+                    zIndex: 10,
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }
+                : {
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }),
+            }}>
             <DropDownPicker
               items={[
                 {
@@ -191,6 +205,7 @@ export class HalfPizzaDetailScreen extends Component {
             {newDescList.map((item, i) => {
               return (
                 <View
+                  key={i}
                   style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',

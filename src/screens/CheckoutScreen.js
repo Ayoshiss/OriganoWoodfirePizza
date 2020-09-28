@@ -6,6 +6,7 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableWithoutFeedback,
+  Modal,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import LinearGradient from 'react-native-linear-gradient';
@@ -23,10 +24,12 @@ import {Card} from 'react-native-shadow-cards';
 import {RNToasty} from 'react-native-toasty';
 import {ActivityIndicator} from 'react-native-paper';
 import RNPaypal from 'react-native-paypal-lib';
+import WebView from 'react-native-webview';
 class CheckoutScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showModal: false,
       status: 'Pending',
       isUser: false,
       uid: '',
@@ -40,6 +43,7 @@ class CheckoutScreen extends Component {
       paymentType: '',
       paymentStatus: '',
       isDisabled: false,
+      Modal,
     };
   }
   componentDidMount() {
@@ -53,25 +57,6 @@ class CheckoutScreen extends Component {
       }
     });
     this.generateRandom();
-  }
-  paypal=()=> {
-    const {totalPrice} = this.state;
-    RNPaypal.paymentRequest({
-    clientId: 'AZpF8ztf3OuNVNyWT5n3FM2UDA--GDRyFw7dt0s_UOph0c4bBU_bLNssPJO8ND32w8F_jpHFOmQWV2Id',
-    environment: RNPaypal.ENVIRONMENT.SANDBOX,
-    intent: RNPaypal.INTENT.SALE,
-    price: totalPrice.toString(),
-    currency: 'AUD',
-    description: `Origano App Checkout`,
-    acceptCreditCards: true
-}).then(response => {
-    console.log(response)
-    RNToasty.Show({title: 'Order Success'})
-    this.handleOrderSuccess('Paypal')
-}).catch(err => {
-    console.log(err.message)
-    RNToasty.Show({title: err.message})
-})
   }
   generateRandom = () => {
     UUIDGenerator.getRandomUUID((uuid) => {
@@ -140,34 +125,17 @@ class CheckoutScreen extends Component {
   handlePaypalCancel = () => {
     RNToasty.Show({title: 'Payment Canceled'});
   };
-  openLink = async () => {
-    const {totalPrice, uuid} = this.state;
-    try {
-      await InAppBrowser.isAvailable();
-      InAppBrowser.open(
-        `https://origano-pay.herokuapp.com/paypal?${uuid}=${uuid}&price=${totalPrice}&${uuid}=${uuid}`,
-        {
-          // iOS Properties
-          dismissButtonStyle: 'cancel',
-          preferredBarTintColor: 'gray',
-          preferredControlTintColor: 'white',
-          // Android Properties
-          showTitle: true,
-          toolbarColor: '#EC942A',
-          secondaryToolbarColor: 'black',
-          enableUrlBarHiding: true,
-          enableDefaultShare: true,
-          forceCloseOnRedirection: true,
-        },
-      ).then((result) => {
-        console.log(result.url)
-        if (result.type === 'dismiss') {
-          this.handleOrderSuccess('Paypal');
-        } else {
-          this.handlePaypalCancel();
-        }
-      });
-    } catch (error) {}
+  handleResponse = (data) => {
+    if (data.title === 'success') {
+      this.setState({showModal: 'false'});
+      RNToasty.Show({title: 'Order Success'});
+      this.handleOrderSuccess('Paypal');
+    } else if (data.title === 'cancel') {
+      this.setState({showModal: 'false'});
+      RNToasty.Show({title: 'Payment Canceled'});
+    } else {
+      return;
+    }
   };
   renderIsUser() {
     const {
@@ -184,6 +152,15 @@ class CheckoutScreen extends Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <ScreenHeaders name="Checkout" props={this.props} />
+          <Modal
+            visible={this.state.showModal}
+            onRequestClose={() => this.setState({showModal: false})}>
+            <WebView
+              source={{uri: 'https://origanopayment.web.app/'}}
+              onNavigationStateChange={(data) => this.handleResponse(data)}
+              injectedJavaScript={`document.getElementById('price').value="${this.state.totalPrice}";document.f1.submit()`}
+            />
+          </Modal>
           <Text
             style={{
               fontFamily: 'Lato-Bold',
@@ -197,11 +174,8 @@ class CheckoutScreen extends Component {
             How do you wish to pay?
           </Text>
         </View>
-        <TouchableOpacity onPress={() => this.paypal()}>
-          <Card
-            elevation={2}
-            cornerRadius={20}
-            style={styles.cardView}>
+        <TouchableOpacity onPress={() => this.setState({showModal: true})}>
+          <Card elevation={2} cornerRadius={20} style={styles.cardView}>
             <MaterialCommunityIcons
               name="credit-card"
               size={24}
@@ -237,10 +211,7 @@ class CheckoutScreen extends Component {
               discount,
             })
           }>
-          <Card
-            elevation={2}
-            cornerRadius={20}
-            style={styles.cardView}>
+          <Card elevation={2} cornerRadius={20} style={styles.cardView}>
             <Octicons
               name="credit-card"
               size={24}
@@ -263,40 +234,6 @@ class CheckoutScreen extends Component {
             />
           </Card>
         </TouchableOpacity>
-        {/* {orderType == 'Pickup' && (
-          <TouchableWithoutFeedback
-            disabled={this.state.isDisabled}
-            onPress={() => {
-              this.handleOrderSuccess('COD');
-            }}>
-            <Card
-              elevation={2}
-              cardMaxElevation={2}
-              cornerRadius={20}
-              style={styles.cardView}>
-              <MaterialCommunityIcons
-                name="cash"
-                size={24}
-                color="#EC942A"
-                style={{paddingRight: wp('5%')}}
-              />
-              <Text
-                style={{
-                  fontSize: hp('2.5%'),
-                  fontWeight: 'bold',
-                  color: '#EC942A',
-                }}>
-                Pay at Store
-              </Text>
-              <ActivityIndicator
-                size={18}
-                animating={this.state.isCODLoading}
-                color="#EC942A"
-                style={{position: 'absolute', paddingLeft: wp('60%')}}
-              />
-            </Card>
-          </TouchableWithoutFeedback>
-        )} */}
       </View>
     );
   }
@@ -371,7 +308,6 @@ class CheckoutScreen extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -435,5 +371,4 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 });
-
 export default CheckoutScreen;

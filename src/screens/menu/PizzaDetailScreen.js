@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   ScrollView,
+  Platform,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -63,11 +64,22 @@ export default class PizzaDetailScreen extends React.Component {
         <View style={styles.image_container}>
           <Image source={{uri: this.state.image}} style={styles.image} />
         </View>
-        <View style={styles.back}>
+        <View
+          style={{
+            position: 'absolute',
+            paddingHorizontal: wp('5%'),
+            ...(Platform.OS === 'ios'
+              ? {paddingVertical: hp('6%')}
+              : {paddingVertical: hp('2%')}),
+          }}>
           <Ionicons
-            name="arrow-back-outline"
+            name={
+              Platform.OS === 'ios'
+                ? 'arrow-back-outline'
+                : 'ios-arrow-round-back'
+            }
             color="white"
-            size={35}
+            size={Platform.OS === 'ios' ? 35 : 42}
             onPress={() => this.props.navigation.goBack()}
           />
         </View>
@@ -76,7 +88,13 @@ export default class PizzaDetailScreen extends React.Component {
             position: 'absolute',
             alignSelf: 'flex-end',
             paddingRight: wp('5%'),
-            paddingVertical: hp('6%'),
+            ...(Platform.OS === 'ios'
+              ? {
+                  paddingVertical: hp('6%'),
+                }
+              : {
+                  paddingVertical: hp('2%'),
+                }),
           }}>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Cart')}>
@@ -181,11 +199,7 @@ var styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  back: {
-    position: 'absolute',
-    paddingHorizontal: wp('5%'),
-    paddingVertical: hp('6%'),
-  },
+
   status: {
     // marginTop: 30,
     marginVertical: hp('2.5%'),
@@ -209,7 +223,7 @@ var styles = StyleSheet.create({
   textDetail: {
     color: 'grey',
     marginVertical: hp('3%'),
-    lineHeight:hp('2.5%'),
+    lineHeight: hp('2.5%'),
   },
   button: {
     justifyContent: 'center',

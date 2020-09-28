@@ -79,15 +79,29 @@ class HalfPizzaScreen extends Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.image_container}>
           <Image
-            source={require('../../assets/img/HalfHalfPizza.jpg')}
+            source={{
+              uri:
+                'https://firebasestorage.googleapis.com/v0/b/origanofirewood.appspot.com/o/halfHalfPizza%2FHalfHalfPizza-min.jpg?alt=media&token=9a851045-849b-4b43-ba9c-c741cad09f8b',
+            }}
             style={styles.image}
           />
         </View>
-        <View style={styles.back}>
+        <View
+          style={{
+            position: 'absolute',
+            paddingHorizontal: wp('5%'),
+            ...(Platform.OS === 'ios'
+              ? {paddingVertical: hp('6%')}
+              : {paddingVertical: hp('2%')}),
+          }}>
           <Ionicons
-            name="arrow-back-outline"
+            name={
+              Platform.OS === 'ios'
+                ? 'arrow-back-outline'
+                : 'ios-arrow-round-back'
+            }
             color="white"
-            size={35}
+            size={Platform.OS === 'ios' ? 35 : 42}
             onPress={() => this.props.navigation.goBack()}
           />
         </View>
@@ -96,7 +110,13 @@ class HalfPizzaScreen extends Component {
             position: 'absolute',
             alignSelf: 'flex-end',
             paddingRight: wp('5%'),
-            paddingVertical: hp('5.5%'),
+            ...(Platform.OS === 'ios'
+              ? {
+                  paddingVertical: hp('6%'),
+                }
+              : {
+                  paddingVertical: hp('2%'),
+                }),
           }}>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Cart')}>
@@ -133,76 +153,79 @@ class HalfPizzaScreen extends Component {
             }}>
             <View>
               <Text>Choose Left Pizza</Text>
-               <View style={{...(Platform.OS !== 'android' && {zIndex:10})}}>
-            
-              <DropDownPicker
-                items={this.state.pizzaLabelArray}
-                placeholder="Select Size"
-                defaultIndex={0}
-                dropDownMaxHeight={hp('18%')}
-                labelStyle={{
-                  fontSize: hp('2.2%'),
-                  textAlign: 'left',
-                  color: '#000',
-                  fontFamily: 'Lato-Regular',
-                }}
-                containerStyle={{
-                  height: hp('6%'),
-                  width: wp('40%'),
-                  // marginHorizontal: wp('5%'),
-                  marginVertical: hp('2%'),
-                }}
-                onChangeItem={(item) => {
-                  const leftPizza = this.state.pizzaList.filter((pizza) => {
-                    return pizza.name === item.value;
-                  });
+              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
+                <DropDownPicker
+                  items={this.state.pizzaLabelArray}
+                  placeholder="Select Size"
+                  defaultIndex={0}
+                  dropDownMaxHeight={
+                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
+                  }
+                  labelStyle={{
+                    fontSize: hp('2.2%'),
+                    textAlign: 'left',
+                    color: '#000',
+                    fontFamily: 'Lato-Regular',
+                  }}
+                  containerStyle={{
+                    height: hp('6%'),
+                    width: wp('40%'),
+                    // marginHorizontal: wp('5%'),
+                    marginVertical: hp('2%'),
+                  }}
+                  onChangeItem={(item) => {
+                    const leftPizza = this.state.pizzaList.filter((pizza) => {
+                      return pizza.name === item.value;
+                    });
 
-                  const apple = leftPizza.map((pizza) => {
-                    return pizza.desc;
-                  });
+                    const apple = leftPizza.map((pizza) => {
+                      return pizza.desc;
+                    });
 
-                  const leftPizzaDescList = apple.toString().split(',');
+                    const leftPizzaDescList = apple.toString().split(',');
 
-                  this.setState({
-                    leftPizza,
-                    leftPizzaDescList,
-                  });
-                }}
-              />
+                    this.setState({
+                      leftPizza,
+                      leftPizzaDescList,
+                    });
+                  }}
+                />
               </View>
             </View>
             <View>
               <Text>Choose Right Pizza</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex:10})}}>
-              <DropDownPicker
-                items={this.state.pizzaLabelArray}
-                placeholder="Select Size"
-                defaultIndex={0}
-                dropDownMaxHeight={hp('30%')}
-                labelStyle={{
-                  fontSize: hp('2.2%'),
-                  textAlign: 'left',
-                  color: '#000',
-                  fontFamily: 'Lato-Regular',
-                }}
-                containerStyle={{
-                  height: hp('6%'),
-                  width: wp('40%'),
-                  // marginHorizontal: wp('5%'),
-                  marginVertical: hp('2%'),
-                }}
-                onChangeItem={(item) => {
-                  const rightPizza = this.state.pizzaList.filter((pizza) => {
-                    return pizza.name === item.value;
-                  });
-                  const apple = rightPizza.map((pizza) => {
-                    return pizza.desc;
-                  });
+              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
+                <DropDownPicker
+                  items={this.state.pizzaLabelArray}
+                  placeholder="Select Size"
+                  defaultIndex={0}
+                  dropDownMaxHeight={
+                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
+                  }
+                  labelStyle={{
+                    fontSize: hp('2.2%'),
+                    textAlign: 'left',
+                    color: '#000',
+                    fontFamily: 'Lato-Regular',
+                  }}
+                  containerStyle={{
+                    height: hp('6%'),
+                    width: wp('40%'),
+                    // marginHorizontal: wp('5%'),
+                    marginVertical: hp('2%'),
+                  }}
+                  onChangeItem={(item) => {
+                    const rightPizza = this.state.pizzaList.filter((pizza) => {
+                      return pizza.name === item.value;
+                    });
+                    const apple = rightPizza.map((pizza) => {
+                      return pizza.desc;
+                    });
 
-                  const rightPizzaDescList = apple.toString().split(',');
-                  this.setState({rightPizza, rightPizzaDescList});
-                }}
-              />
+                    const rightPizzaDescList = apple.toString().split(',');
+                    this.setState({rightPizza, rightPizzaDescList});
+                  }}
+                />
               </View>
             </View>
           </View>

@@ -31,8 +31,6 @@ const Stack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 const HomeTabNavigator = () => {
-  console.disableYellowBox = true;
-
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -119,12 +117,7 @@ const RootStack = () => {
     // Assume a message-notification contains a "type" property in the data payload of the screen to open
 
     messaging().onNotificationOpenedApp((remoteMessage) => {
-      console.log(
-        'Notification caused app to open from background state:',
-        remoteMessage.notification.body,
-      );
       alert(remoteMessage.notification.body);
-      // navigation.navigate('Notifications');
     });
 
     // Check whether an initial notification is available
@@ -132,11 +125,6 @@ const RootStack = () => {
       .getInitialNotification()
       .then((remoteMessage) => {
         if (remoteMessage) {
-          console.log(
-            'Notification caused app to open from quit state:',
-            remoteMessage.notification.android,
-          );
-
           setInitialRoute('Notifications'); // e.g. "Settings"
         }
         setTimeout(() => {

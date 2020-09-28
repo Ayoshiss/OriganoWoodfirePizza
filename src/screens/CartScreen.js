@@ -248,9 +248,9 @@ export class CartScreen extends Component {
 
             return (
               <Card
-              elevation = {2}
-              cornerRadius = {20}
-              
+                key={i}
+                elevation={2}
+                cornerRadius={20}
                 style={styles.cardView}>
                 <Icon
                   name="ios-close"
@@ -353,7 +353,7 @@ export class CartScreen extends Component {
                             fontFamily: 'Lato-Black',
                           }}>
                           Toppings :
-                          {item.ingredients.map((ingredient) => {
+                          {item.ingredients.map((ingredient, i) => {
                             count++;
                             let a;
                             if (count === toppingsLength) {
@@ -363,6 +363,7 @@ export class CartScreen extends Component {
                             }
                             return (
                               <Text
+                                key={i}
                                 style={{
                                   color: 'grey',
                                   fontFamily: 'Lato-Bold',
@@ -383,7 +384,7 @@ export class CartScreen extends Component {
                             fontFamily: 'Lato-Black',
                           }}>
                           Don't Include :
-                          {item.finalDesc.map((finalDes) => {
+                          {item.finalDesc.map((finalDes, i) => {
                             count1++;
                             let a;
                             if (count1 === descLength) {
@@ -393,6 +394,7 @@ export class CartScreen extends Component {
                             }
                             return (
                               <Text
+                                key={i}
                                 style={{
                                   color: 'grey',
                                   fontFamily: 'Lato-Bold',

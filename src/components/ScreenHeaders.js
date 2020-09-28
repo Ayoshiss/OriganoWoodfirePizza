@@ -12,9 +12,11 @@ const ScreenHeaders = ({name, props}) => {
         justifyContent: 'space-between',
       }}>
       <Ionicons
-        name="arrow-back-outline"
+        name={
+          Platform.OS === 'ios' ? 'arrow-back-outline' : 'ios-arrow-round-back'
+        }
         color="grey"
-        size={42}
+        size={Platform.OS === 'ios' ? 35 : 42}
         onPress={() => props.navigation.goBack()}
       />
       <Text

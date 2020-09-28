@@ -236,10 +236,7 @@ class PhoneVerification extends Component {
             /> */}
             <Text style={styles.loginText}>Phone Verification</Text>
           </View>
-          <Card
-            elevation={2}
-            cornerRadius={20}
-            style={styles.cardView}>
+          <Card elevation={2} cornerRadius={20} style={styles.cardView}>
             <View style={styles.errorMessageView}>
               {this.state.errorMessage && (
                 <Text style={styles.errorMessage}>
@@ -293,10 +290,7 @@ class PhoneVerification extends Component {
             /> */}
             <Text style={styles.loginText}>Verification Code</Text>
           </View>
-          <Card
-            elevation={2}
-            cornerRadius={20}
-            style={styles.cardView}>
+          <Card elevation={2} cornerRadius={20} style={styles.cardView}>
             <View style={styles.errorMessageView}>
               {this.state.errorMessage && (
                 <Text style={styles.errorMessage}>
@@ -327,7 +321,7 @@ class PhoneVerification extends Component {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                this.setState({codeSent: false});
+                this.setState({codeSent: false, codeInput: ''});
               }}>
               <LinearGrad
                 text="Change Phone Number"

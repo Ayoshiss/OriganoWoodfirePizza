@@ -12,7 +12,7 @@ import {
   StatusBar,
   ScrollView,
 } from 'react-native';
-import {Card } from 'react-native-shadow-cards';
+import {Card} from 'react-native-shadow-cards';
 import InputTextField from '../../components/profile/InputTextField';
 import LinearGrad from '../../components/LinearGrad';
 import {
@@ -20,7 +20,6 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
 import {LoginManager, AccessToken} from 'react-native-fbsdk';
 import {GoogleSignin} from '@react-native-community/google-signin';
 import {RNToasty} from 'react-native-toasty';
@@ -48,7 +47,7 @@ export class LoginScreen extends Component {
   }
   handleLogin = () => {
     Keyboard.dismiss();
-    this.setState({isLoading: true});
+    this.setState({isLoading: true, errorMessage: null});
     const {email, password} = this.state;
     if (email === '') {
       this.setState({
@@ -128,8 +127,7 @@ export class LoginScreen extends Component {
       .catch((error) => {
         if (error.code == 'auth/account-exists-with-different-credential') {
           this.setState({
-            errorMessage:
-              `It seems you've logged in with different provider. Please login with the correct provider`,
+            errorMessage: `It seems you've logged in with different provider. Please login with the correct provider`,
             isFbLoading: false,
           });
         } else {
@@ -156,8 +154,7 @@ export class LoginScreen extends Component {
       .catch((error) => {
         if (error.code == 'auth/account-exists-with-different-credential') {
           this.setState({
-            errorMessage:
-              `It seems you've logged in with different provider. Please login with the correct provider`,
+            errorMessage: `It seems you've logged in with different provider. Please login with the correct provider`,
             isGoogleLoading: false,
           });
         } else {
@@ -177,10 +174,7 @@ export class LoginScreen extends Component {
           <View style={styles.loginTextView}>
             <Text style={styles.loginText}>Login</Text>
           </View>
-          <Card
-            elevation={2}
-            cornerRadius={20}
-            style={styles.cardView}>
+          <Card elevation={2} cornerRadius={20} style={styles.cardView}>
             <View
               style={{
                 alignItems: 'center',
@@ -292,8 +286,6 @@ export class LoginScreen extends Component {
                 style={{position: 'absolute', paddingLeft: wp('55%')}}
               />
             </TouchableOpacity>
-
-
           </Card>
           <View
             style={{
@@ -317,7 +309,12 @@ export class LoginScreen extends Component {
               onPress={() => {
                 this.props.navigation.navigate('Signup');
               }}>
-              <Text style={{color: '#EC942A',fontSize: hp("2%"), fontFamily: 'Lato-Regular'}}>
+              <Text
+                style={{
+                  color: '#EC942A',
+                  fontSize: hp('2%'),
+                  fontFamily: 'Lato-Regular',
+                }}>
                 {' '}
                 Register Now
               </Text>
@@ -345,7 +342,6 @@ var styles = StyleSheet.create({
     color: '#fbfbfb',
   },
   cardView: {
-
     minHeight: hp('50%'),
     width: wp('90%'),
     alignSelf: 'center',

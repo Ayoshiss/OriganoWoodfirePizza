@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, SafeAreaView} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+  Platform,
+} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -42,19 +49,28 @@ class MenuScreen extends Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView
+        style={{
+          ...(Platform.OS === 'ios'
+            ? {flex: 1, backgroundColor: 'white', paddingHorizontal: hp('5%')}
+            : {flex: 1, backgroundColor: 'white'}),
+        }}>
         <View
           style={{
             flexDirection: 'row',
             marginVertical: hp('1%'),
-            paddingHorizontal:wp("5%"),
+            paddingHorizontal: wp('5%'),
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
           <Ionicons
-            name="arrow-back-outline"
+            name={
+              Platform.OS === 'ios'
+                ? 'arrow-back-outline'
+                : 'ios-arrow-round-back'
+            }
             color="grey"
-            size={35}
+            size={Platform.OS === 'ios' ? 35 : 42}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
@@ -137,7 +153,6 @@ class MenuScreen extends Component {
             />
           </ScrollableTabView>
         </View>
-      
       </SafeAreaView>
     );
   }
@@ -148,7 +163,6 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    paddingHorizontal: wp('5%'),
   },
   header: {
     alignItems: 'center',
@@ -161,7 +175,8 @@ var styles = StyleSheet.create({
   },
   tabbar: {
     flex: 1,
-    paddingHorizontal: wp("3%")  },
+    paddingHorizontal: wp('3%'),
+  },
   badge: {
     alignItems: 'center',
     height: wp('4.5%'),
