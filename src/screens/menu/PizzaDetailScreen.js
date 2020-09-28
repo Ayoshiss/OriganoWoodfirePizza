@@ -41,7 +41,6 @@ export default class PizzaDetailScreen extends React.Component {
   }
   componentDidMount() {
     const {navigation} = this.props;
-    // console.log(this.props.route.params.desc);
     this.focusListener = navigation.addListener('focus', () => {
       this.getBadgeCount();
     });

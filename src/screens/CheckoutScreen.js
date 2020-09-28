@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import LinearGradient from 'react-native-linear-gradient';
-import InAppBrowser from 'react-native-inappbrowser-reborn';
 import UUIDGenerator from 'react-native-uuid-generator';
 import {
   widthPercentageToDP as wp,
@@ -157,6 +156,7 @@ class CheckoutScreen extends Component {
             onRequestClose={() => this.setState({showModal: false})}>
             <WebView
               source={{uri: 'https://origanopayment.web.app/'}}
+              onMessage={() => {}}
               onNavigationStateChange={(data) => this.handleResponse(data)}
               injectedJavaScript={`document.getElementById('price').value="${this.state.totalPrice}";document.f1.submit()`}
             />

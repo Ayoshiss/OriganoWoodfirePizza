@@ -91,7 +91,7 @@ export class ProfileScreen extends Component {
 
   render() {
     var {displayName, photoURL} = this.state;
-    console.log(photoURL);
+
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.profileUI}>

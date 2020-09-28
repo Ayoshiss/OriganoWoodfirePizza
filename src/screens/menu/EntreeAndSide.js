@@ -23,7 +23,7 @@ export default class Salad extends Component {
           item_image_styles={styles.image}
           isPopular={item.isPopular}
           popularView={styles.popularView}
-          popularImg={require('../../asset/Popular.png')}
+          popularImg={require('../../assets/img/Popular.png')}
           popularImgStyle={styles.popularImg}
           contentStyles={styles.content}
           nameStyles={styles.name}

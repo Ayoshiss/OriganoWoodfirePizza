@@ -9,10 +9,8 @@ class NotificationManager extends Component {
       // (optional) Called when Token is generated (iOS and Android)
       onRegister: function (token) {
         onRegister(token.token);
-        // console.log('[NotificationManager] onRegister token:', token.token);
       },
       onNotification: function (notification) {
-        // console.log('[NotificationManager] onNotification:', notification);
         alert(notification.message);
         if (Platform.OS === 'ios') {
           if (notification.data.openedInForeground) {

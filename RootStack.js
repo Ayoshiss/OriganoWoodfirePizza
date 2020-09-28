@@ -14,7 +14,7 @@ import LoginScreen from './src/screens/Profile/LoginScreen';
 import ProfileScreen from './src/screens/Profile/ProfileScreen';
 import CheckoutScreen from './src/screens/CheckoutScreen';
 import LoadingScreen from './src/screens/Profile/LoadingScreen';
-import AccountVerify from './src/screens/Profile/AccountVerify';
+// import AccountVerify from './src/screens/Profile/AccountVerify';
 import ChangePassword from './src/screens/Profile/ChangePassword';
 import ForgotPassword from './src/screens/Profile/ForgotPassword';
 import OrderSuccess from './src/screens/OrderScreens/OrderSuccess';
@@ -97,7 +97,7 @@ const ProfileNavigator = () => {
       <ProfileStack.Screen name="Profile" component={ProfileScreen} />
       <ProfileStack.Screen name="Login" component={LoginScreen} />
       <ProfileStack.Screen name="Signup" component={SignupScreen} />
-      <ProfileStack.Screen name="AccountVerify" component={AccountVerify} />
+      {/* <ProfileStack.Screen name="AccountVerify" component={AccountVerify} /> */}
       <ProfileStack.Screen
         name="PhoneVerification"
         component={PhoneVerification}

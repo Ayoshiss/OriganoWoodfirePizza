@@ -10,8 +10,6 @@ import {
   ScrollView,
   TouchableOpacity,
   ActivityIndicator,
-  Alert,
-  ImageBackground,
   StatusBar,
 } from 'react-native';
 import PlaceSearch from '../components/PlaceSearch';
@@ -71,7 +69,8 @@ export default class HomeScreen extends React.Component {
       preferenceData: '',
       preferenceType: '',
       isUser: false,
-      bannerUrl: 'Loading',
+      bannerUrl:
+        'https://firebasestorage.googleapis.com/v0/b/origanofirewood.appspot.com/o/banner%2FFinalBanner.jpg?alt=media&token=df7ca247-b8e2-43a5-b614-6013e66679e5',
       places: [],
       errorMessage: null,
       viewPlaces: null,
@@ -384,7 +383,6 @@ export default class HomeScreen extends React.Component {
     if (item.id === 7) {
       this.props.navigation.navigate('HalfPizzaScreen', {
         pizzaList: this.state.pizzaList,
-        // toppingsList: this.state.toppingsList,
       });
     } else {
       this.props.navigation.navigate('Menu', {
@@ -477,10 +475,9 @@ export default class HomeScreen extends React.Component {
           <View style={styles.imageView}>
             <Image
               style={styles.banner}
-              // source={{
-              //   uri: bannerUrl,
-              // }}
-              source={require('../assets/img/FinalBanner.png')}
+              source={{
+                uri: bannerUrl,
+              }}
             />
           </View>
           {/* {checkDiscount && alert('You are elgigble for 10% discount')} */}

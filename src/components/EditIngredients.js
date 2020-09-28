@@ -343,7 +343,6 @@ class EditIngredients extends Component {
       ingredients: newArry,
       finalDesc,
     };
-    console.log(itemCart);
     AsyncStorage.getItem('cart')
       .then((datacart) => {
         if (datacart !== null) {

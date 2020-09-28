@@ -42,7 +42,6 @@ export default class StripeScreen extends PureComponent {
     // const userEmail = auth().currentUser.email;
     // const uid = auth().currentUser.uid;
     // this.setState({uid})
-    // console.log(uid)
   }
 
   handleCardPayPress = async () => {
@@ -90,8 +89,6 @@ export default class StripeScreen extends PureComponent {
       },
     })
       .then((response) => {
-        // console.log(response);
-
         const newDate = new Date();
         var orderId = 'OP-' + newDate.valueOf();
         var paymentType, paymentStatus;
