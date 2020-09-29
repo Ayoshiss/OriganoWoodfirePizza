@@ -22,7 +22,6 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import {Card} from 'react-native-shadow-cards';
 import {RNToasty} from 'react-native-toasty';
 import {ActivityIndicator} from 'react-native-paper';
-import RNPaypal from 'react-native-paypal-lib';
 import WebView from 'react-native-webview';
 class CheckoutScreen extends Component {
   constructor(props) {

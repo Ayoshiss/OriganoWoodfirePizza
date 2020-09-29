@@ -69,8 +69,6 @@ export default class HomeScreen extends React.Component {
       preferenceData: '',
       preferenceType: '',
       isUser: false,
-      bannerUrl:
-        'https://firebasestorage.googleapis.com/v0/b/origanofirewood.appspot.com/o/banner%2FFinalBanner.jpg?alt=media&token=df7ca247-b8e2-43a5-b614-6013e66679e5',
       places: [],
       errorMessage: null,
       viewPlaces: null,
@@ -276,6 +274,9 @@ export default class HomeScreen extends React.Component {
         } = this.props.route.params;
         this.storePreferenceData(preferenceData, preferenceType, charge);
       }
+      PushNotificationIOS.addEventListener('register', (token) =>
+        console.log(token),
+      );
 
       this.localNotify = notificationManager;
       this.localNotify.configure(
@@ -465,7 +466,7 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
-    const {bannerUrl, checkDiscount} = this.state;
+    const {checkDiscount} = this.state;
     const listHeader = () => {
       return (
         <SafeAreaView>
@@ -476,7 +477,8 @@ export default class HomeScreen extends React.Component {
             <Image
               style={styles.banner}
               source={{
-                uri: bannerUrl,
+                uri:
+                  'https://firebasestorage.googleapis.com/v0/b/origanofirewood.appspot.com/o/banner%2FFinalBanner.jpg?alt=media&token=df7ca247-b8e2-43a5-b614-6013e66679e5',
               }}
             />
           </View>
