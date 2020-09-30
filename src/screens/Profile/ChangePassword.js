@@ -97,13 +97,9 @@ class ChangePassword extends Component {
           <View style={styles.loginTextView}>
             <View style={styles.back}>
               <Ionicons
-                name={
-                  Platform.OS === 'ios'
-                    ? 'arrow-back-outline'
-                    : 'ios-arrow-round-back'
-                }
+                name="arrow-back-outline"
                 color="white"
-                size={Platform.OS === 'ios' ? 35 : 42}
+                size={35}
                 onPress={() => this.props.navigation.goBack()}
               />
             </View>

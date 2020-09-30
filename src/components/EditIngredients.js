@@ -242,13 +242,9 @@ class EditIngredients extends Component {
             paddingHorizontal: wp('1.5%'),
           }}>
           <Ionicons
-            name={
-              Platform.OS === 'ios'
-                ? 'arrow-back-outline'
-                : 'ios-arrow-round-back'
-            }
+            name="arrow-back-outline"
             color="grey"
-            size={Platform.OS === 'ios' ? 35 : 42}
+            size={35}
             onPress={() => this.setState({toppings: false})}
           />
           <Text
@@ -260,15 +256,8 @@ class EditIngredients extends Component {
             }}>
             Add More Toppings
           </Text>
-          <Ionicons
-            name={
-              Platform.OS === 'ios'
-                ? 'arrow-back-outline'
-                : 'ios-arrow-round-back'
-            }
-            color="white"
-            size={Platform.OS === 'ios' ? 35 : 42}
-          />
+
+          <Ionicons name="arrow-back-outline" color="white" size={35} />
         </View>
         <View>
           <FlatList

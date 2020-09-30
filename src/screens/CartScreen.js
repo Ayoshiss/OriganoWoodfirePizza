@@ -84,10 +84,10 @@ export class CartScreen extends Component {
     });
   }
 
-  // componentWillUnmount() {
-  //   // Remove the event listener before removing the screen from the stack
-  //   this.focusListener.remove();
-  // }
+  componentWillUnmount() {
+    // Remove the event listener before removing the screen from the stack
+    this.focusListener.remove();
+  }
   onChangeQuat(i, type) {
     const tempDataCart = this.state.dataCart;
     let cartq = tempDataCart[i].quantity;

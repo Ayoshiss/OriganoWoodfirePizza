@@ -72,13 +72,9 @@ export default class PizzaDetailScreen extends React.Component {
               : {paddingVertical: hp('2%')}),
           }}>
           <Ionicons
-            name={
-              Platform.OS === 'ios'
-                ? 'arrow-back-outline'
-                : 'ios-arrow-round-back'
-            }
+            name="arrow-back-outline"
             color="white"
-            size={Platform.OS === 'ios' ? 35 : 42}
+            size={35}
             onPress={() => this.props.navigation.goBack()}
           />
         </View>

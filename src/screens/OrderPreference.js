@@ -114,13 +114,9 @@ export class OrderPreference extends Component {
             paddingHorizontal: wp('5%'),
           }}>
           <Ionicons
-            name={
-              Platform.OS === 'ios'
-                ? 'arrow-back-outline'
-                : 'ios-arrow-round-back'
-            }
+            name="arrow-back-outline"
             color="grey"
-            size={Platform.OS === 'ios' ? 35 : 42}
+            size={35}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
@@ -133,9 +129,9 @@ export class OrderPreference extends Component {
             Order Preference
           </Text>
           <Ionicons
-            name="ios-arrow-round-back"
+            name="arrow-back-outline"
             color="white"
-            size={42}
+            size={35}
             onPress={() => props.navigation.goBack()}
           />
         </View>

@@ -153,13 +153,9 @@ class OrderSuccess extends Component {
             }}>
             <View>
               <Ionicons
-                name={
-                  Platform.OS === 'ios'
-                    ? 'arrow-back-outline'
-                    : 'ios-arrow-round-back'
-                }
+                name="arrow-back-outline"
                 color="grey"
-                size={Platform.OS === 'ios' ? 35 : 42}
+                size={35}
                 onPress={this.handleGoBack}
               />
             </View>
@@ -174,7 +170,7 @@ class OrderSuccess extends Component {
               Order Details
             </Text>
             <View>
-              <Ionicons name="ios-arrow-round-back" color="white" size={42} />
+              <Ionicons name="arrow-back-outline" color="white" size={35} />
             </View>
           </View>
           <ScrollView>

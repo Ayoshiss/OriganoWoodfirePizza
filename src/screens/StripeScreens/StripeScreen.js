@@ -24,8 +24,7 @@ import axios from 'axios';
 import stripe from 'tipsi-stripe';
 import {RNToasty} from 'react-native-toasty';
 stripe.setOptions({
-  publishableKey:
-    'pk_test_51HCfokGiTcm6iFfH5XdIZeKuP37DuT3H4yhZDOYyt9sQwPoHVEzqA7Mr7DzxAvLUrJm1qBhEvEwIOaYV8cFv3Ab8005BjbS5li',
+  publishableKey: 'pk_live_mSQZ4vxUO0Ihq5GM1ezHJ6ab00EvOSGhB1',
 });
 
 export default class StripeScreen extends PureComponent {

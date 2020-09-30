@@ -15,7 +15,7 @@ class PlaceSearch extends Component {
         <GooglePlacesAutocomplete
           placeholder="Enter your full address"
           query={{
-            key: 'AIzaSyAOJj_IHEdUyR5_FaxHqaUu9iJdTQhpwuk',
+            key: 'AIzaSyCT1DuqZIQOfaeDTw1FcxdQUCUCELLJzwU',
             language: 'en',
             components: 'country:au',
             region: 'au',

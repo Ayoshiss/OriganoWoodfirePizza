@@ -229,6 +229,9 @@ export default class HomeScreen extends React.Component {
       .then((data) => {
         const {notifyToken} = data.data();
         this.setState({notifyToken});
+      })
+      .catch((e) => {
+        return;
       });
   };
 
@@ -274,9 +277,6 @@ export default class HomeScreen extends React.Component {
         } = this.props.route.params;
         this.storePreferenceData(preferenceData, preferenceType, charge);
       }
-      PushNotificationIOS.addEventListener('register', (token) =>
-        console.log(token),
-      );
 
       this.localNotify = notificationManager;
       this.localNotify.configure(
@@ -300,10 +300,10 @@ export default class HomeScreen extends React.Component {
     // console.log('[Notification] onOpenNotification:', notify);
   }
 
-  // componentWillUnmount() {
-  //   // Remove the event listener before removing the screen from the stack
-  //   this.focusListener.remove();
-  // }
+  componentWillUnmount() {
+    // Remove the event listener before removing the screen from the stack
+    this.focusListener.remove();
+  }
   storePreferenceData = async (preferenceData, type, charge) => {
     this.setState({showPickupInput: false});
     try {
