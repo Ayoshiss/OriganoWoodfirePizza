@@ -16,6 +16,7 @@ import ScrollableTabView, {
 } from 'react-native-scrollable-tab-view';
 import AsyncStorage from '@react-native-community/async-storage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Pasta from './menu/Pasta';
 import Salad from './menu/Salad';
 import Dessert from './menu/Dessert';
@@ -63,8 +64,8 @@ class MenuScreen extends Component {
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
-          <Ionicons
-            name="arrow-back-outline"
+          <MaterialIcons
+            name="arrow-back"
             color="grey"
             size={35}
             onPress={() => this.props.navigation.goBack()}

@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
 import InputTextField from '../../components/profile/InputTextField';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/Octicons';
 import LinearGrad from '../../components/LinearGrad';
 import {RNToasty} from 'react-native-toasty';
@@ -90,8 +90,8 @@ class ShippingDetails extends Component {
               style={{height: hp('20%'), width: wp('70%')}}
             /> */}
             <View style={styles.back}>
-              <Ionicons
-                name="arrow-back-outline"
+              <MaterialIcons
+                name="arrow-back"
                 color="white"
                 size={35}
                 onPress={() => this.props.navigation.goBack()}

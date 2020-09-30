@@ -15,9 +15,8 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {Card} from 'react-native-shadow-cards';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
-import firestore from '@react-native-firebase/firestore';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AsyncStorage from '@react-native-community/async-storage';
 class OrderSuccess extends Component {
   constructor(props) {
@@ -152,8 +151,8 @@ class OrderSuccess extends Component {
               alignItems: 'center',
             }}>
             <View>
-              <Ionicons
-                name="arrow-back-outline"
+              <MaterialIcons
+                name="arrow-back"
                 color="grey"
                 size={35}
                 onPress={this.handleGoBack}
@@ -170,7 +169,7 @@ class OrderSuccess extends Component {
               Order Details
             </Text>
             <View>
-              <Ionicons name="arrow-back-outline" color="white" size={35} />
+              <MaterialIcons name="arrow-back" color="white" size={35} />
             </View>
           </View>
           <ScrollView>

@@ -16,6 +16,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 export default class DetailScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -92,8 +93,8 @@ export default class DetailScreen extends React.Component {
               ? {paddingVertical: hp('6%')}
               : {paddingVertical: hp('2%')}),
           }}>
-          <Ionicons
-            name="arrow-back-outline"
+          <MaterialIcons
+            name="arrow-back"
             color="white"
             size={35}
             onPress={() => this.props.navigation.goBack()}

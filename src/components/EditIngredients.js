@@ -15,6 +15,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AsyncStorage from '@react-native-community/async-storage';
 class EditIngredients extends Component {
   constructor(props) {
@@ -241,8 +242,8 @@ class EditIngredients extends Component {
             alignItems: 'center',
             paddingHorizontal: wp('1.5%'),
           }}>
-          <Ionicons
-            name="arrow-back-outline"
+          <MaterialIcons
+            name="arrow-back"
             color="grey"
             size={35}
             onPress={() => this.setState({toppings: false})}
@@ -257,7 +258,7 @@ class EditIngredients extends Component {
             Add More Toppings
           </Text>
 
-          <Ionicons name="arrow-back-outline" color="white" size={35} />
+          <MaterialIcons name="arrow-back" color="white" size={35} />
         </View>
         <View>
           <FlatList

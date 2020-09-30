@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
 import InputTextField from '../../components/profile/InputTextField';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LinearGrad from '../../components/LinearGrad';
 import {RNToasty} from 'react-native-toasty';
 import {
@@ -96,8 +96,8 @@ class ChangePassword extends Component {
           style={{flex: 1}}>
           <View style={styles.loginTextView}>
             <View style={styles.back}>
-              <Ionicons
-                name="arrow-back-outline"
+              <MaterialIcons
+                name="arrow-back"
                 color="white"
                 size={35}
                 onPress={() => this.props.navigation.goBack()}

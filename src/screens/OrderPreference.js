@@ -15,7 +15,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FAIcon from 'react-native-vector-icons/FontAwesome5';
 import DropDownPicker from 'react-native-dropdown-picker';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import PlaceSearch from '../components/PlaceSearch';
 import RBSheet from 'react-native-raw-bottom-sheet';
 export class OrderPreference extends Component {
@@ -113,8 +113,8 @@ export class OrderPreference extends Component {
             justifyContent: 'space-between',
             paddingHorizontal: wp('5%'),
           }}>
-          <Ionicons
-            name="arrow-back-outline"
+          <MaterialIcons
+            name="arrow-back"
             color="grey"
             size={35}
             onPress={() => this.props.navigation.goBack()}
@@ -128,8 +128,8 @@ export class OrderPreference extends Component {
             }}>
             Order Preference
           </Text>
-          <Ionicons
-            name="arrow-back-outline"
+          <MaterialIcons
+            name="arrow-back"
             color="white"
             size={35}
             onPress={() => props.navigation.goBack()}

@@ -15,6 +15,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage';
 import RBSheet from 'react-native-raw-bottom-sheet';
@@ -71,8 +72,8 @@ export default class PizzaDetailScreen extends React.Component {
               ? {paddingVertical: hp('6%')}
               : {paddingVertical: hp('2%')}),
           }}>
-          <Ionicons
-            name="arrow-back-outline"
+          <MaterialIcons
+            name="arrow-back"
             color="white"
             size={35}
             onPress={() => this.props.navigation.goBack()}

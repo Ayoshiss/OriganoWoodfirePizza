@@ -15,6 +15,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage';
 import {RNToasty} from 'react-native-toasty';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -94,8 +95,8 @@ class HalfPizzaScreen extends Component {
               ? {paddingVertical: hp('6%')}
               : {paddingVertical: hp('2%')}),
           }}>
-          <Ionicons
-            name="arrow-back-outline"
+          <MaterialIcons
+            name="arrow-back"
             color="white"
             size={35}
             onPress={() => this.props.navigation.goBack()}

@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const ScreenHeaders = ({name, props}) => {
   return (
@@ -11,8 +12,8 @@ const ScreenHeaders = ({name, props}) => {
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-      <Ionicons
-        name="arrow-back-outline"
+      <MaterialIcons
+        name="arrow-back"
         color="grey"
         size={35}
         onPress={() => props.navigation.goBack()}
