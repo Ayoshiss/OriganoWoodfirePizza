@@ -37,6 +37,7 @@ import {
   getSpecialData,
 } from '../getDatas/FoodApi';
 import {notificationManager} from '../NotificationManager';
+import FastImage from 'react-native-fast-image'
 var menuData = [];
 var deliveryPlaces = [];
 var placesWithCharge = [];
@@ -364,7 +365,7 @@ export default class HomeScreen extends React.Component {
             end={{x: 1, y: 0}}
             style={styles.item}>
             <View style={styles.image_container}>
-              <Image source={{uri: item.image}} style={styles.image} />
+              <FastImage source={{uri: item.image}} style={styles.image} />
             </View>
             <View style={styles.content}>
               <Text style={styles.name}>{item.name}</Text>
@@ -474,7 +475,7 @@ export default class HomeScreen extends React.Component {
           <StatusBar barStyle="dark-content" backgroundColor="white" />
 
           <View style={styles.imageView}>
-            <Image
+            <FastImage
               style={styles.banner}
               source={{
                 uri:

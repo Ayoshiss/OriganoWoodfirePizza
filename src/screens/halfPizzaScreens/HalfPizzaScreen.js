@@ -22,6 +22,7 @@ import {
 } from 'react-native-responsive-screen';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import HalfPizzaDetailScreen from './HalfPizzaDetailScreen';
+import FastImage from 'react-native-fast-image'
 class HalfPizzaScreen extends Component {
   constructor(props) {
     super(props);
@@ -79,7 +80,7 @@ class HalfPizzaScreen extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.image_container}>
-          <Image
+          <FastImage
             source={{
               uri:
                 'https://firebasestorage.googleapis.com/v0/b/origanofirewood.appspot.com/o/halfHalfPizza%2FHalfHalfPizza-min.jpg?alt=media&token=9a851045-849b-4b43-ba9c-c741cad09f8b',

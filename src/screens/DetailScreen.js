@@ -17,6 +17,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FastImage from 'react-native-fast-image'
 export default class DetailScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -83,7 +84,7 @@ export default class DetailScreen extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.image_container}>
-          <Image source={{uri: this.state.image}} style={styles.image} />
+          <FastImage source={{uri: this.state.image}} style={styles.image} />
         </View>
         <View
           style={{

@@ -21,6 +21,7 @@ import {
 } from 'react-native-responsive-screen';
 import {Card} from 'react-native-shadow-cards';
 import {RNToasty} from 'react-native-toasty';
+import FastImage from 'react-native-fast-image'
 export class CartScreen extends Component {
   constructor(props) {
     super(props);
@@ -269,7 +270,7 @@ export class CartScreen extends Component {
                 <View>
                   {item.food.size ? (
                     <TouchableOpacity onPress={() => this[RBSheet + i].open()}>
-                      <Image
+                      <FastImage
                         style={{
                           width: wp('25%'),
                           minHeight: hp('13%'),
@@ -279,7 +280,7 @@ export class CartScreen extends Component {
                       />
                     </TouchableOpacity>
                   ) : (
-                    <Image
+                    <FastImage
                       style={{
                         width: wp('25%'),
                         minHeight: hp('13%'),

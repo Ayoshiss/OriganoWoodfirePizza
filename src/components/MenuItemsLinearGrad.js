@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from '../../src/screens/menu/pizzastyles';
+import FastImage from 'react-native-fast-image'
 export default function MenuItemsLinearGrad({
   image_container,
   item_image,
@@ -29,10 +30,10 @@ export default function MenuItemsLinearGrad({
       style={styles.item}>
       <TouchableOpacity onPress={onPress}>
         <View style={image_container}>
-          <Image source={item_image} style={item_image_styles} />
+          <FastImage source={item_image} style={item_image_styles} />
           {isPopular === 'Yes' && (
             // <View style={popularView}>
-            <Image source={popularImg} style={popularImgStyle} />
+            <FastImage source={popularImg} style={popularImgStyle} />
             // </View>
           )}
         </View>
