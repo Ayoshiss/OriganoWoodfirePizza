@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  Image,
   FlatList,
   TouchableWithoutFeedback,
   SafeAreaView,
@@ -155,17 +154,6 @@ export default class HomeScreen extends React.Component {
         });
       });
   };
-  // getBannerImage() {
-  //   firestore()
-  //     .collection('Banner')
-  //     .get()
-  //     .then((snap) => {
-  //       snap.docs.forEach((item) => {
-  //         x = item.data().image;
-  //         this.setState({bannerUrl: x});
-  //       });
-  //     });
-  // }
   getDeliveryPlaces() {
     firestore()
       .collection('Delivery Places')
@@ -471,7 +459,7 @@ export default class HomeScreen extends React.Component {
     const listHeader = () => {
       return (
         <SafeAreaView>
-          {/* <Carousel data={carouselData} /> */}
+      
           <StatusBar barStyle="dark-content" backgroundColor="white" />
 
           <View style={styles.imageView}>

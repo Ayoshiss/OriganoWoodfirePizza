@@ -4,12 +4,12 @@ import {
   Text,
   StyleSheet,
   Dimensions,
-  Image,
   SafeAreaView,
   TouchableOpacity,
   ScrollView,
   Platform,
 } from 'react-native';
+import FastImage from 'react-native-fast-image'
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -62,7 +62,7 @@ export default class PizzaDetailScreen extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.image_container}>
-          <Image source={{uri: this.state.image}} style={styles.image} />
+          <FastImage source={{uri: this.state.image}} style={styles.image} />
         </View>
         <View
           style={{

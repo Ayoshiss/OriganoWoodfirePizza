@@ -71,10 +71,6 @@ class ForgotPassword extends Component {
           behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
           style={{flex: 1}}>
           <View style={styles.loginTextView}>
-            {/* <Image
-              source={require('../../asset/origanologo.jpg')}
-              style={{height: hp('20%'), width: wp('70%')}}
-            /> */}
             <View style={styles.back}>
               <MaterialIcons
                 name="arrow-back"

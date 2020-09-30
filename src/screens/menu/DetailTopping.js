@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {ScrollView, StyleSheet, Dimensions, View} from 'react-native';
-import CheckboxGroup from '../../components/CheckboxGroup';
+import {StyleSheet, View} from 'react-native';
+
 import EditIngredients from '../../components/EditIngredients';
 import {
   heightPercentageToDP as hp,
@@ -16,7 +16,6 @@ export class DetailTopping extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <CheckboxGroup props={this.props} /> */}
         <EditIngredients props={this.props} />
       </View>
     );

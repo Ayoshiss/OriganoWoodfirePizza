@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   SafeAreaView,
   Platform,
-  Image,
 } from 'react-native';
+import FastImage from 'react-native-fast-image'
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -116,7 +116,7 @@ export class ProfileScreen extends Component {
                 </Text>
               )
             ) : (
-              <Image
+              <FastImage
                 source={{uri: photoURL}}
                 style={{height: hp('15%'), width: hp('15%'), borderRadius: 100}}
               />

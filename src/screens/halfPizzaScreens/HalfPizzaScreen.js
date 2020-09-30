@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Image,
   Platform,
   StyleSheet,
   SafeAreaView,

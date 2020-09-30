@@ -85,10 +85,7 @@ class ShippingDetails extends Component {
                 ? {height: hp('25%')}
                 : {height: hp('30%')}),
             }}>
-            {/* <Image
-              source={require('../../asset/origanologo.jpg')}
-              style={{height: hp('20%'), width: wp('70%')}}
-            /> */}
+           
             <View style={styles.back}>
               <MaterialIcons
                 name="arrow-back"

@@ -4,12 +4,12 @@ import {
   Text,
   StyleSheet,
   ActivityIndicator,
-  Image,
   SafeAreaView,
   TouchableOpacity,
   BackHandler,
   ScrollView,
 } from 'react-native';
+import FastImage from 'react-native-fast-image'
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -200,7 +200,7 @@ class OrderSuccess extends Component {
                   style={styles.cardView}
                   key={i}>
                   <View style={{width: wp('26%'), alignSelf: 'center'}}>
-                    <Image
+                    <FastImage
                       style={{
                         width: wp('25%'),
                         height: hp('15%'),

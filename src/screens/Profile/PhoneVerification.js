@@ -230,10 +230,6 @@ class PhoneVerification extends Component {
           behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
           style={{flex: 1}}>
           <View style={styles.loginTextView}>
-            {/* <Image
-              source={require('../../asset/origanologo.jpg')}
-              style={{height: hp('20%'), width: wp('70%')}}
-            /> */}
             <Text style={styles.loginText}>Phone Verification</Text>
           </View>
           <Card elevation={2} cornerRadius={20} style={styles.cardView}>
@@ -284,10 +280,6 @@ class PhoneVerification extends Component {
           behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
           style={{flex: 1}}>
           <View style={styles.loginTextView}>
-            {/* <Image
-              source={require('../../asset/origanologo.jpg')}
-              style={{height: hp('20%'), width: wp('70%')}}
-            /> */}
             <Text style={styles.loginText}>Verification Code</Text>
           </View>
           <Card elevation={2} cornerRadius={20} style={styles.cardView}>

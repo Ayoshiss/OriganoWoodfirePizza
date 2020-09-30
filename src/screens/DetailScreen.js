@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   Dimensions,
-  Image,
   SafeAreaView,
   ScrollView,
 } from 'react-native';

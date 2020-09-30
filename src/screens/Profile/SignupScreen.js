@@ -108,14 +108,9 @@ export class SignupScreen extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        {/* <KeyboardAvoidingView
-          behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
-          style={{flex: 1}}> */}
+        
         <View style={styles.loginTextView}>
-          {/* <Image
-              source={require('../../asset/origanologo.jpg')}
-              style={{height: hp('20%'), width: wp('70%')}}
-            /> */}
+      
           <Text style={styles.loginText}>Register</Text>
         </View>
         <Card
