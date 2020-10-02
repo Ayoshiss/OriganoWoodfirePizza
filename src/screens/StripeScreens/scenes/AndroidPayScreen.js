@@ -13,7 +13,7 @@ export default class AndroidPayScreen extends PureComponent {
     token: null,
   }
 
-  async componentWillMount() {
+  async UNSAFE_componentWillMount() {
     const allowed = await stripe.deviceSupportsNativePay()
 
     this.setState({ allowed })

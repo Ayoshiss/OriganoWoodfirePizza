@@ -20,7 +20,7 @@ export default class ApplePayScreen extends PureComponent {
     visaAvailable: false,
   }
 
-  async componentWillMount() {
+  async UNSAFE_componentWillMount() {
     const allowed = await stripe.deviceSupportsNativePay()
     const amexAvailable = await stripe.canMakeNativePayPayments({
       networks: ['american_express'],
