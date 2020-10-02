@@ -4,8 +4,6 @@ import {
   View,
   StatusBar,
   StyleSheet,
-  Image,
-  SafeAreaView,
   ImageBackground,
 } from 'react-native';
 import NetworkManager from './src/components/NetworkManager';

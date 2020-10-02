@@ -36,7 +36,7 @@ import {
   getSpecialData,
 } from '../getDatas/FoodApi';
 import {notificationManager} from '../NotificationManager';
-import FastImage from 'react-native-fast-image'
+import FastImage from 'react-native-fast-image';
 var menuData = [];
 var deliveryPlaces = [];
 var placesWithCharge = [];
@@ -152,6 +152,9 @@ export default class HomeScreen extends React.Component {
             data: menuData,
           });
         });
+      })
+      .catch((e) => {
+        return;
       });
   };
   getDeliveryPlaces() {
@@ -211,17 +214,21 @@ export default class HomeScreen extends React.Component {
     });
   }
   getNotifyToken = (currentUserId) => {
-    firestore()
-      .collection('Users')
-      .doc(currentUserId)
-      .get()
-      .then((data) => {
-        const {notifyToken} = data.data();
-        this.setState({notifyToken});
-      })
-      .catch((e) => {
-        return;
-      });
+    const {phoneNumber} = auth().currentUser;
+
+    if (phoneNumber !== null) {
+      firestore()
+        .collection('Users')
+        .doc(currentUserId)
+        .get()
+        .then((data) => {
+          const {notifyToken} = data.data();
+          this.setState({notifyToken});
+        })
+        .catch((e) => {
+          return;
+        });
+    }
   };
 
   componentDidMount() {
@@ -289,10 +296,10 @@ export default class HomeScreen extends React.Component {
     // console.log('[Notification] onOpenNotification:', notify);
   }
 
-  componentWillUnmount() {
-    // Remove the event listener before removing the screen from the stack
-    this.focusListener.remove();
-  }
+  // componentWillUnmount() {
+  //   // Remove the event listener before removing the screen from the stack
+  //   this.focusListener.remove();
+  // }
   storePreferenceData = async (preferenceData, type, charge) => {
     this.setState({showPickupInput: false});
     try {
@@ -455,11 +462,9 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
-    const {checkDiscount} = this.state;
     const listHeader = () => {
       return (
         <SafeAreaView>
-      
           <StatusBar barStyle="dark-content" backgroundColor="white" />
 
           <View style={styles.imageView}>
@@ -644,8 +649,16 @@ export default class HomeScreen extends React.Component {
             {this.state.showPickupInput && (
               <View
                 style={{
-                  marginHorizontal: wp('5%'),
-                  marginVertical: hp('1%'),
+                  ...(Platform.OS !== 'android'
+                    ? {
+                        marginHorizontal: wp('5%'),
+                        marginVertical: hp('1%'),
+                        zIndex: 10,
+                      }
+                    : {
+                        marginHorizontal: wp('5%'),
+                        marginVertical: hp('1%'),
+                      }),
                 }}>
                 <StorePicker
                   onChangeItem={(item) => this.handlePickupBtn(item)}

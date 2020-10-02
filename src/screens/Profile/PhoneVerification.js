@@ -13,6 +13,7 @@ import {Card} from 'react-native-shadow-cards';
 import InputTextField from '../../components/profile/InputTextField';
 import {RNToasty} from 'react-native-toasty';
 import LinearGrad from '../../components/LinearGrad';
+import PhoneInput from 'react-native-phone-input';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -20,12 +21,12 @@ import {
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import AsyncStorage from '@react-native-community/async-storage';
-import {notificationManager} from '../../NotificationManager';
 class PhoneVerification extends Component {
   constructor(props) {
     super(props);
+    this.phoneInput = React.createRef();
     this.state = {
-      phone: '',
+      phone: '+61',
       code: '',
       codeInput: '',
       verificationId: '',
@@ -135,13 +136,18 @@ class PhoneVerification extends Component {
 
     this.setState({isLoading: false});
   };
-
+  handleUpdateProfile2 = () => {
+    console.log(this.state.phone);
+    const checkValid = this.phoneInput.current?.isValidNumber();
+    console.log(checkValid);
+  };
   handleUpdateProfile = () => {
     Keyboard.dismiss();
     this.setState({isLoading: true});
     const {phone} = this.state;
     const {uid, displayName, email} = auth().currentUser;
-    if (phone == '') {
+    const checkValid = this.phoneInput.current?.isValidNumber();
+    if (!checkValid) {
       this.setState({errorMessage: 'Please Enter a Valid Phone Number'});
       return;
     }
@@ -223,6 +229,9 @@ class PhoneVerification extends Component {
         },
       );
   };
+  onFlagPress = () => {
+    return;
+  };
   renderUpdateUI() {
     return (
       <SafeAreaView style={styles.container}>
@@ -240,16 +249,21 @@ class PhoneVerification extends Component {
                 </Text>
               )}
             </View>
-            <InputTextField
-              icon="cellphone-iphone"
-              placeholderText="Phone Number"
-              title={'Phone Number'}
-              onChange={(phone) => {
+
+            <PhoneInput
+              style={{
+                borderColor: '#ddd',
+                borderWidth: 2,
+                borderRadius: 20,
+                padding: 16,
+              }}
+              ref={this.phoneInput}
+              value={this.state.phone}
+              onChangePhoneNumber={(phone) => {
                 this.setState({phone});
               }}
-              type={'phone-pad'}
-              value={this.state.phone}
-              autoCompleteType="off"
+              initialCountry="au"
+              onPressFlag={this.onFlagPress}
             />
 
             <TouchableOpacity onPress={this.handleUpdateProfile}>
