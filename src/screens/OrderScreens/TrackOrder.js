@@ -35,6 +35,7 @@ class TrackOrder extends Component {
     } else {
       var collectionName = 'Orders';
     }
+
     this.setState({orderId, orderType});
     firestore()
       .collection(collectionName)

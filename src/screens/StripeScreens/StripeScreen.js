@@ -14,9 +14,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {Card} from 'react-native-shadow-cards';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
-import Button from './components/Button';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import ScreenHeaders from '../../components/ScreenHeaders';
@@ -36,12 +34,6 @@ export default class StripeScreen extends PureComponent {
     token: null,
     uid: '',
   };
-
-  componentDidMount() {
-    // const userEmail = auth().currentUser.email;
-    // const uid = auth().currentUser.uid;
-    // this.setState({uid})
-  }
 
   handleCardPayPress = async () => {
     try {

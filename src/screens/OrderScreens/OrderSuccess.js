@@ -9,7 +9,7 @@ import {
   BackHandler,
   ScrollView,
 } from 'react-native';
-import FastImage from 'react-native-fast-image'
+import FastImage from 'react-native-fast-image';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -31,6 +31,7 @@ class OrderSuccess extends Component {
       orderId: this.props.route.params.docID,
       orderType: this.props.route.params.orderType,
       previousScreen: this.props.route.params.previousScreen,
+      tabName: this.props.route.params.tabName,
     };
   }
   backAction = () => {
@@ -42,39 +43,12 @@ class OrderSuccess extends Component {
       this.backAction,
     );
 
-    const {previousScreen, tabName} = this.props.route.params;
+    const {previousScreen} = this.props.route.params;
 
-    var collectionName;
     this.setState({previousScreen});
     if (previousScreen == 'Checkout') {
       this.clearCart();
     }
-    if (tabName) {
-      collectionName = tabName;
-    } else {
-      collectionName = 'Orders';
-    }
-    // firestore()
-    //   .collection(collectionName)
-    //   .doc(docId)
-    //   .get()
-    //   .then((snapshot) => {
-    //     const {
-    //       orderStatus,
-    //       paymentType,
-    //       shippingAddress,
-    //       specialInstruction,
-    //       dataCart,
-    //     } = snapshot.data();
-    //     this.setState({
-    //       orderedItems: dataCart,
-    //       shippingAddress,
-    //       paymentType,
-    //       specialInstruction,
-    //       orderStatus,
-    //       isLoading: false,
-    //     });
-    //   });
   }
   componentWillUnmount() {
     this.backHandler.remove();
@@ -98,7 +72,7 @@ class OrderSuccess extends Component {
     }
   };
   renderGoBack = () => {
-    const {orderId, orderType} = this.state;
+    const {orderId, orderType, tabName} = this.state;
     return (
       <View style={{alignSelf: 'center'}}>
         <TouchableOpacity
@@ -106,6 +80,7 @@ class OrderSuccess extends Component {
             this.props.navigation.navigate('TrackOrder', {
               orderId,
               orderType,
+              tabName,
             })
           }>
           <LinearGradient
@@ -308,7 +283,7 @@ class OrderSuccess extends Component {
                             color: '#555',
                           }}>
                           Don't Include :{' '}
-                          {item.finalDesc.map((finalDes) => {
+                          {item.finalDesc.map((finalDes, i) => {
                             count1++;
                             let x;
                             if (count1 === descLength) {
@@ -318,6 +293,7 @@ class OrderSuccess extends Component {
                             }
                             return (
                               <Text
+                                key={i}
                                 style={{
                                   fontFamily: 'Lato-Regular',
                                   color: 'grey',

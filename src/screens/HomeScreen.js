@@ -466,7 +466,6 @@ export default class HomeScreen extends React.Component {
       return (
         <SafeAreaView>
           <StatusBar barStyle="dark-content" backgroundColor="white" />
-
           <View style={styles.imageView}>
             <FastImage
               style={styles.banner}

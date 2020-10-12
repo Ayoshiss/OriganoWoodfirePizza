@@ -13,32 +13,36 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import DropDownPicker from 'react-native-dropdown-picker';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage';
-import {RNToasty} from 'react-native-toasty';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import RBSheet from 'react-native-raw-bottom-sheet';
-import HalfPizzaDetailScreen from './HalfPizzaDetailScreen';
 import FastImage from 'react-native-fast-image';
-class HalfPizzaScreen extends Component {
+class BigOrMaxDeals extends Component {
   constructor(props) {
     super(props);
     var x,
       pizzaLabelArray = [],
       y;
     this.props.route.params.pizzaList.map((pizza) => {
-      x = pizza.name;
-      y = {label: x, value: x};
-      pizzaLabelArray = [...pizzaLabelArray, y];
+      if (pizza.isAvailable === 'Yes' && pizza.type !== 'Sea Food Pizza') {
+        x = pizza.name;
+        y = {label: x, value: x};
+        pizzaLabelArray = [...pizzaLabelArray, y];
+      }
     });
+
     this.state = {
       pizzaList: this.props.route.params.pizzaList,
-      // toppingsList: this.props.route.params.toppingsList,
       pizzaLabelArray,
+      firstPizza: '',
+      secondPizza: '',
+      thirdPizza: '',
       leftPizza: [],
-      image: this.props.route.params.pizzaList[0].image,
+      image: this.props.route.params.image,
+      name: this.props.route.params.name,
+      price: this.props.route.params.price,
       rightPizza: [],
       badgeCount: 0,
     };
@@ -58,21 +62,54 @@ class HalfPizzaScreen extends Component {
       }
     });
   };
-  handleEdit = () => {
-    const {leftPizza, rightPizza} = this.state;
-    if (leftPizza.length === 0 || rightPizza.length === 0) {
-      RNToasty.Show({
-        title: 'Please select two Pizzas',
-      });
-      return;
+  addToCart = () => {
+    const {
+      firstPizza,
+      secondPizza,
+      thirdPizza,
+      image,
+      name,
+      price,
+    } = this.state;
+    if (name === 'Max Deal') {
+      if (firstPizza === '' || secondPizza === '' || thirdPizza === '') {
+        alert('Please Select Three Large Pizza');
+        return;
+      }
     }
-    if (leftPizza[0].name === rightPizza[0].name) {
-      RNToasty.Show({
-        title: 'Please select two different types of pizza',
-      });
-      return;
+    if (name === 'Big Deal') {
+      if (firstPizza === '' || secondPizza === '') {
+        alert('Please Select Two Large Pizza');
+        return;
+      }
     }
-    this.RBSheet.open();
+    var food = {
+      image,
+      name,
+      pizzaNames: [firstPizza, secondPizza, thirdPizza],
+    };
+    var itemCart = {
+      food: food,
+      price: Number(price).toFixed(2),
+      quantity: 1,
+    };
+    AsyncStorage.getItem('cart')
+      .then((datacart) => {
+        if (datacart !== null) {
+          const cart = JSON.parse(datacart);
+          cart.push(itemCart);
+          AsyncStorage.setItem('cart', JSON.stringify(cart));
+        } else {
+          const cart = [];
+          cart.push(itemCart);
+          AsyncStorage.setItem('cart', JSON.stringify(cart));
+        }
+        this.getBadgeCount();
+        alert('Item added to Cart');
+      })
+      .catch((error) => {
+        alert(error);
+      });
   };
 
   render() {
@@ -81,8 +118,7 @@ class HalfPizzaScreen extends Component {
         <View style={styles.image_container}>
           <FastImage
             source={{
-              uri:
-                'https://firebasestorage.googleapis.com/v0/b/origanofirewood.appspot.com/o/halfHalfPizza%2FHalfHalfPizza-min.jpg?alt=media&token=9a851045-849b-4b43-ba9c-c741cad09f8b',
+              uri: this.state.image,
             }}
             style={styles.image}
           />
@@ -133,27 +169,25 @@ class HalfPizzaScreen extends Component {
           </TouchableOpacity>
         </View>
         <ScrollView style={[styles.footer]}>
-          {/* <Text style={styles.textPrice}>${this.state.price}</Text> */}
           <Text numberOfLines={2} style={styles.textName}>
-            {/* {this.state.name.toUpperCase()} */}
-            Half Half Pizza
+            {this.state.name}
           </Text>
+          <Text style={styles.textPrice}>${this.state.price}</Text>
           <Text style={styles.textDetail}>
-            Combine any 2 of our delicious pizzas in 1. Each pizza will take up
-            one half of the entire base.
+            {this.state.name === 'Max Deal'
+              ? 'Choose any three large pizza'
+              : 'Choose any two large pizza'}{' '}
           </Text>
           <View
             style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              minHeight: hp('26%'),
+              minHeight: hp('32%'),
             }}>
             <View>
-              <Text>Left Pizza</Text>
+              <Text>First Pizza</Text>
               <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
                 <DropDownPicker
                   items={this.state.pizzaLabelArray}
-                  placeholder="Select Left Pizza"
+                  placeholder="Select First Pizza"
                   defaultIndex={0}
                   dropDownMaxHeight={
                     Platform.OS === 'ios' ? hp('18%') : hp('22%')
@@ -166,35 +200,22 @@ class HalfPizzaScreen extends Component {
                   }}
                   containerStyle={{
                     height: hp('6%'),
-                    width: wp('40%'),
+                    width: wp('70%'),
                     // marginHorizontal: wp('5%'),
-                    marginVertical: hp('2%'),
+                    marginVertical: hp('1.5%'),
                   }}
                   onChangeItem={(item) => {
-                    const leftPizza = this.state.pizzaList.filter((pizza) => {
-                      return pizza.name === item.value;
-                    });
-
-                    const apple = leftPizza.map((pizza) => {
-                      return pizza.desc;
-                    });
-
-                    const leftPizzaDescList = apple.toString().split(',');
-
-                    this.setState({
-                      leftPizza,
-                      leftPizzaDescList,
-                    });
+                    this.setState({firstPizza: item.value});
                   }}
                 />
               </View>
             </View>
             <View>
-              <Text>Right Pizza</Text>
+              <Text>Second Pizza</Text>
               <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
                 <DropDownPicker
                   items={this.state.pizzaLabelArray}
-                  placeholder="Select Right Pizza"
+                  placeholder="Select Second Pizza"
                   defaultIndex={0}
                   dropDownMaxHeight={
                     Platform.OS === 'ios' ? hp('18%') : hp('22%')
@@ -207,70 +228,65 @@ class HalfPizzaScreen extends Component {
                   }}
                   containerStyle={{
                     height: hp('6%'),
-                    width: wp('40%'),
+                    width: wp('70%'),
                     // marginHorizontal: wp('5%'),
-                    marginVertical: hp('2%'),
+                    marginVertical: hp('1.5%'),
                   }}
                   onChangeItem={(item) => {
-                    const rightPizza = this.state.pizzaList.filter((pizza) => {
-                      return pizza.name === item.value;
-                    });
-                    const apple = rightPizza.map((pizza) => {
-                      return pizza.desc;
-                    });
-
-                    const rightPizzaDescList = apple.toString().split(',');
-                    this.setState({rightPizza, rightPizzaDescList});
+                    this.setState({secondPizza: item.value});
                   }}
                 />
               </View>
             </View>
+            {this.state.name === 'Max Deal' && (
+              <View style={{marginBottom: hp('2%')}}>
+                <Text>Third Pizza</Text>
+                <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
+                  <DropDownPicker
+                    items={this.state.pizzaLabelArray}
+                    placeholder="Select Third Pizza"
+                    defaultIndex={0}
+                    dropDownMaxHeight={
+                      Platform.OS === 'ios' ? hp('18%') : hp('22%')
+                    }
+                    labelStyle={{
+                      fontSize: hp('2.2%'),
+                      textAlign: 'left',
+                      color: '#000',
+                      fontFamily: 'Lato-Regular',
+                    }}
+                    containerStyle={{
+                      height: hp('6%'),
+                      width: wp('70%'),
+                      // marginHorizontal: wp('5%'),
+                      marginVertical: hp('1.5%'),
+                    }}
+                    onChangeItem={(item) => {
+                      this.setState({thirdPizza: item.value});
+                    }}
+                  />
+                </View>
+              </View>
+            )}
           </View>
           <View>
-            <TouchableOpacity onPress={this.handleEdit}>
+            <TouchableOpacity onPress={this.addToCart}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}
                 colors={['#F47621', '#F89919']}
                 style={styles.button}>
-                <Text style={styles.textOrder}>EDIT INGREDIENTS</Text>
+                <Text style={styles.textOrder}>Add To Cart</Text>
               </LinearGradient>
             </TouchableOpacity>
           </View>
-          <RBSheet
-            ref={(ref) => {
-              this.RBSheet = ref;
-            }}
-            animationType={'slide'}
-            height={hp('80%')}
-            openDuration={500}
-            closeOnDragDown={true}
-            dragFromTopOnly={true}
-            customStyles={{
-              container: {
-                borderTopEndRadius: 30,
-                borderTopStartRadius: 30,
-              },
-            }}>
-            <HalfPizzaDetailScreen
-              closeRB={() => this.RBSheet.close()}
-              badgeCount={() => this.getBadgeCount()}
-              leftPizzaDescList={this.state.leftPizzaDescList}
-              rightPizzaDescList={this.state.rightPizzaDescList}
-              leftPizza={this.state.leftPizza}
-              rightPizza={this.state.rightPizza}
-              // toppingsList={this.state.toppingsList}
-            />
-          </RBSheet>
         </ScrollView>
       </SafeAreaView>
     );
   }
 }
 
-const height = Dimensions.get('screen').height;
 const width = Dimensions.get('screen').width;
-const height_image = height * 0.5 * 0.9;
 var styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -282,7 +298,7 @@ var styles = StyleSheet.create({
   },
   image_container: {
     width: width,
-    height: hp('40%'),
+    height: hp('35%'),
     flexDirection: 'row',
   },
   image: {
@@ -293,16 +309,6 @@ var styles = StyleSheet.create({
     position: 'absolute',
     paddingHorizontal: wp('5%'),
     paddingVertical: hp('5.5%'),
-  },
-  status: {
-    // marginTop: 30,
-    marginVertical: hp('2.5%'),
-    paddingVertical: hp('0.5%'),
-    width: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderRadius: 50,
   },
   textPrice: {
     color: '#EC942A',
@@ -342,4 +348,4 @@ var styles = StyleSheet.create({
   },
 });
 
-export default HalfPizzaScreen;
+export default BigOrMaxDeals;

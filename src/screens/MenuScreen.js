@@ -24,7 +24,7 @@ import Beverages from './menu/Beverages';
 import EntreeAndSide from './menu/EntreeAndSide';
 import Pizza from './menu/Pizza';
 import Special from './menu/Special';
-
+import Deals from './menu/Deals';
 
 class MenuScreen extends Component {
   constructor(props) {
@@ -116,6 +116,12 @@ class MenuScreen extends Component {
               props={this.props}
               specialList={this.props.route.params.specialList}
               toppingsList={this.props.route.params.toppingsList}
+            />
+            <Deals
+              tabLabel="Deals"
+              props={this.props}
+              pizzaList={this.props.route.params.pizzaList}
+              pastaList={this.props.route.params.pastaList}
             />
             <Pizza
               tabLabel="Pizza"

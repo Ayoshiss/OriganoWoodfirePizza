@@ -26,6 +26,9 @@ import PhoneVerification from './src/screens/Profile/PhoneVerification';
 import StripeScreen from './src/screens/StripeScreens/StripeScreen';
 import SplashScreen from './src/screens/SplashScreen';
 import HalfPizzaScreen from './src/screens/halfPizzaScreens/HalfPizzaScreen';
+import BigOrMaxDeals from './src/screens/DealScreens/BigOrMaxDeals';
+import PartyDeal from './src/screens/DealScreens/PartyDeal';
+import DealDetails from './src/screens/DealScreens/DealDetails';
 
 const Stack = createStackNavigator();
 const ProfileStack = createStackNavigator();
@@ -156,6 +159,9 @@ const RootStack = () => {
         <Stack.Screen name="Checkout" component={CheckoutScreen} />
         <Stack.Screen name="StripeScreen" component={StripeScreen} />
         <Stack.Screen name="HalfPizzaScreen" component={HalfPizzaScreen} />
+        <Stack.Screen name="BigOrMaxDeals" component={BigOrMaxDeals} />
+        <Stack.Screen name="PartyDeal" component={PartyDeal} />
+        <Stack.Screen name="DealDetails" component={DealDetails} />
         <Stack.Screen
           name="OrderSuccess"
           component={OrderSuccess}

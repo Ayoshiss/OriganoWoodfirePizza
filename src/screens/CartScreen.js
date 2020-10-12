@@ -20,7 +20,7 @@ import {
 } from 'react-native-responsive-screen';
 import {Card} from 'react-native-shadow-cards';
 import {RNToasty} from 'react-native-toasty';
-import FastImage from 'react-native-fast-image'
+import FastImage from 'react-native-fast-image';
 export class CartScreen extends Component {
   constructor(props) {
     super(props);
@@ -309,7 +309,15 @@ export class CartScreen extends Component {
                         </Text>
                       </TouchableOpacity>
                     )}
-                    {!item.food.size && (
+                    {item.food.pizzaNames && (
+                      <TouchableOpacity
+                        onPress={() => this[RBSheet + i].open()}>
+                        <Text style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                          View Details
+                        </Text>
+                      </TouchableOpacity>
+                    )}
+                    {!item.food.size && !item.food.pizzaNames && (
                       <Text style={{color: 'white', fontFamily: 'Lato-Bold'}}>
                         View Details
                       </Text>
@@ -335,17 +343,99 @@ export class CartScreen extends Component {
                         paddingLeft: wp('10%'),
                         paddingVertical: hp('2%'),
                       }}>
-                      <Text
-                        style={{
-                          fontFamily: 'Lato-Black',
-                          fontSize: hp('2.2%'),
-                          paddingVertical: hp('1%'),
-                        }}>
-                        Size :{' '}
-                        <Text style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
-                          {item.food.size}
+                      {item.food.size && (
+                        <Text
+                          style={{
+                            fontFamily: 'Lato-Black',
+                            fontSize: hp('2.2%'),
+                            paddingVertical: hp('1%'),
+                          }}>
+                          Size :{' '}
+                          <Text
+                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                            {item.food.size}
+                          </Text>
                         </Text>
-                      </Text>
+                      )}
+
+                      {item.food.pizzaNames && (
+                        <Text
+                          style={{
+                            fontFamily: 'Lato-Black',
+                            fontSize: hp('2.2%'),
+                            paddingVertical: hp('1%'),
+                          }}>
+                          Pizza :{' '}
+                          <Text
+                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                            {item.food.name === 'Big Deal' &&
+                              item.food.pizzaNames.map((pizza, i) => {
+                                if (i < item.food.pizzaNames.length - 2) {
+                                  return pizza + ', ';
+                                }
+                                if (i === item.food.pizzaNames.length - 2) {
+                                  return pizza;
+                                }
+                              })}
+                            {item.food.name !== 'Big Deal' &&
+                              item.food.pizzaNames.map((pizza, i) => {
+                                if (i < item.food.pizzaNames.length - 1) {
+                                  return pizza + ', ';
+                                }
+                                if (i === item.food.pizzaNames.length - 1) {
+                                  return pizza;
+                                }
+                              })}
+                          </Text>
+                        </Text>
+                      )}
+                      {item.food.pastaNames && item.food.name === 'Party Deal' && (
+                        <Text
+                          style={{
+                            fontFamily: 'Lato-Black',
+                            fontSize: hp('2.2%'),
+                            paddingVertical: hp('1%'),
+                          }}>
+                          Pasta :{' '}
+                          <Text
+                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                            {item.food.pastaNames.map((pasta, i) => {
+                              if (i < item.food.pastaNames.length - 1) {
+                                return pasta + ', ';
+                              }
+                              if (i === item.food.pastaNames.length - 1) {
+                                return pasta;
+                              }
+                            })}
+                          </Text>
+                        </Text>
+                      )}
+                      {item.food.garlicPizzaNames &&
+                        item.food.name === 'Party Deal' && (
+                          <Text
+                            style={{
+                              fontFamily: 'Lato-Black',
+                              fontSize: hp('2.2%'),
+                              paddingVertical: hp('1%'),
+                            }}>
+                            Garlic Pizza :{' '}
+                            <Text
+                              style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                              {item.food.garlicPizzaNames.map((gPizza, i) => {
+                                if (i < item.food.garlicPizzaNames.length - 1) {
+                                  return gPizza + ', ';
+                                }
+                                if (
+                                  i ===
+                                  item.food.garlicPizzaNames.length - 1
+                                ) {
+                                  return gPizza;
+                                }
+                              })}
+                            </Text>
+                          </Text>
+                        )}
+
                       {item.ingredients && item.ingredients.length > 0 && (
                         <Text
                           style={{

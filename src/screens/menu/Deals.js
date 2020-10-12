@@ -3,55 +3,52 @@ import {View, FlatList, SafeAreaView} from 'react-native';
 import styles from './pizzastyles';
 import MenuItemsLinearGrad from '../../components/MenuItemsLinearGrad';
 
-export default class Special extends Component {
+export default class Deals extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      data: [
+        {name: 'Big Deal', price: 49, url: 'big'},
+        {name: 'Max Deal', price: 59, url: 'max'},
+        {name: 'Party Deal', price: 100, url: 'party'},
+      ],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/origanofirewood.appspot.com/o/pizzaImages%2Foriganopizza.jpg?alt=media&token=8df5cad2-f002-47c8-94e9-4d74d26f3ef0',
     };
   }
-
-  componentDidMount() {
-    this.setState({data: this.props.specialList});
-  }
   handleOnPress = (item) => {
-    if (
-      item.type === 'Pasta' ||
-      item.type === 'Sides' ||
-      item.type === 'Salad' ||
-      item.type === 'Dessert' ||
-      item.type === 'Beverages'
-    ) {
-      this.props.props.navigation.navigate('Detail', {
-        image: item.image,
-        price: item.price,
-        name: item.name,
-        desc: item.desc,
-        type: item.type,
-        isAvailable: item.isAvailable,
-      });
-    } else {
-      this.props.props.navigation.navigate('PizzaDetail', {
-        image: item.image,
-        price: item.smallPrice,
-        smallPrice: item.smallPrice,
-        medPrice: item.medPrice,
-        largePrice: item.largePrice,
-        gfPrice: item.gfPrice,
-        name: item.name,
-        type: item.type,
-        desc: item.desc,
-        toppingsList: this.props.toppingsList,
-        isAvailable: item.isAvailable,
-      });
-    }
+    // if (item.name === 'Big Deal' || item.name === 'Max Deal') {
+    //   this.props.props.navigation.navigate('BigOrMaxDeals', {
+    //     image: this.state.image,
+    //     price: item.price,
+    //     name: item.name,
+    //     pizzaList: this.props.pizzaList,
+    //   });
+    // } else {
+    //   this.props.props.navigation.navigate('PartyDeal', {
+    //     image: this.state.image,
+    //     price: item.price,
+    //     name: item.name,
+    //     pizzaList: this.props.pizzaList,
+    //     pastaList: this.props.pastaList,
+    //   });
+    // }
+    this.props.props.navigation.navigate('DealDetails', {
+      image: this.state.image,
+      price: item.price,
+      name: item.name,
+      pizzaList: this.props.pizzaList,
+      pastaList: this.props.pastaList,
+    });
   };
   renderItem = ({item}) => {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: 'white'}} key={item.id}>
         <MenuItemsLinearGrad
           image_container={styles.image_container}
-          item_image={{uri: item.image}}
+          item_image={{
+            uri: this.state.image,
+          }}
           item_image_styles={styles.image}
           isPopular={item.isPopular}
           popularView={styles.popularView}
@@ -63,7 +60,7 @@ export default class Special extends Component {
           price_container={styles.price_container}
           priceStyles={styles.price}
           textPrice={styles.textPrice}
-          itemType={item.type}
+          itemPrice={item.price}
           btnStyles={styles.button}
           onPress={() => this.handleOnPress(item)}
         />
