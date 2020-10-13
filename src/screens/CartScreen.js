@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AsyncStorage from '@react-native-community/async-storage';
 import RBSheet from 'react-native-raw-bottom-sheet';
@@ -304,23 +303,17 @@ export class CartScreen extends Component {
                     {item.food.size && (
                       <TouchableOpacity
                         onPress={() => this[RBSheet + i].open()}>
-                        <Text style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
-                          View Details
-                        </Text>
+                        <Text style={styles.viewDetailsText}>View Details</Text>
                       </TouchableOpacity>
                     )}
                     {item.food.pizzaNames && (
                       <TouchableOpacity
                         onPress={() => this[RBSheet + i].open()}>
-                        <Text style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
-                          View Details
-                        </Text>
+                        <Text style={styles.viewDetailsText}>View Details</Text>
                       </TouchableOpacity>
                     )}
                     {!item.food.size && !item.food.pizzaNames && (
-                      <Text style={{color: 'white', fontFamily: 'Lato-Bold'}}>
-                        View Details
-                      </Text>
+                      <Text style={styles.viewDetailsText}>View Details</Text>
                     )}
                   </View>
                   <RBSheet
@@ -344,12 +337,7 @@ export class CartScreen extends Component {
                         paddingVertical: hp('2%'),
                       }}>
                       {item.food.size && (
-                        <Text
-                          style={{
-                            fontFamily: 'Lato-Black',
-                            fontSize: hp('2.2%'),
-                            paddingVertical: hp('1%'),
-                          }}>
+                        <Text style={styles.viewDetails}>
                           Size :{' '}
                           <Text
                             style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
@@ -359,12 +347,7 @@ export class CartScreen extends Component {
                       )}
 
                       {item.food.pizzaNames && (
-                        <Text
-                          style={{
-                            fontFamily: 'Lato-Black',
-                            fontSize: hp('2.2%'),
-                            paddingVertical: hp('1%'),
-                          }}>
+                        <Text style={styles.viewDetails}>
                           Pizza :{' '}
                           <Text
                             style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
@@ -390,12 +373,7 @@ export class CartScreen extends Component {
                         </Text>
                       )}
                       {item.food.pastaNames && item.food.name === 'Party Deal' && (
-                        <Text
-                          style={{
-                            fontFamily: 'Lato-Black',
-                            fontSize: hp('2.2%'),
-                            paddingVertical: hp('1%'),
-                          }}>
+                        <Text style={styles.viewDetails}>
                           Pasta :{' '}
                           <Text
                             style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
@@ -412,12 +390,7 @@ export class CartScreen extends Component {
                       )}
                       {item.food.garlicPizzaNames &&
                         item.food.name === 'Party Deal' && (
-                          <Text
-                            style={{
-                              fontFamily: 'Lato-Black',
-                              fontSize: hp('2.2%'),
-                              paddingVertical: hp('1%'),
-                            }}>
+                          <Text style={styles.viewDetails}>
                             Garlic Pizza :{' '}
                             <Text
                               style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
@@ -437,11 +410,7 @@ export class CartScreen extends Component {
                         )}
 
                       {item.ingredients && item.ingredients.length > 0 && (
-                        <Text
-                          style={{
-                            fontSize: hp('2.2%'),
-                            fontFamily: 'Lato-Black',
-                          }}>
+                        <Text style={styles.viewDetails}>
                           Toppings :
                           {item.ingredients.map((ingredient, i) => {
                             count++;
@@ -461,18 +430,14 @@ export class CartScreen extends Component {
                                 {' '}
                                 {ingredient.name}
                                 {!a && ','}
-                                {a && '.'}
+                                {a}
                               </Text>
                             );
                           })}
                         </Text>
                       )}
                       {item.finalDesc && item.finalDesc.length > 0 && (
-                        <Text
-                          style={{
-                            fontSize: hp('2.2%'),
-                            fontFamily: 'Lato-Black',
-                          }}>
+                        <Text style={styles.viewDetails}>
                           Don't Include :
                           {item.finalDesc.map((finalDes, i) => {
                             count1++;
@@ -492,7 +457,7 @@ export class CartScreen extends Component {
                                 {' '}
                                 {finalDes}
                                 {!a && ','}
-                                {a && '.'}
+                                {a}
                               </Text>
                             );
                           })}
@@ -521,7 +486,7 @@ export class CartScreen extends Component {
                         fontFamily: 'Lato-Black',
                         paddingHorizontal: wp('2%'),
                         color: 'grey',
-                        fontSize: hp('2.3'),
+                        fontSize: hp('2.3%'),
                       }}>
                       {item.quantity}
                     </Text>
@@ -747,6 +712,16 @@ var styles = StyleSheet.create({
   header: {
     alignSelf: 'center',
     marginVertical: hp('1%'),
+  },
+  viewDetailsText: {
+    fontSize: hp('1.9%'),
+    color: 'grey',
+    fontFamily: 'Lato-Bold',
+  },
+  viewDetails: {
+    fontFamily: 'Lato-Black',
+    fontSize: hp('2.2%'),
+    paddingVertical: hp('1%'),
   },
 
   title: {

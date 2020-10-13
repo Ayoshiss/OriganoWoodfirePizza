@@ -18,6 +18,7 @@ import {Card} from 'react-native-shadow-cards';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AsyncStorage from '@react-native-community/async-storage';
+import RBSheet from 'react-native-raw-bottom-sheet';
 class OrderSuccess extends Component {
   constructor(props) {
     super(props);
@@ -119,7 +120,6 @@ class OrderSuccess extends Component {
           <View
             style={{
               flexDirection: 'row',
-
               justifyContent: 'space-between',
               marginVertical: hp('1%'),
               paddingHorizontal: wp('5%'),
@@ -212,21 +212,6 @@ class OrderSuccess extends Component {
                           {item.quantity}
                         </Text>
                       </Text>
-                      {item.food.size && (
-                        <Text
-                          style={{
-                            fontSize: hp('1.9%'),
-                            fontFamily: 'Lato-Black',
-                            color: '#555',
-                          }}>
-                          Size :
-                          <Text
-                            style={{fontFamily: 'Lato-Regular', color: 'grey'}}>
-                            {' '}
-                            {item.food.size}
-                          </Text>
-                        </Text>
-                      )}
                     </View>
                     <View>
                       <Text
@@ -243,14 +228,128 @@ class OrderSuccess extends Component {
                       </Text>
                     </View>
                     <View>
-                      {item.ingredients && item.ingredients.length > 0 && (
+                      {item.food.size && (
+                        <TouchableOpacity
+                          onPress={() => this[RBSheet + i].open()}>
+                          <Text style={styles.moreDetailsText}>
+                            More Details
+                          </Text>
+                        </TouchableOpacity>
+                      )}
+                      {item.food.pizzaNames && (
+                        <TouchableOpacity
+                          onPress={() => this[RBSheet + i].open()}>
+                          <Text style={styles.moreDetailsText}>
+                            More Details
+                          </Text>
+                        </TouchableOpacity>
+                      )}
+                      {!item.food.size && !item.food.pizzaNames && (
                         <Text
                           style={{
-                            fontSize: hp('1.9%'),
-                            fontFamily: 'Lato-Black',
-                            color: '#555',
+                            color: 'white',
                           }}>
-                          Toppings :{' '}
+                          More Details
+                        </Text>
+                      )}
+                    </View>
+                  </View>
+                  <RBSheet
+                    ref={(ref) => {
+                      this[RBSheet + i] = ref;
+                    }}
+                    animationType={'slide'}
+                    height={hp('25%')}
+                    openDuration={500}
+                    closeOnDragDown={true}
+                    dragFromTopOnly={true}
+                    customStyles={{
+                      container: {
+                        borderTopEndRadius: 30,
+                        borderTopStartRadius: 30,
+                      },
+                    }}>
+                    <ScrollView
+                      style={{
+                        paddingLeft: wp('10%'),
+                        paddingVertical: hp('2%'),
+                      }}>
+                      {item.food.size && (
+                        <Text style={styles.moreDetails}>
+                          Size :{' '}
+                          <Text
+                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                            {item.food.size}
+                          </Text>
+                        </Text>
+                      )}
+
+                      {item.food.pizzaNames && (
+                        <Text style={styles.moreDetails}>
+                          Pizza :{' '}
+                          <Text
+                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                            {item.food.name === 'Big Deal' &&
+                              item.food.pizzaNames.map((pizza, i) => {
+                                if (i < item.food.pizzaNames.length - 2) {
+                                  return pizza + ', ';
+                                }
+                                if (i === item.food.pizzaNames.length - 2) {
+                                  return pizza;
+                                }
+                              })}
+                            {item.food.name !== 'Big Deal' &&
+                              item.food.pizzaNames.map((pizza, i) => {
+                                if (i < item.food.pizzaNames.length - 1) {
+                                  return pizza + ', ';
+                                }
+                                if (i === item.food.pizzaNames.length - 1) {
+                                  return pizza;
+                                }
+                              })}
+                          </Text>
+                        </Text>
+                      )}
+                      {item.food.pastaNames && item.food.name === 'Party Deal' && (
+                        <Text style={styles.moreDetails}>
+                          Pasta :{' '}
+                          <Text
+                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                            {item.food.pastaNames.map((pasta, i) => {
+                              if (i < item.food.pastaNames.length - 1) {
+                                return pasta + ', ';
+                              }
+                              if (i === item.food.pastaNames.length - 1) {
+                                return pasta;
+                              }
+                            })}
+                          </Text>
+                        </Text>
+                      )}
+                      {item.food.garlicPizzaNames &&
+                        item.food.name === 'Party Deal' && (
+                          <Text style={styles.moreDetails}>
+                            Garlic Pizza :{' '}
+                            <Text
+                              style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                              {item.food.garlicPizzaNames.map((gPizza, i) => {
+                                if (i < item.food.garlicPizzaNames.length - 1) {
+                                  return gPizza + ', ';
+                                }
+                                if (
+                                  i ===
+                                  item.food.garlicPizzaNames.length - 1
+                                ) {
+                                  return gPizza;
+                                }
+                              })}
+                            </Text>
+                          </Text>
+                        )}
+
+                      {item.ingredients && item.ingredients.length > 0 && (
+                        <Text style={styles.moreDetails}>
+                          Toppings :
                           {item.ingredients.map((ingredient, i) => {
                             count++;
                             let a;
@@ -263,50 +362,47 @@ class OrderSuccess extends Component {
                               <Text
                                 key={i}
                                 style={{
-                                  fontFamily: 'Lato-Regular',
                                   color: 'grey',
+                                  fontFamily: 'Lato-Bold',
                                 }}>
+                                {' '}
                                 {ingredient.name}
-                                {!a && ','} {a && ''}
+                                {!a && ','}
+                                {a}
                               </Text>
                             );
                           })}
                         </Text>
                       )}
-                    </View>
-                    <View>
                       {item.finalDesc && item.finalDesc.length > 0 && (
-                        <Text
-                          style={{
-                            fontSize: hp('1.9%'),
-                            fontFamily: 'Lato-Black',
-                            color: '#555',
-                          }}>
-                          Don't Include :{' '}
+                        <Text style={styles.moreDetails}>
+                          Don't Include :
                           {item.finalDesc.map((finalDes, i) => {
                             count1++;
-                            let x;
+                            let a;
                             if (count1 === descLength) {
-                              x = true;
+                              a = true;
                             } else {
-                              x = false;
+                              a = false;
                             }
                             return (
                               <Text
                                 key={i}
                                 style={{
-                                  fontFamily: 'Lato-Regular',
                                   color: 'grey',
+                                  fontFamily: 'Lato-Bold',
                                 }}>
+                                {' '}
                                 {finalDes}
-                                {!x && ','}{' '}
+                                {!a && ','}
+                                {a}
                               </Text>
                             );
                           })}
                         </Text>
                       )}
-                    </View>
-                  </View>
+                    </ScrollView>
+                  </RBSheet>
                 </Card>
               );
             })}
@@ -328,6 +424,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: wp('5%'),
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  moreDetailsText: {
+    fontSize: hp('1.9%'),
+    color: '#ec942a',
+    fontFamily: 'Lato-Black',
+  },
+  moreDetails: {
+    fontFamily: 'Lato-Black',
+    fontSize: hp('2.2%'),
+    paddingVertical: hp('1%'),
   },
   cardView: {
     alignSelf: 'center',
