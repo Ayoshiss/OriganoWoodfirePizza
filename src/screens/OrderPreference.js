@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {
   Text,
@@ -51,7 +52,7 @@ export class OrderPreference extends Component {
   handleSelect = (data) => {
     const address = data.description;
     const {places} = this.state;
-    if (places.some((places) => address.includes(places))) {
+    if (places.some((place) => address.includes(place))) {
       if (address.split(' ').length < 5) {
         this.setState({errorMessage: 'Please enter your full address.'});
         return;
@@ -69,7 +70,7 @@ export class OrderPreference extends Component {
     }
   };
   handleDeliveryBtn = (data) => {
-    const {places, placesWithCharge} = this.state;
+    const {placesWithCharge} = this.state;
     const address = data.description;
     var count = 0;
     placesWithCharge.forEach((item) => {

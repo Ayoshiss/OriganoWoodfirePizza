@@ -7,7 +7,7 @@ import {
   SafeAreaView,
   Platform,
 } from 'react-native';
-import FastImage from 'react-native-fast-image'
+import FastImage from 'react-native-fast-image';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -15,7 +15,6 @@ import {
 import LinearGrad from '../../components/LinearGrad';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
-import Icon from 'react-native-vector-icons/Feather';
 import {Card} from 'react-native-shadow-cards';
 import auth from '@react-native-firebase/auth';
 import {RNToasty} from 'react-native-toasty';

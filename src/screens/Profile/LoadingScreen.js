@@ -17,7 +17,7 @@ export class LoadingScreen extends Component {
     return (
       <View style={styles.container}>
         <Text> Loading ...</Text>
-        <ActivityIndicator size="large" color="#EC942A"></ActivityIndicator>
+        <ActivityIndicator size="large" color="#EC942A" />
       </View>
     );
   }

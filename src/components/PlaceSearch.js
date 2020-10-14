@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import {
   heightPercentageToDP as hp,
@@ -7,7 +7,7 @@ import {
 } from 'react-native-responsive-screen';
 class PlaceSearch extends Component {
   constructor(props) {
-    super(props), (this.state = {});
+    super(props);
   }
   render() {
     return (

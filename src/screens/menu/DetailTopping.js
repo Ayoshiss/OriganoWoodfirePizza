@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import EditIngredients from '../../components/EditIngredients';
-import {
-  heightPercentageToDP as hp,
-  widthPercentageToDP as wp,
-} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 export class DetailTopping extends Component {
   constructor(props) {
     super(props);

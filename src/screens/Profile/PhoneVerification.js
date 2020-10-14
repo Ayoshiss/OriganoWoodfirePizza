@@ -180,9 +180,9 @@ class PhoneVerification extends Component {
             case auth.PhoneAuthState.AUTO_VERIFY_TIMEOUT:
               break;
             case auth.PhoneAuthState.AUTO_VERIFIED:
-              const {credential} = this.state;
+              const credential2 = this.state.credential;
               auth()
-                .currentUser.linkWithCredential(credential)
+                .currentUser.linkWithCredential(credential2)
                 .then(() => {
                   RNToasty.Show({title: 'Verification Success'});
                   firestore()
@@ -236,7 +236,7 @@ class PhoneVerification extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView
-          behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
           style={{flex: 1}}>
           <View style={styles.loginTextView}>
             <Text style={styles.loginText}>Phone Verification</Text>
@@ -291,7 +291,7 @@ class PhoneVerification extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView
-          behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
           style={{flex: 1}}>
           <View style={styles.loginTextView}>
             <Text style={styles.loginText}>Verification Code</Text>

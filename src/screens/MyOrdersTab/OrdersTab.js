@@ -4,7 +4,6 @@ import {
   View,
   TouchableOpacity,
   StyleSheet,
-  SafeAreaView,
   ScrollView,
 } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
@@ -20,30 +19,10 @@ class OrdersTab extends Component {
   render() {
     const {orders, tabName} = this.props;
     if (tabName === 'Orders' && orders.length === 0) {
-      return (
-        <Text
-          style={{
-            paddingHorizontal: wp('10%'),
-            paddingVertical: hp('2%'),
-            fontFamily: 'Lato-Black',
-            color: '#B6B6B6',
-          }}>
-          No Active Orders
-        </Text>
-      );
+      return <Text style={styles.noOrdersText}>No Active Orders</Text>;
     }
     if (tabName === 'Completed Orders' && orders.length === 0) {
-      return (
-        <Text
-          style={{
-            paddingHorizontal: wp('10%'),
-            paddingVertical: hp('2%'),
-            fontFamily: 'Lato-Black',
-            color: '#B6B6B6',
-          }}>
-          No Completed Orders Yet
-        </Text>
-      );
+      return <Text style={styles.noOrdersText}>No Completed Orders Yet</Text>;
     } else {
       return (
         <ScrollView style={{flex: 1}}>
@@ -168,6 +147,12 @@ const styles = StyleSheet.create({
     color: '#EC942A',
     fontFamily: 'Lato-Black',
     fontSize: hp('2%'),
+  },
+  noOrdersText: {
+    paddingHorizontal: wp('10%'),
+    paddingVertical: hp('2%'),
+    fontFamily: 'Lato-Black',
+    color: '#B6B6B6',
   },
 });
 export default OrdersTab;

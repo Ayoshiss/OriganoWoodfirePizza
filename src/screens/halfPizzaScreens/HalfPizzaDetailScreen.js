@@ -5,7 +5,6 @@ import {
   ScrollView,
   StyleSheet,
   TouchableOpacity,
-  FlatList,
   SafeAreaView,
 } from 'react-native';
 import {
@@ -80,7 +79,7 @@ export class HalfPizzaDetailScreen extends Component {
       'Half/Half ' + ': ' + leftPizzaName + ' & ' + rightPizzaName;
 
     const {sizePrice} = this.state;
-    if (sizePrice == 0) {
+    if (sizePrice === 0) {
       alert('Select a Pizza size');
       return;
     }
@@ -126,7 +125,7 @@ export class HalfPizzaDetailScreen extends Component {
   };
   renderIngredients = () => {
     const {newDescList} = this.state;
-    const {largePrice, gfPrice, checkSize} = this.state;
+    const {largePrice, gfPrice} = this.state;
     return (
       <View style={{paddingHorizontal: wp('5%')}}>
         <View

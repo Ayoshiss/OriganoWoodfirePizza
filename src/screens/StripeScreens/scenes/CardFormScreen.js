@@ -1,20 +1,20 @@
-import React, { PureComponent } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import stripe from 'tipsi-stripe'
-import Button from '../components/Button'
-import testID from '../utils/testID'
+import React, {PureComponent} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import stripe from 'tipsi-stripe';
+import Button from '../components/Button';
+import testID from '../utils/testID';
 
 export default class CardFormScreen extends PureComponent {
-  static title = 'Card Form'
+  static title = 'Card Form';
 
   state = {
     loading: false,
     token: null,
-  }
+  };
 
   handleCardPayPress = async () => {
     try {
-      this.setState({ loading: true, token: null })
+      this.setState({loading: true, token: null});
       const token = await stripe.paymentRequestWithCardForm({
         // Only iOS support this options
         smsAutofillDisabled: true,
@@ -31,22 +31,20 @@ export default class CardFormScreen extends PureComponent {
             email: 'ghaugeh0@printfriendly.com',
           },
         },
-      })
+      });
 
-      this.setState({ loading: false, token })
+      this.setState({loading: false, token});
     } catch (error) {
-      this.setState({ loading: false })
+      this.setState({loading: false});
     }
-  }
+  };
 
   render() {
-    const { loading, token } = this.state
+    const {loading, token} = this.state;
 
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>
-          Card Form Example
-        </Text>
+        <Text style={styles.header}>Card Form Example</Text>
         <Text style={styles.instruction}>
           Click button to show Card Form dialog.
         </Text>
@@ -56,17 +54,13 @@ export default class CardFormScreen extends PureComponent {
           onPress={this.handleCardPayPress}
           {...testID('cardFormButton')}
         />
-        <View
-          style={styles.token}
-          {...testID('cardFormToken')}>
-          {token &&
-            <Text style={styles.instruction}>
-              Token: {token.tokenId}
-            </Text>
-          }
+        <View style={styles.token} {...testID('cardFormToken')}>
+          {token && (
+            <Text style={styles.instruction}>Token: {token.tokenId}</Text>
+          )}
         </View>
       </View>
-    )
+    );
   }
 }
 
@@ -89,4 +83,4 @@ const styles = StyleSheet.create({
   token: {
     height: 20,
   },
-})
+});

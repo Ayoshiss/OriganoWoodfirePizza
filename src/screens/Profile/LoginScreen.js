@@ -9,8 +9,6 @@ import {
   TouchableWithoutFeedback,
   SafeAreaView,
   Keyboard,
-  StatusBar,
-  ScrollView,
 } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
 import InputTextField from '../../components/profile/InputTextField';
@@ -125,9 +123,10 @@ export class LoginScreen extends Component {
         this.setState({isFbLoading: false});
       })
       .catch((error) => {
-        if (error.code == 'auth/account-exists-with-different-credential') {
+        if (error.code === 'auth/account-exists-with-different-credential') {
           this.setState({
-            errorMessage: `It seems you've logged in with different provider. Please login with the correct provider`,
+            errorMessage:
+              "It seems you've logged in with different provider. Please login with the correct provider",
             isFbLoading: false,
           });
         } else {
@@ -152,9 +151,10 @@ export class LoginScreen extends Component {
         this.setState({isGoogleLoading: false});
       })
       .catch((error) => {
-        if (error.code == 'auth/account-exists-with-different-credential') {
+        if (error.code === 'auth/account-exists-with-different-credential') {
           this.setState({
-            errorMessage: `It seems you've logged in with different provider. Please login with the correct provider`,
+            errorMessage:
+              "It seems you've logged in with different provider. Please login with the correct provider",
             isGoogleLoading: false,
           });
         } else {
@@ -169,7 +169,7 @@ export class LoginScreen extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView
-          behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
           style={{flex: 1}}>
           <View style={styles.loginTextView}>
             <Text style={styles.loginText}>Login</Text>

@@ -36,7 +36,9 @@ class OrderSuccess extends Component {
     };
   }
   backAction = () => {
-    if (this.props.route.params.previousScreen === 'Checkout') return true;
+    if (this.props.route.params.previousScreen === 'Checkout') {
+      return true;
+    }
   };
   componentDidMount() {
     this.backHandler = BackHandler.addEventListener(
@@ -47,7 +49,7 @@ class OrderSuccess extends Component {
     const {previousScreen} = this.props.route.params;
 
     this.setState({previousScreen});
-    if (previousScreen == 'Checkout') {
+    if (previousScreen === 'Checkout') {
       this.clearCart();
     }
   }
@@ -277,8 +279,7 @@ class OrderSuccess extends Component {
                       {item.food.size && (
                         <Text style={styles.moreDetails}>
                           Size :{' '}
-                          <Text
-                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                          <Text style={styles.moreDetailsItems}>
                             {item.food.size}
                           </Text>
                         </Text>
@@ -287,23 +288,22 @@ class OrderSuccess extends Component {
                       {item.food.pizzaNames && (
                         <Text style={styles.moreDetails}>
                           Pizza :{' '}
-                          <Text
-                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                          <Text style={styles.moreDetailsItems}>
                             {item.food.name === 'Big Deal' &&
-                              item.food.pizzaNames.map((pizza, i) => {
-                                if (i < item.food.pizzaNames.length - 2) {
+                              item.food.pizzaNames.map((pizza, j) => {
+                                if (j < item.food.pizzaNames.length - 2) {
                                   return pizza + ', ';
                                 }
-                                if (i === item.food.pizzaNames.length - 2) {
+                                if (j === item.food.pizzaNames.length - 2) {
                                   return pizza;
                                 }
                               })}
                             {item.food.name !== 'Big Deal' &&
-                              item.food.pizzaNames.map((pizza, i) => {
-                                if (i < item.food.pizzaNames.length - 1) {
+                              item.food.pizzaNames.map((pizza, k) => {
+                                if (k < item.food.pizzaNames.length - 1) {
                                   return pizza + ', ';
                                 }
-                                if (i === item.food.pizzaNames.length - 1) {
+                                if (k === item.food.pizzaNames.length - 1) {
                                   return pizza;
                                 }
                               })}
@@ -313,13 +313,12 @@ class OrderSuccess extends Component {
                       {item.food.pastaNames && item.food.name === 'Party Deal' && (
                         <Text style={styles.moreDetails}>
                           Pasta :{' '}
-                          <Text
-                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
-                            {item.food.pastaNames.map((pasta, i) => {
-                              if (i < item.food.pastaNames.length - 1) {
+                          <Text style={styles.moreDetailsItems}>
+                            {item.food.pastaNames.map((pasta, l) => {
+                              if (l < item.food.pastaNames.length - 1) {
                                 return pasta + ', ';
                               }
-                              if (i === item.food.pastaNames.length - 1) {
+                              if (l === item.food.pastaNames.length - 1) {
                                 return pasta;
                               }
                             })}
@@ -330,14 +329,13 @@ class OrderSuccess extends Component {
                         item.food.name === 'Party Deal' && (
                           <Text style={styles.moreDetails}>
                             Garlic Pizza :{' '}
-                            <Text
-                              style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
-                              {item.food.garlicPizzaNames.map((gPizza, i) => {
-                                if (i < item.food.garlicPizzaNames.length - 1) {
+                            <Text style={styles.moreDetailsItems}>
+                              {item.food.garlicPizzaNames.map((gPizza, m) => {
+                                if (m < item.food.garlicPizzaNames.length - 1) {
                                   return gPizza + ', ';
                                 }
                                 if (
-                                  i ===
+                                  m ===
                                   item.food.garlicPizzaNames.length - 1
                                 ) {
                                   return gPizza;
@@ -350,7 +348,7 @@ class OrderSuccess extends Component {
                       {item.ingredients && item.ingredients.length > 0 && (
                         <Text style={styles.moreDetails}>
                           Toppings :
-                          {item.ingredients.map((ingredient, i) => {
+                          {item.ingredients.map((ingredient, x) => {
                             count++;
                             let a;
                             if (count === toppingsLength) {
@@ -359,12 +357,7 @@ class OrderSuccess extends Component {
                               a = false;
                             }
                             return (
-                              <Text
-                                key={i}
-                                style={{
-                                  color: 'grey',
-                                  fontFamily: 'Lato-Bold',
-                                }}>
+                              <Text key={x} style={styles.moreDetailsItems}>
                                 {' '}
                                 {ingredient.name}
                                 {!a && ','}
@@ -377,7 +370,7 @@ class OrderSuccess extends Component {
                       {item.finalDesc && item.finalDesc.length > 0 && (
                         <Text style={styles.moreDetails}>
                           Don't Include :
-                          {item.finalDesc.map((finalDes, i) => {
+                          {item.finalDesc.map((finalDes, y) => {
                             count1++;
                             let a;
                             if (count1 === descLength) {
@@ -386,12 +379,7 @@ class OrderSuccess extends Component {
                               a = false;
                             }
                             return (
-                              <Text
-                                key={i}
-                                style={{
-                                  color: 'grey',
-                                  fontFamily: 'Lato-Bold',
-                                }}>
+                              <Text key={y} style={styles.moreDetailsItems}>
                                 {' '}
                                 {finalDes}
                                 {!a && ','}
@@ -435,6 +423,7 @@ const styles = StyleSheet.create({
     fontSize: hp('2.2%'),
     paddingVertical: hp('1%'),
   },
+  moreDetailsItems: {color: 'grey', fontFamily: 'Lato-Bold'},
   cardView: {
     alignSelf: 'center',
     flexDirection: 'row',

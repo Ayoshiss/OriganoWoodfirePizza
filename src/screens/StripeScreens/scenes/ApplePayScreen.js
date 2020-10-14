@@ -1,12 +1,12 @@
-import React, { PureComponent } from 'react'
-import { View, Text, Switch, StyleSheet } from 'react-native'
-import stripe from 'tipsi-stripe'
-import Button from '../components/Button'
-import testID from '../utils/testID'
+import React, {PureComponent} from 'react';
+import {View, Text, Switch, StyleSheet} from 'react-native';
+import stripe from 'tipsi-stripe';
+import Button from '../components/Button';
+import testID from '../utils/testID';
 
 /* eslint-disable no-console */
 export default class ApplePayScreen extends PureComponent {
-  static title = 'Pay'
+  static title = 'Pay';
 
   state = {
     loading: false,
@@ -18,34 +18,32 @@ export default class ApplePayScreen extends PureComponent {
     discoverAvailable: false,
     masterCardAvailable: false,
     visaAvailable: false,
-  }
+  };
 
   async UNSAFE_componentWillMount() {
-    const allowed = await stripe.deviceSupportsNativePay()
+    const allowed = await stripe.deviceSupportsNativePay();
     const amexAvailable = await stripe.canMakeNativePayPayments({
       networks: ['american_express'],
-    })
+    });
     const discoverAvailable = await stripe.canMakeNativePayPayments({
       networks: ['discover'],
-    })
+    });
     const masterCardAvailable = await stripe.canMakeNativePayPayments({
       networks: ['master_card'],
-    })
+    });
     const visaAvailable = await stripe.canMakeNativePayPayments({
       networks: ['visa'],
-    })
+    });
     this.setState({
       allowed,
       amexAvailable,
       discoverAvailable,
       masterCardAvailable,
       visaAvailable,
-    })
+    });
   }
 
-  handleCompleteChange = complete => (
-    this.setState({ complete })
-  )
+  handleCompleteChange = (complete) => this.setState({complete});
 
   handleApplePayPress = async () => {
     try {
@@ -53,45 +51,51 @@ export default class ApplePayScreen extends PureComponent {
         loading: true,
         status: null,
         token: null,
-      })
-      const token = await stripe.paymentRequestWithNativePay({
-        // requiredBillingAddressFields: ['all'],
-        // requiredShippingAddressFields: ['all'],
-        shippingMethods: [{
-          id: 'fedex',
-          label: 'FedEX',
-          detail: 'Test @ 10',
-          amount: '10.00',
-        }],
-      },
-      [{
-        label: 'Whisky',
-        amount: '50.00',
-      }, {
-        label: 'Vine',
-        amount: '60.00',
-      }, {
-        label: 'Tipsi',
-        amount: '110.00',
-      }])
+      });
+      const token = await stripe.paymentRequestWithNativePay(
+        {
+          // requiredBillingAddressFields: ['all'],
+          // requiredShippingAddressFields: ['all'],
+          shippingMethods: [
+            {
+              id: 'fedex',
+              label: 'FedEX',
+              detail: 'Test @ 10',
+              amount: '10.00',
+            },
+          ],
+        },
+        [
+          {
+            label: 'Whisky',
+            amount: '50.00',
+          },
+          {
+            label: 'Vine',
+            amount: '60.00',
+          },
+          {
+            label: 'Tipsi',
+            amount: '110.00',
+          },
+        ],
+      );
 
-      this.setState({ loading: false, token })
+      this.setState({loading: false, token});
 
       if (this.state.complete) {
-        await stripe.completeNativePayRequest()
-        this.setState({ status: 'Apple Pay payment completed' })
+        await stripe.completeNativePayRequest();
+        this.setState({status: 'Apple Pay payment completed'});
       } else {
-        await stripe.cancelNativePayRequest()
-        this.setState({ status: 'Apple Pay payment cenceled' })
+        await stripe.cancelNativePayRequest();
+        this.setState({status: 'Apple Pay payment cenceled'});
       }
     } catch (error) {
-      this.setState({ loading: false, status: `Error: ${error.message}` })
+      this.setState({loading: false, status: `Error: ${error.message}`});
     }
-  }
+  };
 
-  handleSetupApplePayPress = () => (
-    stripe.openNativePaySetup()
-  )
+  handleSetupApplePayPress = () => stripe.openNativePaySetup();
 
   render() {
     const {
@@ -104,20 +108,27 @@ export default class ApplePayScreen extends PureComponent {
       discoverAvailable,
       masterCardAvailable,
       visaAvailable,
-    } = this.state
+    } = this.state;
 
     const cards = {
-      americanExpressAvailabilityStatus: { name: 'American Express', isAvailable: amexAvailable },
-      discoverAvailabilityStatus: { name: 'Discover', isAvailable: discoverAvailable },
-      masterCardAvailabilityStatus: { name: 'Master Card', isAvailable: masterCardAvailable },
-      visaAvailabilityStatus: { name: 'Visa', isAvailable: visaAvailable },
-    }
+      americanExpressAvailabilityStatus: {
+        name: 'American Express',
+        isAvailable: amexAvailable,
+      },
+      discoverAvailabilityStatus: {
+        name: 'Discover',
+        isAvailable: discoverAvailable,
+      },
+      masterCardAvailabilityStatus: {
+        name: 'Master Card',
+        isAvailable: masterCardAvailable,
+      },
+      visaAvailabilityStatus: {name: 'Visa', isAvailable: visaAvailable},
+    };
 
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>
-          Apple Pay Example
-        </Text>
+        <Text style={styles.header}>Apple Pay Example</Text>
         <Text style={styles.instruction}>
           Click button to show Apple Pay dialog.
         </Text>
@@ -129,9 +140,7 @@ export default class ApplePayScreen extends PureComponent {
           onPress={this.handleApplePayPress}
           {...testID('applePayButton')}
         />
-        <Text style={styles.instruction}>
-          Complete the operation on token
-        </Text>
+        <Text style={styles.instruction}>Complete the operation on token</Text>
         <Switch
           style={styles.switch}
           value={complete}
@@ -139,16 +148,16 @@ export default class ApplePayScreen extends PureComponent {
           {...testID('applePaySwitch')}
         />
         <View>
-          {token &&
+          {token && (
             <Text style={styles.instruction} {...testID('applePayToken')}>
               Token: {token.tokenId}
             </Text>
-          }
-          {status &&
+          )}
+          {status && (
             <Text style={styles.instruction} {...testID('applePayStatus')}>
               {status}
             </Text>
-          }
+          )}
         </View>
         <View style={styles.hintContainer}>
           <Button
@@ -158,22 +167,22 @@ export default class ApplePayScreen extends PureComponent {
             onPress={this.handleSetupApplePayPress}
             {...testID('setupApplePayButton')}
           />
-          <Text style={styles.hint}>
-            Setup Pay works only on real device
-          </Text>
+          <Text style={styles.hint}>Setup Pay works only on real device</Text>
         </View>
         <View style={styles.statusContainer}>
-          <Text style={styles.status} {...testID('deviceSupportsApplePayStatus')}>
-            Device {allowed ? 'supports' : 'doesn\'t support' } Pay
+          <Text
+            style={styles.status}
+            {...testID('deviceSupportsApplePayStatus')}>
+            Device {allowed ? 'supports' : "doesn't support"} Pay
           </Text>
-          {Object.entries(cards).map(([id, { name, isAvailable }]) => (
+          {Object.entries(cards).map(([id, {name, isAvailable}]) => (
             <Text style={styles.status} key={id} {...testID(id)}>
               {name} is {isAvailable ? 'available' : 'not available'}
             </Text>
           ))}
         </View>
       </View>
-    )
+    );
   }
 }
 
@@ -211,4 +220,4 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     color: 'gray',
   },
-})
+});

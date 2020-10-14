@@ -267,10 +267,7 @@ class HalfPizzaScreen extends Component {
     );
   }
 }
-
-const height = Dimensions.get('screen').height;
 const width = Dimensions.get('screen').width;
-const height_image = height * 0.5 * 0.9;
 var styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -3,8 +3,6 @@ import {
   Text,
   View,
   StyleSheet,
-  Dimensions,
-  ImageBackground,
   ActivityIndicator,
   TouchableOpacity,
   SafeAreaView,
@@ -136,7 +134,7 @@ export default class StripeScreen extends PureComponent {
   };
 
   render() {
-    const {loading, token, paymentLoading} = this.state;
+    const {token} = this.state;
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>

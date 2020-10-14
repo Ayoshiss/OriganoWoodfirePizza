@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, ImageBackground, StatusBar} from 'react-native';
+import {View, ImageBackground, StatusBar} from 'react-native';
 
 export class SplashScreen extends Component {
   render() {

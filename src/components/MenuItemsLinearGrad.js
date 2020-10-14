@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from '../../src/screens/menu/pizzastyles';
-import FastImage from 'react-native-fast-image'
+import FastImage from 'react-native-fast-image';
 export default function MenuItemsLinearGrad({
   image_container,
   item_image,

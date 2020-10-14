@@ -61,7 +61,7 @@ class EditIngredients extends Component {
   }
   renderIngredients = () => {
     const {newDescList} = this.state;
-    const {smallPrice, medPrice, largePrice, gfPrice, checkSize} = this.state;
+    const {smallPrice, medPrice, largePrice, gfPrice} = this.state;
     return (
       <View>
         <View
@@ -298,7 +298,7 @@ class EditIngredients extends Component {
   };
   onSubmitCart = () => {
     const {sizePrice} = this.state;
-    if (sizePrice == 0) {
+    if (sizePrice === 0) {
       alert('Select a Pizza size');
       return;
     }

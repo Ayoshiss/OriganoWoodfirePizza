@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react'
-import { View, Text, TouchableHighlight, StyleSheet } from 'react-native'
-import PropTypes from 'prop-types'
+import React, {PureComponent} from 'react';
+import {View, Text, TouchableHighlight, StyleSheet} from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class Spoiler extends PureComponent {
   static propTypes = {
@@ -8,30 +8,28 @@ export default class Spoiler extends PureComponent {
     defaultOpen: PropTypes.bool,
     children: PropTypes.node.isRequired,
     style: PropTypes.any,
-  }
+  };
 
   static defaultProps = {
     defaultOpen: true,
     style: undefined,
-  }
+  };
 
   state = {
     open: this.props.defaultOpen,
-  }
+  };
 
   handlePress = () => {
-    this.setState({ open: !this.state.open })
-  }
+    this.setState({open: !this.state.open});
+  };
 
   render() {
-    const { title, style, children } = this.props
-    const { open } = this.state
-    const headerStyles = open ?
-      [styles.header, styles.headerOpen] :
-      styles.header
-    const arrowStyles = open ?
-      styles.arrowDown :
-      styles.arrowUp
+    const {title, style, children} = this.props;
+    const {open} = this.state;
+    const headerStyles = open
+      ? [styles.header, styles.headerOpen]
+      : styles.header;
+    const arrowStyles = open ? styles.arrowDown : styles.arrowUp;
 
     return (
       <View style={[styles.spoiler, style]}>
@@ -43,11 +41,9 @@ export default class Spoiler extends PureComponent {
             <Text style={arrowStyles}>›</Text>
           </View>
         </TouchableHighlight>
-        <View>
-          {open && children}
-        </View>
+        <View>{open && children}</View>
       </View>
-    )
+    );
   }
 }
 
@@ -73,9 +69,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   arrowUp: {
-    transform: [{ rotate: '-180deg' }],
+    transform: [{rotate: '-180deg'}],
   },
   arrowDown: {
-    transform: [{ rotate: '90deg' }],
+    transform: [{rotate: '90deg'}],
   },
-})
+});

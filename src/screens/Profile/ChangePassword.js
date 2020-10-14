@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   SafeAreaView,
   KeyboardAvoidingView,
-  ActivityIndicator,
   Keyboard,
 } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
@@ -92,7 +91,7 @@ class ChangePassword extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView
-          behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
           style={{flex: 1}}>
           <View style={styles.loginTextView}>
             <View style={styles.back}>

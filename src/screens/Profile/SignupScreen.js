@@ -4,7 +4,6 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
-  ScrollView,
   SafeAreaView,
   Keyboard,
 } from 'react-native';
@@ -17,7 +16,6 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
 export class SignupScreen extends Component {
   constructor(props) {
     super(props);
@@ -108,15 +106,10 @@ export class SignupScreen extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        
         <View style={styles.loginTextView}>
-      
           <Text style={styles.loginText}>Register</Text>
         </View>
-        <Card
-          elevation={2}
-          cornerRadius={20}
-          style={styles.cardView}>
+        <Card elevation={2} cornerRadius={20} style={styles.cardView}>
           <View style={styles.errorMessageView}>
             {this.state.errorMessage && (
               <Text style={styles.errorMessage}>{this.state.errorMessage}</Text>
@@ -202,7 +195,12 @@ export class SignupScreen extends Component {
             onPress={() => {
               this.props.navigation.navigate('Login');
             }}>
-            <Text style={{color: '#EC942A',fontSize: hp('2%'), fontFamily: 'Lato-Regular'}}>
+            <Text
+              style={{
+                color: '#EC942A',
+                fontSize: hp('2%'),
+                fontFamily: 'Lato-Regular',
+              }}>
               {' '}
               Back to Login
             </Text>

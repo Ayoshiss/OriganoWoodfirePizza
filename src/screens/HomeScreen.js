@@ -196,7 +196,7 @@ export default class HomeScreen extends React.Component {
                 } else {
                   y = 0;
                 }
-                if (x == 1 && y == 1) {
+                if (x === 1 && y === 1) {
                   alert('You are eligible for a $10 discount. Yay!!!');
                   AsyncStorage.setItem('First Order', 'True');
                 } else {
@@ -311,12 +311,12 @@ export default class HomeScreen extends React.Component {
         preferenceDataExists: true,
         preferenceData,
       });
-      if (type == 'Pickup') {
+      if (type === 'Pickup') {
         this.setState({
           preferenceType: 'Pickup',
         });
       }
-      if (type == 'Delivery') {
+      if (type === 'Delivery') {
         this.setState({
           preferenceType: 'Delivery',
         });
@@ -418,7 +418,7 @@ export default class HomeScreen extends React.Component {
   }
 
   handleDeliveryBtn = (data) => {
-    const {places, placesWithCharge} = this.state;
+    const {placesWithCharge} = this.state;
     const address = data.description;
     var count = 0;
     placesWithCharge.forEach((item) => {
@@ -548,7 +548,7 @@ export default class HomeScreen extends React.Component {
     };
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
-        {menuData.length == 0 && (
+        {menuData.length === 0 && (
           <View
             style={{
               flex: 1,
@@ -559,7 +559,7 @@ export default class HomeScreen extends React.Component {
             <ActivityIndicator animating={true} size="large" color="#EC942A" />
           </View>
         )}
-        {menuData.length != 0 && (
+        {menuData.length !== 0 && (
           // <ImageBackground
           //   source={require('../asset/back2.jpg')}
           //   style={{flex: 1, resizeMode: 'cover'}}>
@@ -689,7 +689,7 @@ export default class HomeScreen extends React.Component {
                       style={{marginHorizontal: wp('2%')}}
                     />
                   )}
-                  {this.state.preferenceType == 'Pickup' && (
+                  {this.state.preferenceType === 'Pickup' && (
                     <MaterialCommunityIcons
                       name="store"
                       color="black"

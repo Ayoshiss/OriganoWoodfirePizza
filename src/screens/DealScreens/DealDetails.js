@@ -180,12 +180,7 @@ class DealDetails extends Component {
                 dropDownMaxHeight={
                   Platform.OS === 'ios' ? hp('18%') : hp('22%')
                 }
-                labelStyle={{
-                  fontSize: hp('2.2%'),
-                  textAlign: 'left',
-                  color: '#000',
-                  fontFamily: 'Lato-Regular',
-                }}
+                labelStyle={styles.labelStyle}
                 containerStyle={{
                   height: hp('6%'),
                   width: wp('70%'),
@@ -208,12 +203,7 @@ class DealDetails extends Component {
                 dropDownMaxHeight={
                   Platform.OS === 'ios' ? hp('18%') : hp('22%')
                 }
-                labelStyle={{
-                  fontSize: hp('2.2%'),
-                  textAlign: 'left',
-                  color: '#000',
-                  fontFamily: 'Lato-Regular',
-                }}
+                labelStyle={styles.labelStyle}
                 containerStyle={{
                   height: hp('6%'),
                   width: wp('70%'),
@@ -237,12 +227,7 @@ class DealDetails extends Component {
                   dropDownMaxHeight={
                     Platform.OS === 'ios' ? hp('18%') : hp('22%')
                   }
-                  labelStyle={{
-                    fontSize: hp('2.2%'),
-                    textAlign: 'left',
-                    color: '#000',
-                    fontFamily: 'Lato-Regular',
-                  }}
+                  labelStyle={styles.labelStyle}
                   containerStyle={{
                     height: hp('6%'),
                     width: wp('70%'),
@@ -286,7 +271,7 @@ class DealDetails extends Component {
           style={{
             minHeight: hp('32%'),
           }}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <View style={styles.dropDownView}>
             <View>
               <Text>First Pizza</Text>
               <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
@@ -297,12 +282,7 @@ class DealDetails extends Component {
                   dropDownMaxHeight={
                     Platform.OS === 'ios' ? hp('18%') : hp('22%')
                   }
-                  labelStyle={{
-                    fontSize: hp('2.2%'),
-                    textAlign: 'left',
-                    color: '#000',
-                    fontFamily: 'Lato-Regular',
-                  }}
+                  labelStyle={styles.labelStyle}
                   containerStyle={{
                     height: hp('6%'),
                     width: wp('40%'),
@@ -325,12 +305,7 @@ class DealDetails extends Component {
                   dropDownMaxHeight={
                     Platform.OS === 'ios' ? hp('18%') : hp('22%')
                   }
-                  labelStyle={{
-                    fontSize: hp('2.2%'),
-                    textAlign: 'left',
-                    color: '#000',
-                    fontFamily: 'Lato-Regular',
-                  }}
+                  labelStyle={styles.labelStyle}
                   containerStyle={{
                     height: hp('6%'),
                     width: wp('40%'),
@@ -354,12 +329,7 @@ class DealDetails extends Component {
                 dropDownMaxHeight={
                   Platform.OS === 'ios' ? hp('18%') : hp('22%')
                 }
-                labelStyle={{
-                  fontSize: hp('2.2%'),
-                  textAlign: 'left',
-                  color: '#000',
-                  fontFamily: 'Lato-Regular',
-                }}
+                labelStyle={styles.labelStyle}
                 containerStyle={{
                   height: hp('6%'),
                   width: wp('40%'),
@@ -372,7 +342,7 @@ class DealDetails extends Component {
               />
             </View>
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <View style={styles.dropDownView}>
             <View>
               <Text>First Pasta</Text>
               <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
@@ -383,12 +353,7 @@ class DealDetails extends Component {
                   dropDownMaxHeight={
                     Platform.OS === 'ios' ? hp('18%') : hp('22%')
                   }
-                  labelStyle={{
-                    fontSize: hp('2.2%'),
-                    textAlign: 'left',
-                    color: '#000',
-                    fontFamily: 'Lato-Regular',
-                  }}
+                  labelStyle={styles.labelStyle}
                   containerStyle={{
                     height: hp('6%'),
                     width: wp('40%'),
@@ -411,12 +376,7 @@ class DealDetails extends Component {
                   dropDownMaxHeight={
                     Platform.OS === 'ios' ? hp('18%') : hp('22%')
                   }
-                  labelStyle={{
-                    fontSize: hp('2.2%'),
-                    textAlign: 'left',
-                    color: '#000',
-                    fontFamily: 'Lato-Regular',
-                  }}
+                  labelStyle={styles.labelStyle}
                   containerStyle={{
                     height: hp('6%'),
                     width: wp('40%'),
@@ -430,12 +390,7 @@ class DealDetails extends Component {
               </View>
             </View>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginBottom: hp('2%'),
-            }}>
+          <View style={[styles.dropDownView, {marginBottom: hp('2%')}]}>
             <View>
               <Text>First Garlic Pizza</Text>
               <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
@@ -446,12 +401,7 @@ class DealDetails extends Component {
                   dropDownMaxHeight={
                     Platform.OS === 'ios' ? hp('18%') : hp('22%')
                   }
-                  labelStyle={{
-                    fontSize: hp('2.2%'),
-                    textAlign: 'left',
-                    color: '#000',
-                    fontFamily: 'Lato-Regular',
-                  }}
+                  labelStyle={styles.labelStyle}
                   containerStyle={{
                     height: hp('6%'),
                     width: wp('40%'),
@@ -474,12 +424,7 @@ class DealDetails extends Component {
                   dropDownMaxHeight={
                     Platform.OS === 'ios' ? hp('18%') : hp('22%')
                   }
-                  labelStyle={{
-                    fontSize: hp('2.2%'),
-                    textAlign: 'left',
-                    color: '#000',
-                    fontFamily: 'Lato-Regular',
-                  }}
+                  labelStyle={styles.labelStyle}
                   containerStyle={{
                     height: hp('6%'),
                     width: wp('40%'),
@@ -597,6 +542,13 @@ var styles = StyleSheet.create({
     paddingHorizontal: wp('5%'),
     paddingVertical: hp('5.5%'),
   },
+  labelStyle: {
+    fontSize: hp('2.2%'),
+    textAlign: 'left',
+    color: '#000',
+    fontFamily: 'Lato-Regular',
+  },
+  dropDownView: {flexDirection: 'row', justifyContent: 'space-between'},
   textPrice: {
     color: '#EC942A',
     fontFamily: 'Lato-Bold',

@@ -43,13 +43,13 @@ class TrackOrder extends Component {
       .get()
       .then((snap) => {
         const orderStatus = snap.data().orderStatus;
-        if (orderStatus == 'Requested') {
+        if (orderStatus === 'Requested') {
           this.setState({orderPlaced: true});
         }
-        if (orderStatus == 'Processing') {
+        if (orderStatus === 'Processing') {
           this.setState({orderPlaced: true, processing: true});
         }
-        if (orderStatus == 'Ready') {
+        if (orderStatus === 'Ready') {
           this.setState({
             orderPlaced: true,
             processing: true,
@@ -58,7 +58,7 @@ class TrackOrder extends Component {
             readytoCollect: true,
           });
         }
-        if (orderStatus == 'Completed') {
+        if (orderStatus === 'Completed') {
           this.setState({
             orderPlaced: true,
             processing: true,

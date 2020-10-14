@@ -16,7 +16,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import FastImage from 'react-native-fast-image'
+import FastImage from 'react-native-fast-image';
 export default class DetailScreen extends React.Component {
   constructor(props) {
     super(props);

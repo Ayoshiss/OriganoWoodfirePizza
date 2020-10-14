@@ -30,7 +30,8 @@ class InputTextField extends Component {
           selectionColor="#d8d8d8"
           autoCompleteType={this.props.autoCompleteType}
           value={this.props.value}
-          style={styles.input}></TextInput>
+          style={styles.input}
+        />
       </View>
     );
   }

@@ -1,12 +1,12 @@
-import React, { PureComponent } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import stripe from 'tipsi-stripe'
-import Spoiler from '../components/Spoiler'
-import Button from '../components/Button'
-import testID from '../utils/testID'
+import React, {PureComponent} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import stripe from 'tipsi-stripe';
+import Spoiler from '../components/Spoiler';
+import Button from '../components/Button';
+import testID from '../utils/testID';
 
 export default class CustomCardScreen extends PureComponent {
-  static title = 'Custom Card'
+  static title = 'Custom Card';
 
   state = {
     loading: false,
@@ -40,36 +40,34 @@ export default class CustomCardScreen extends PureComponent {
       addressCountry: 'Test Country',
       addressZip: '55555',
     },
-  }
+  };
 
   handleCustomPayPress = async (shouldPass = true) => {
     try {
-      this.setState({ loading: true, token: null, error: null })
+      this.setState({loading: true, token: null, error: null});
 
-      const params = shouldPass ? this.state.params : this.state.errorParams
-      const token = await stripe.createTokenWithCard(params)
-      this.setState({ loading: false, error: undefined, token })
+      const params = shouldPass ? this.state.params : this.state.errorParams;
+      const token = await stripe.createTokenWithCard(params);
+      this.setState({loading: false, error: undefined, token});
     } catch (error) {
-      this.setState({ loading: false, error })
+      this.setState({loading: false, error});
     }
-  }
+  };
 
-  renderMandatoryFields = params => (
+  renderMandatoryFields = (params) => (
     <View style={styles.params}>
       <Text style={styles.param}>Number: {params.number}</Text>
       <Text style={styles.param}>Month: {params.expMonth}</Text>
       <Text style={styles.param}>Year: {params.expYear}</Text>
     </View>
-  )
+  );
 
   render() {
-    const { loading, token, error, params, errorParams } = this.state
+    const {loading, token, error, params, errorParams} = this.state;
 
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>
-          Custom Card Params Example
-        </Text>
+        <Text style={styles.header}>Custom Card Params Example</Text>
         <Spoiler title="Mandatory Fields">
           {this.renderMandatoryFields(params)}
         </Spoiler>
@@ -81,15 +79,25 @@ export default class CustomCardScreen extends PureComponent {
             <Text style={styles.param}>CVC: {params.cvc}</Text>
             <Text style={styles.param}>Name: {params.name}</Text>
             <Text style={styles.param}>Currency: {params.currency}</Text>
-            <Text style={styles.param}>Address Line 1: {params.addressLine1}</Text>
-            <Text style={styles.param}>Address Line 2: {params.addressLine2}</Text>
+            <Text style={styles.param}>
+              Address Line 1: {params.addressLine1}
+            </Text>
+            <Text style={styles.param}>
+              Address Line 2: {params.addressLine2}
+            </Text>
             <Text style={styles.param}>Address City: {params.addressCity}</Text>
-            <Text style={styles.param}>Address State: {params.addressState}</Text>
-            <Text style={styles.param}>Address Country: {params.addressCountry}</Text>
+            <Text style={styles.param}>
+              Address State: {params.addressState}
+            </Text>
+            <Text style={styles.param}>
+              Address Country: {params.addressCountry}
+            </Text>
             <Text style={styles.param}>Address Zip: {params.addressZip}</Text>
           </View>
         </Spoiler>
-        <Text style={styles.instruction}>Click button to get token based on params.</Text>
+        <Text style={styles.instruction}>
+          Click button to get token based on params.
+        </Text>
         <Button
           text="Pay with custom params"
           loading={loading}
@@ -102,18 +110,20 @@ export default class CustomCardScreen extends PureComponent {
           onPress={() => this.handleCustomPayPress(false)}
           {...testID('customCardErrorButton')}
         />
-        {token &&
+        {token && (
           <View style={styles.token} {...testID('customCardToken')}>
             <Text style={styles.instruction}>Token: {token.tokenId}</Text>
           </View>
-        }
-        {error &&
+        )}
+        {error && (
           <View style={styles.token} {...testID('customCardTokenError')}>
-            <Text style={styles.instruction}>Error: {JSON.stringify(error.message)}</Text>
+            <Text style={styles.instruction}>
+              Error: {JSON.stringify(error.message)}
+            </Text>
           </View>
-        }
+        )}
       </View>
-    )
+    );
   }
 }
 
@@ -144,4 +154,4 @@ const styles = StyleSheet.create({
   token: {
     height: 20,
   },
-})
+});

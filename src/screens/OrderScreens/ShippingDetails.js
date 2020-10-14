@@ -42,7 +42,7 @@ class ShippingDetails extends Component {
     let splitDate = date.split(' ');
     let splitTime = splitDate[4].split(':');
     let splitHour = parseInt(splitTime[0]);
-    let splitMinute = parseInt(splitTime[1]);
+
     var a = 0;
     if (splitHour >= 16 && splitHour <= 21) {
       a = 1;
@@ -54,9 +54,9 @@ class ShippingDetails extends Component {
       RNToasty.Show({
         title: 'Past Date is Selected',
       });
-    } else if (date1.getDay() == 1) {
+    } else if (date1.getDay() === 1) {
       alert('We are closed on Mondays');
-    } else if (a == 0) {
+    } else if (a === 0) {
       alert('Please place your order between 4pm-10pm');
     } else {
       this.props.navigation.navigate('Checkout', {
@@ -85,7 +85,6 @@ class ShippingDetails extends Component {
                 ? {height: hp('25%')}
                 : {height: hp('30%')}),
             }}>
-           
             <View style={styles.back}>
               <MaterialIcons
                 name="arrow-back"

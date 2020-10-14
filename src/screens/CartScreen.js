@@ -94,11 +94,11 @@ export class CartScreen extends Component {
       cartq = cartq + 1;
       tempDataCart[i].quantity = cartq;
       this.setState({dataCart: tempDataCart});
-    } else if (type == false && cartq >= 2) {
+    } else if (type === false && cartq >= 2) {
       cartq = cartq - 1;
       tempDataCart[i].quantity = cartq;
       this.setState({dataCart: tempDataCart});
-    } else if (type == false && cartq == 1) {
+    } else if (type === false && cartq === 1) {
       return;
     }
 
@@ -339,8 +339,7 @@ export class CartScreen extends Component {
                       {item.food.size && (
                         <Text style={styles.viewDetails}>
                           Size :{' '}
-                          <Text
-                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                          <Text style={styles.viewDetailsItems}>
                             {item.food.size}
                           </Text>
                         </Text>
@@ -349,8 +348,7 @@ export class CartScreen extends Component {
                       {item.food.pizzaNames && (
                         <Text style={styles.viewDetails}>
                           Pizza :{' '}
-                          <Text
-                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                          <Text style={styles.viewDetailsItems}>
                             {item.food.name === 'Big Deal' &&
                               item.food.pizzaNames.map((pizza, i) => {
                                 if (i < item.food.pizzaNames.length - 2) {
@@ -375,8 +373,7 @@ export class CartScreen extends Component {
                       {item.food.pastaNames && item.food.name === 'Party Deal' && (
                         <Text style={styles.viewDetails}>
                           Pasta :{' '}
-                          <Text
-                            style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                          <Text style={styles.viewDetailsItems}>
                             {item.food.pastaNames.map((pasta, i) => {
                               if (i < item.food.pastaNames.length - 1) {
                                 return pasta + ', ';
@@ -392,8 +389,7 @@ export class CartScreen extends Component {
                         item.food.name === 'Party Deal' && (
                           <Text style={styles.viewDetails}>
                             Garlic Pizza :{' '}
-                            <Text
-                              style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                            <Text style={styles.viewDetailsItems}>
                               {item.food.garlicPizzaNames.map((gPizza, i) => {
                                 if (i < item.food.garlicPizzaNames.length - 1) {
                                   return gPizza + ', ';
@@ -421,12 +417,7 @@ export class CartScreen extends Component {
                               a = false;
                             }
                             return (
-                              <Text
-                                key={i}
-                                style={{
-                                  color: 'grey',
-                                  fontFamily: 'Lato-Bold',
-                                }}>
+                              <Text key={i} style={styles.viewDetailsItems}>
                                 {' '}
                                 {ingredient.name}
                                 {!a && ','}
@@ -448,12 +439,7 @@ export class CartScreen extends Component {
                               a = false;
                             }
                             return (
-                              <Text
-                                key={i}
-                                style={{
-                                  color: 'grey',
-                                  fontFamily: 'Lato-Bold',
-                                }}>
+                              <Text key={i} style={styles.viewDetailsItems}>
                                 {' '}
                                 {finalDes}
                                 {!a && ','}
@@ -624,8 +610,8 @@ export class CartScreen extends Component {
             </View>
           </View>
         )}
-        <View style={{flexDirection: 'row'}}></View>
-        <View style={{flexDirection: 'row'}}></View>
+        <View style={{flexDirection: 'row'}} />
+        <View style={{flexDirection: 'row'}} />
         <TouchableOpacity onPress={() => this.handleCheckout()}>
           <LinearGradient
             start={{x: 0, y: 0}}
@@ -637,12 +623,7 @@ export class CartScreen extends Component {
             </View>
             <View style={{paddingLeft: wp('60%'), position: 'absolute'}}>
               {preferenceType === 'Pickup' && isFirstOrder === 'True' && (
-                <Text
-                  style={{
-                    fontSize: hp('2.3%'),
-                    fontFamily: 'Lato-Black',
-                    color: 'white',
-                  }}>
+                <Text style={styles.totalPriceText}>
                   $
                   {Math.round(
                     (this.onCartTotal() - 10) * 100 + Number.EPSILON,
@@ -650,12 +631,7 @@ export class CartScreen extends Component {
                 </Text>
               )}
               {preferenceType === 'Pickup' && isFirstOrder === 'False' && (
-                <Text
-                  style={{
-                    fontSize: hp('2.3%'),
-                    fontFamily: 'Lato-Black',
-                    color: 'white',
-                  }}>
+                <Text style={styles.totalPriceText}>
                   ${Math.round(this.onCartTotal() * 100 + Number.EPSILON) / 100}
                 </Text>
               )}
@@ -674,12 +650,7 @@ export class CartScreen extends Component {
                 </Text>
               )}
               {preferenceType === 'Delivery' && isFirstOrder === 'False' && (
-                <Text
-                  style={{
-                    fontSize: hp('2.3%'),
-                    fontFamily: 'Lato-Black',
-                    color: 'white',
-                  }}>
+                <Text style={styles.totalPriceText}>
                   $
                   {Math.round(
                     (this.onCartTotal() + parseInt(deliveryCharge)) * 100 +
@@ -694,7 +665,7 @@ export class CartScreen extends Component {
     );
   }
   render() {
-    if (this.state.dataCart.length != 0) {
+    if (this.state.dataCart.length !== 0) {
       return <View style={{flex: 1}}>{this.renderCartItems()}</View>;
     } else {
       return <View style={{flex: 1}}>{this.renderEmpty()}</View>;
@@ -723,6 +694,7 @@ var styles = StyleSheet.create({
     fontSize: hp('2.2%'),
     paddingVertical: hp('1%'),
   },
+  viewDetailsItems: {color: 'grey', fontFamily: 'Lato-Bold'},
 
   title: {
     fontFamily: 'Lato-Black',
@@ -737,6 +709,11 @@ var styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: hp('2.5%'),
+  },
+  totalPriceText: {
+    fontSize: hp('2.3%'),
+    fontFamily: 'Lato-Black',
+    color: 'white',
   },
   button: {
     justifyContent: 'center',

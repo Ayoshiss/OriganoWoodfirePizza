@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  StatusBar,
-  StyleSheet,
-  ImageBackground,
-} from 'react-native';
+import {Text, View, StatusBar, StyleSheet, ImageBackground} from 'react-native';
 import NetworkManager from './src/components/NetworkManager';
 import RootStack from './RootStack';
 import Icon from 'react-native-vector-icons/Feather';
@@ -105,12 +99,12 @@ class App extends Component {
   getAppLaunchInfo = async () => {
     try {
       const HasLaunched = await AsyncStorage.getItem('HasLaunched');
-      if (HasLaunched == 'true') {
+      if (HasLaunched === 'true') {
         this.setState({
           show_app: true,
         });
       }
-      if (HasLaunched == 'false') {
+      if (HasLaunched === 'false') {
         this.setState({show_app: false});
       }
     } catch (e) {}
