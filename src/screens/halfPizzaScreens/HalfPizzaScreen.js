@@ -22,6 +22,7 @@ import {
 import RBSheet from 'react-native-raw-bottom-sheet';
 import HalfPizzaDetailScreen from './HalfPizzaDetailScreen';
 import FastImage from 'react-native-fast-image';
+import RNPickerSelect from 'react-native-picker-select';
 class HalfPizzaScreen extends Component {
   constructor(props) {
     super(props);
@@ -149,30 +150,14 @@ class HalfPizzaScreen extends Component {
               minHeight: hp('26%'),
             }}>
             <View>
-              <Text>Left Pizza</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-                <DropDownPicker
-                  items={this.state.pizzaLabelArray}
-                  placeholder="Select Left Pizza"
-                  defaultIndex={0}
-                  dropDownMaxHeight={
-                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                  }
-                  labelStyle={{
-                    fontSize: hp('2.2%'),
-                    textAlign: 'left',
-                    color: '#000',
-                    fontFamily: 'Lato-Regular',
-                  }}
-                  containerStyle={{
-                    height: hp('6%'),
-                    width: wp('40%'),
-                    // marginHorizontal: wp('5%'),
-                    marginVertical: hp('2%'),
-                  }}
-                  onChangeItem={(item) => {
+              <Text style={{fontSize: hp('2%')}}>Left Pizza</Text>
+              <View style={styles.labelStyle}>
+                <RNPickerSelect
+                  placeholder={{label: 'Select Left Pizza'}}
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={(item) => {
                     const leftPizza = this.state.pizzaList.filter((pizza) => {
-                      return pizza.name === item.value;
+                      return pizza.name === item;
                     });
 
                     const apple = leftPizza.map((pizza) => {
@@ -186,34 +171,21 @@ class HalfPizzaScreen extends Component {
                       leftPizzaDescList,
                     });
                   }}
+                  items={this.state.pizzaLabelArray}
+                  textInputProps={styles.pickerText}
                 />
               </View>
             </View>
             <View>
-              <Text>Right Pizza</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-                <DropDownPicker
-                  items={this.state.pizzaLabelArray}
-                  placeholder="Select Right Pizza"
-                  defaultIndex={0}
-                  dropDownMaxHeight={
-                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                  }
-                  labelStyle={{
-                    fontSize: hp('2.2%'),
-                    textAlign: 'left',
-                    color: '#000',
-                    fontFamily: 'Lato-Regular',
-                  }}
-                  containerStyle={{
-                    height: hp('6%'),
-                    width: wp('40%'),
-                    // marginHorizontal: wp('5%'),
-                    marginVertical: hp('2%'),
-                  }}
-                  onChangeItem={(item) => {
+              <Text style={{fontSize: hp('2%')}}>Right Pizza</Text>
+
+              <View style={styles.labelStyle}>
+                <RNPickerSelect
+                  placeholder={{label: 'Select Right Pizza'}}
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={(item) => {
                     const rightPizza = this.state.pizzaList.filter((pizza) => {
-                      return pizza.name === item.value;
+                      return pizza.name === item;
                     });
                     const apple = rightPizza.map((pizza) => {
                       return pizza.desc;
@@ -222,6 +194,8 @@ class HalfPizzaScreen extends Component {
                     const rightPizzaDescList = apple.toString().split(',');
                     this.setState({rightPizza, rightPizzaDescList});
                   }}
+                  items={this.state.pizzaLabelArray}
+                  textInputProps={styles.pickerText}
                 />
               </View>
             </View>
@@ -315,6 +289,7 @@ var styles = StyleSheet.create({
   textDetail: {
     color: 'grey',
     marginVertical: hp('2%'),
+    fontSize: hp('2%'),
   },
   button: {
     justifyContent: 'center',
@@ -336,6 +311,21 @@ var styles = StyleSheet.create({
     top: 0,
     backgroundColor: 'red',
     position: 'absolute',
+  },
+  labelStyle: {
+    width: wp('40%'),
+    marginVertical: hp('1%'),
+    fontSize: hp('2.2%'),
+    textAlign: 'left',
+    color: '#000',
+    fontFamily: 'Lato-Regular',
+    borderWidth: 1,
+    borderColor: 'lightgrey',
+    borderRadius: 10,
+  },
+  pickerText: {
+    fontSize: hp('2.2%'),
+    color: 'grey',
   },
 });
 

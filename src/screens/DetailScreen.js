@@ -6,6 +6,7 @@ import {
   Dimensions,
   SafeAreaView,
   ScrollView,
+  Alert,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -63,11 +64,15 @@ export default class DetailScreen extends React.Component {
           AsyncStorage.setItem('cart', JSON.stringify(cart));
         }
 
-        alert('Item added to Cart');
+        Alert.alert('Success', 'Item added to Cart', [{text: 'OK'}], {
+          cancelable: false,
+        });
         this.getBadgeCount();
       })
       .catch((error) => {
-        alert(error);
+        Alert.alert('Error', `${error}`, [{text: 'OK'}], {
+          cancelable: false,
+        });
       });
   };
   getBadgeCount = () => {
@@ -135,7 +140,7 @@ export default class DetailScreen extends React.Component {
           {this.state.isAvailable === 'Yes' ? (
             <View style={[styles.status, {borderColor: '#EC942A'}]}>
               <Text style={{color: '#EC942A', fontFamily: 'Lato-Regular'}}>
-                AVALIABLE
+                AVAILABLE
               </Text>
             </View>
           ) : (

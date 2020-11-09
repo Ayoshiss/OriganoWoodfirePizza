@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "180464438307-fj6f2qjj5dj77ub12lt5m8a78uufps29.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.origano",
+            "certificate_hash": "02b58b264779a1d11e4e6c9c45216b4f9419e7ac"
+          }
+        },
+        {
           "client_id": "180464438307-rl23fdld4rkdkndu0eoh49rlcic0mkti.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -36,8 +44,15 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "180464438307-6vfj1a40qklt9qaf0pvr4p5csg22k6ej.apps.googleusercontent.com",
+              "client_id": "180464438307-cck0n7bvdqqtrn6v6cbq8ntieqc41lbt.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "180464438307-2hngsn585pepr3otjbpvffoh2k689rgn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "OriganoWoodfirePizza.Origano-Woodfire-Pizza"
+              }
             }
           ]
         }

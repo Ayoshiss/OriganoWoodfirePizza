@@ -8,9 +8,9 @@ import {
   SafeAreaView,
   ScrollView,
   Dimensions,
+  Alert,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import DropDownPicker from 'react-native-dropdown-picker';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -19,6 +19,8 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
+import RNPickerSelect from 'react-native-picker-select';
+
 class DealDetails extends Component {
   constructor(props) {
     super(props);
@@ -98,14 +100,33 @@ class DealDetails extends Component {
       price,
     } = this.state;
     if (name === 'Max Deal') {
-      if (firstPizza === '' || secondPizza === '' || thirdPizza === '') {
-        alert('Please Select Three Large Pizza');
+      if (
+        firstPizza === '' ||
+        secondPizza === '' ||
+        thirdPizza === '' ||
+        firstPizza === null ||
+        secondPizza === null ||
+        thirdPizza === null
+      ) {
+        Alert.alert(
+          'Alert',
+          'Please Select Three Large Pizza',
+          [{text: 'OK'}],
+          {cancelable: false},
+        );
         return;
       }
     }
     if (name === 'Big Deal') {
-      if (firstPizza === '' || secondPizza === '') {
-        alert('Please Select Two Large Pizza');
+      if (
+        firstPizza === '' ||
+        secondPizza === '' ||
+        firstPizza === null ||
+        secondPizza === null
+      ) {
+        Alert.alert('Alert', 'Please Select Two Large Pizza', [{text: 'OK'}], {
+          cancelable: false,
+        });
         return;
       }
     }
@@ -117,9 +138,21 @@ class DealDetails extends Component {
         firstPasta === '' ||
         secondPasta === '' ||
         firstGarlicPizza === '' ||
-        secondGarlicPizza === ''
+        secondGarlicPizza === '' ||
+        firstPizza === null ||
+        secondPizza === null ||
+        thirdPizza === null ||
+        firstPasta === null ||
+        secondPasta === null ||
+        firstGarlicPizza === null ||
+        secondGarlicPizza === null
       ) {
-        alert('Please Select 3 Large Pizza, 2 Pasta and 2 Garlic Pizza');
+        Alert.alert(
+          'Alert',
+          'Please Select 3 Large Pizza, 2 Pasta and 2 Garlic Pizza',
+          [{text: 'OK'}],
+          {cancelable: false},
+        );
         return;
       }
     }
@@ -147,10 +180,16 @@ class DealDetails extends Component {
           AsyncStorage.setItem('cart', JSON.stringify(cart));
         }
         this.getBadgeCount();
-        alert('Item added to Cart');
+
+        Alert.alert('Alert', 'Item Added to Cart', [{text: 'OK'}], {
+          cancelable: false,
+        });
       })
       .catch((error) => {
-        alert(error);
+        Alert.alert('Error', `${error}`, [{text: 'OK'}], {
+          cancelable: false,
+        });
+        return;
       });
   };
 
@@ -172,71 +211,44 @@ class DealDetails extends Component {
           }}>
           <View>
             <Text>First Pizza</Text>
-            <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-              <DropDownPicker
+            <View style={[styles.labelStyle, {width: wp('70%')}]}>
+              <RNPickerSelect
+                placeholder={{label: 'Select First Pizza'}}
+                useNativeAndroidPickerStyle={false}
+                onValueChange={(item) => {
+                  this.setState({firstPizza: item});
+                }}
                 items={this.state.pizzaLabelArray}
-                placeholder="Select First Pizza"
-                defaultIndex={0}
-                dropDownMaxHeight={
-                  Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                }
-                labelStyle={styles.labelStyle}
-                containerStyle={{
-                  height: hp('6%'),
-                  width: wp('70%'),
-                  // marginHorizontal: wp('5%'),
-                  marginVertical: hp('1.5%'),
-                }}
-                onChangeItem={(item) => {
-                  this.setState({firstPizza: item.value});
-                }}
+                textInputProps={styles.pickerText}
               />
             </View>
           </View>
           <View>
             <Text>Second Pizza</Text>
-            <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-              <DropDownPicker
+            <View style={[styles.labelStyle, {width: wp('70%')}]}>
+              <RNPickerSelect
+                placeholder={{label: 'Select Second Pizza'}}
+                useNativeAndroidPickerStyle={false}
+                onValueChange={(item) => {
+                  this.setState({secondPizza: item});
+                }}
                 items={this.state.pizzaLabelArray}
-                placeholder="Select Second Pizza"
-                defaultIndex={0}
-                dropDownMaxHeight={
-                  Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                }
-                labelStyle={styles.labelStyle}
-                containerStyle={{
-                  height: hp('6%'),
-                  width: wp('70%'),
-                  // marginHorizontal: wp('5%'),
-                  marginVertical: hp('1.5%'),
-                }}
-                onChangeItem={(item) => {
-                  this.setState({secondPizza: item.value});
-                }}
+                textInputProps={styles.pickerText}
               />
             </View>
           </View>
           {this.state.name === 'Max Deal' && (
             <View style={{marginBottom: hp('2%')}}>
               <Text>Third Pizza</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-                <DropDownPicker
+              <View style={[styles.labelStyle, {width: wp('70%')}]}>
+                <RNPickerSelect
+                  placeholder={{label: 'Select Third Pizza'}}
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={(item) => {
+                    this.setState({thirdPizza: item});
+                  }}
                   items={this.state.pizzaLabelArray}
-                  placeholder="Select Third Pizza"
-                  defaultIndex={0}
-                  dropDownMaxHeight={
-                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                  }
-                  labelStyle={styles.labelStyle}
-                  containerStyle={{
-                    height: hp('6%'),
-                    width: wp('70%'),
-                    // marginHorizontal: wp('5%'),
-                    marginVertical: hp('1.5%'),
-                  }}
-                  onChangeItem={(item) => {
-                    this.setState({thirdPizza: item.value});
-                  }}
+                  textInputProps={styles.pickerText}
                 />
               </View>
             </View>
@@ -274,118 +286,74 @@ class DealDetails extends Component {
           <View style={styles.dropDownView}>
             <View>
               <Text>First Pizza</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-                <DropDownPicker
+              <View style={[styles.labelStyle, {width: wp('40%')}]}>
+                <RNPickerSelect
+                  placeholder={{label: 'Select First Pizza'}}
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={(item) => {
+                    this.setState({firstPizza: item});
+                  }}
                   items={this.state.pizzaLabelArray}
-                  placeholder="Select Pizza"
-                  defaultIndex={0}
-                  dropDownMaxHeight={
-                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                  }
-                  labelStyle={styles.labelStyle}
-                  containerStyle={{
-                    height: hp('6%'),
-                    width: wp('40%'),
-                    // marginHorizontal: wp('5%'),
-                    marginVertical: hp('1.5%'),
-                  }}
-                  onChangeItem={(item) => {
-                    this.setState({firstPizza: item.value});
-                  }}
+                  textInputProps={styles.pickerText}
                 />
               </View>
             </View>
             <View>
               <Text>Second Pizza</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-                <DropDownPicker
+              <View style={[styles.labelStyle, {width: wp('40%')}]}>
+                <RNPickerSelect
+                  placeholder={{label: 'Select Second Pizza'}}
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={(item) => {
+                    this.setState({secondPizza: item});
+                  }}
                   items={this.state.pizzaLabelArray}
-                  placeholder="Select Pizza"
-                  defaultIndex={0}
-                  dropDownMaxHeight={
-                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                  }
-                  labelStyle={styles.labelStyle}
-                  containerStyle={{
-                    height: hp('6%'),
-                    width: wp('40%'),
-                    // marginHorizontal: wp('5%'),
-                    marginVertical: hp('1.5%'),
-                  }}
-                  onChangeItem={(item) => {
-                    this.setState({secondPizza: item.value});
-                  }}
+                  textInputProps={styles.pickerText}
                 />
               </View>
             </View>
           </View>
           <View>
             <Text>Third Pizza</Text>
-            <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-              <DropDownPicker
+            <View style={[styles.labelStyle, {width: wp('40%')}]}>
+              <RNPickerSelect
+                placeholder={{label: 'Select Third Pizza'}}
+                useNativeAndroidPickerStyle={false}
+                onValueChange={(item) => {
+                  this.setState({thirdPizza: item});
+                }}
                 items={this.state.pizzaLabelArray}
-                placeholder="Select Pizza"
-                defaultIndex={0}
-                dropDownMaxHeight={
-                  Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                }
-                labelStyle={styles.labelStyle}
-                containerStyle={{
-                  height: hp('6%'),
-                  width: wp('40%'),
-                  // marginHorizontal: wp('5%'),
-                  marginVertical: hp('1.5%'),
-                }}
-                onChangeItem={(item) => {
-                  this.setState({thirdPizza: item.value});
-                }}
+                textInputProps={styles.pickerText}
               />
             </View>
           </View>
           <View style={styles.dropDownView}>
             <View>
               <Text>First Pasta</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-                <DropDownPicker
+
+              <View style={[styles.labelStyle, {width: wp('40%')}]}>
+                <RNPickerSelect
+                  placeholder={{label: 'Select First Pasta'}}
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={(item) => {
+                    this.setState({firstPasta: item});
+                  }}
                   items={this.state.pastaLabelArray}
-                  placeholder="Select Pasta"
-                  defaultIndex={0}
-                  dropDownMaxHeight={
-                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                  }
-                  labelStyle={styles.labelStyle}
-                  containerStyle={{
-                    height: hp('6%'),
-                    width: wp('40%'),
-                    // marginHorizontal: wp('5%'),
-                    marginVertical: hp('1.5%'),
-                  }}
-                  onChangeItem={(item) => {
-                    this.setState({firstPasta: item.value});
-                  }}
+                  textInputProps={styles.pickerText}
                 />
               </View>
             </View>
             <View>
               <Text>Second Pasta</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-                <DropDownPicker
+              <View style={[styles.labelStyle, {width: wp('40%')}]}>
+                <RNPickerSelect
+                  placeholder={{label: 'Select Second Pasta'}}
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={(item) => {
+                    this.setState({secondPasta: item});
+                  }}
                   items={this.state.pastaLabelArray}
-                  placeholder="Select Pasta"
-                  defaultIndex={0}
-                  dropDownMaxHeight={
-                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                  }
-                  labelStyle={styles.labelStyle}
-                  containerStyle={{
-                    height: hp('6%'),
-                    width: wp('40%'),
-                    // marginHorizontal: wp('5%'),
-                    marginVertical: hp('1.5%'),
-                  }}
-                  onChangeItem={(item) => {
-                    this.setState({secondPasta: item.value});
-                  }}
+                  textInputProps={styles.pickerText}
                 />
               </View>
             </View>
@@ -393,47 +361,30 @@ class DealDetails extends Component {
           <View style={[styles.dropDownView, {marginBottom: hp('2%')}]}>
             <View>
               <Text>First Garlic Pizza</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-                <DropDownPicker
+
+              <View style={[styles.labelStyle, {width: wp('40%')}]}>
+                <RNPickerSelect
+                  placeholder={{label: 'First Garlic Pizza'}}
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={(item) => {
+                    this.setState({firstGarlicPizza: item});
+                  }}
                   items={this.state.garlicPizzaList}
-                  placeholder="Select Pizza"
-                  defaultIndex={0}
-                  dropDownMaxHeight={
-                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                  }
-                  labelStyle={styles.labelStyle}
-                  containerStyle={{
-                    height: hp('6%'),
-                    width: wp('40%'),
-                    // marginHorizontal: wp('5%'),
-                    marginVertical: hp('1.5%'),
-                  }}
-                  onChangeItem={(item) => {
-                    this.setState({firstGarlicPizza: item.value});
-                  }}
+                  textInputProps={styles.pickerText}
                 />
               </View>
             </View>
             <View>
               <Text>Second Garlic Pizza</Text>
-              <View style={{...(Platform.OS !== 'android' && {zIndex: 10})}}>
-                <DropDownPicker
+              <View style={[styles.labelStyle, {width: wp('40%')}]}>
+                <RNPickerSelect
+                  placeholder={{label: 'Second Garlic Pizza'}}
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={(item) => {
+                    this.setState({secondGarlicPizza: item});
+                  }}
                   items={this.state.garlicPizzaList}
-                  placeholder="Select Pizza"
-                  defaultIndex={0}
-                  dropDownMaxHeight={
-                    Platform.OS === 'ios' ? hp('18%') : hp('22%')
-                  }
-                  labelStyle={styles.labelStyle}
-                  containerStyle={{
-                    height: hp('6%'),
-                    width: wp('40%'),
-                    // marginHorizontal: wp('5%'),
-                    marginVertical: hp('1.5%'),
-                  }}
-                  onChangeItem={(item) => {
-                    this.setState({secondGarlicPizza: item.value});
-                  }}
+                  textInputProps={styles.pickerText}
                 />
               </View>
             </View>
@@ -542,12 +493,7 @@ var styles = StyleSheet.create({
     paddingHorizontal: wp('5%'),
     paddingVertical: hp('5.5%'),
   },
-  labelStyle: {
-    fontSize: hp('2.2%'),
-    textAlign: 'left',
-    color: '#000',
-    fontFamily: 'Lato-Regular',
-  },
+
   dropDownView: {flexDirection: 'row', justifyContent: 'space-between'},
   textPrice: {
     color: '#EC942A',
@@ -585,6 +531,26 @@ var styles = StyleSheet.create({
     top: 0,
     backgroundColor: 'red',
     position: 'absolute',
+  },
+  pickerSection: {
+    borderWidth: 1,
+    borderColor: 'darkgrey',
+    margin: 15,
+    padding: 5,
+  },
+  labelStyle: {
+    marginVertical: hp('1%'),
+    fontSize: hp('2.2%'),
+    textAlign: 'left',
+    color: '#000',
+    fontFamily: 'Lato-Regular',
+    borderWidth: 1,
+    borderColor: 'lightgrey',
+    borderRadius: 10,
+  },
+  pickerText: {
+    fontSize: hp('2.2%'),
+    color: 'grey',
   },
 });
 

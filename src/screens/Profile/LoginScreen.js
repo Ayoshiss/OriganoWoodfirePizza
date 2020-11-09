@@ -293,7 +293,7 @@ export class LoginScreen extends Component {
               alignSelf: 'center',
               alignItems: 'center',
               position: 'absolute',
-              marginTop: hp('80%'),
+              marginTop: hp('80.5%'),
               // marginBottom: hp('6%'),
             }}>
             <Text

@@ -42,34 +42,67 @@ class ShippingDetails extends Component {
     let splitDate = date.split(' ');
     let splitTime = splitDate[4].split(':');
     let splitHour = parseInt(splitTime[0]);
+    let splitMinute = parseInt(splitTime[1]);
+    var validHour = /^(2[0-1]|1[6-9])$/.test(splitHour);
+    var STWTh = 0;
+    var FS = 0;
 
-    var a = 0;
-    if (splitHour >= 16 && splitHour <= 21) {
-      a = 1;
-    } else {
-      a = 0;
-    }
     const newDate = new Date();
+    if (
+      date1.getDay() === 2 ||
+      date1.getDay() === 3 ||
+      date1.getDay() === 4 ||
+      date1.getDay() === 0
+    ) {
+      STWTh = 1;
+    }
+    if (date1.getDay() === 5 || date1.getDay() === 6) {
+      FS = 1;
+    }
     if (chosenDate < newDate) {
       RNToasty.Show({
         title: 'Past Date is Selected',
       });
-    } else if (date1.getDay() === 1) {
-      alert('We are closed on Mondays');
-    } else if (a === 0) {
-      alert('Please place your order between 4pm-10pm');
-    } else {
-      this.props.navigation.navigate('Checkout', {
-        dataCart,
-        address: this.state.preferenceData,
-        specialInstruction: this.state.specialInstruction,
-        date,
-        orderType: this.state.preferenceType,
-        totalPrice,
-        deliveryCharge,
-        discount: this.state.discount,
-      });
+      return;
     }
+
+    if (date1.getDay() === 1) {
+      RNToasty.Show({
+        title: 'We are closed on Mondays.',
+      });
+      return;
+    }
+    if (STWTh === 1 && validHour) {
+      if (splitHour === 21 && splitMinute > 30) {
+        RNToasty.Show({
+          title: 'Please place your order between 4pm and 9:30pm',
+        });
+        return;
+      }
+    }
+    if (STWTh === 1 && !validHour) {
+      RNToasty.Show({
+        title: 'Please place your order between 4pm and 9:30pm',
+      });
+      return;
+    }
+    if (FS === 1 && !validHour) {
+      RNToasty.Show({
+        title: 'Please place your order between 4pm and 10pm',
+      });
+      return;
+    }
+
+    this.props.navigation.navigate('Checkout', {
+      dataCart,
+      address: this.state.preferenceData,
+      specialInstruction: this.state.specialInstruction,
+      date,
+      orderType: this.state.preferenceType,
+      totalPrice,
+      deliveryCharge,
+      discount: this.state.discount,
+    });
   };
   render() {
     const {preferenceType} = this.state;

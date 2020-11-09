@@ -313,7 +313,14 @@ export class CartScreen extends Component {
                       </TouchableOpacity>
                     )}
                     {!item.food.size && !item.food.pizzaNames && (
-                      <Text style={styles.viewDetailsText}>View Details</Text>
+                      <Text
+                        style={{
+                          fontSize: hp('1.9%'),
+                          color: 'white',
+                          fontFamily: 'Lato-Bold',
+                        }}>
+                        View Details
+                      </Text>
                     )}
                   </View>
                   <RBSheet

@@ -8,7 +8,7 @@ export default class Deals extends Component {
     super(props);
     this.state = {
       data: [
-        {name: 'Big Deal', price: 49, url: 'big'},
+        {name: 'Big Deal', price: 40, url: 'big'},
         {name: 'Max Deal', price: 59, url: 'max'},
         {name: 'Party Deal', price: 100, url: 'party'},
       ],
@@ -17,22 +17,6 @@ export default class Deals extends Component {
     };
   }
   handleOnPress = (item) => {
-    // if (item.name === 'Big Deal' || item.name === 'Max Deal') {
-    //   this.props.props.navigation.navigate('BigOrMaxDeals', {
-    //     image: this.state.image,
-    //     price: item.price,
-    //     name: item.name,
-    //     pizzaList: this.props.pizzaList,
-    //   });
-    // } else {
-    //   this.props.props.navigation.navigate('PartyDeal', {
-    //     image: this.state.image,
-    //     price: item.price,
-    //     name: item.name,
-    //     pizzaList: this.props.pizzaList,
-    //     pastaList: this.props.pastaList,
-    //   });
-    // }
     this.props.props.navigation.navigate('DealDetails', {
       image: this.state.image,
       price: item.price,

@@ -6,6 +6,7 @@ import {
   ActivityIndicator,
   TouchableOpacity,
   SafeAreaView,
+  Alert,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -81,7 +82,7 @@ export default class StripeScreen extends PureComponent {
         const newDate = new Date();
         var orderId = 'OP-' + newDate.valueOf();
         var paymentType, paymentStatus;
-        paymentType = 'Stripe';
+        paymentType = 'Stripe App';
         paymentStatus = 'Paid';
         const {
           dataCart,
@@ -125,7 +126,9 @@ export default class StripeScreen extends PureComponent {
           });
       })
       .catch((err) => {
-        alert(err);
+        Alert.alert('Error', `${err}`, [{text: 'OK'}], {
+          cancelable: false,
+        });
         this.setState({
           loading: false,
           paymentLoading: false,

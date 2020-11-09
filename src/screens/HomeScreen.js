@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   StatusBar,
+  Alert,
 } from 'react-native';
 import PlaceSearch from '../components/PlaceSearch';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -40,7 +41,9 @@ import FastImage from 'react-native-fast-image';
 var menuData = [];
 var deliveryPlaces = [];
 var placesWithCharge = [];
+var isMounted = false;
 export default class HomeScreen extends React.Component {
+  _isMounted = false;
   constructor(props) {
     super(props);
 
@@ -81,50 +84,72 @@ export default class HomeScreen extends React.Component {
     this.localNotify = null;
     this.senderID = '180464438307';
   }
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   onPizzaRecieved = (pizzaList) => {
-    this.setState((prevState) => ({
-      pizzaList: (prevState.pizzaList = pizzaList),
-    }));
+    if (this._isMounted) {
+      this.setState((prevState) => ({
+        pizzaList: (prevState.pizzaList = pizzaList),
+      }));
+    }
   };
   onToppingsRecieved = (toppingsList) => {
-    this.setState((prevState) => ({
-      toppingsList: (prevState.toppingsList = toppingsList),
-    }));
+    if (this._isMounted) {
+      this.setState((prevState) => ({
+        toppingsList: (prevState.toppingsList = toppingsList),
+      }));
+    }
   };
   onBurgerRecieved = (burgerList) => {
-    this.setState((prevState) => ({
-      burgerList: (prevState.burgerList = burgerList),
-    }));
+    if (this._isMounted) {
+      this.setState((prevState) => ({
+        burgerList: (prevState.burgerList = burgerList),
+      }));
+    }
   };
   onPastaRecieved = (pastaList) => {
-    this.setState((prevState) => ({
-      pastaList: (prevState.pastaList = pastaList),
-    }));
+    if (this._isMounted) {
+      this.setState((prevState) => ({
+        pastaList: (prevState.pastaList = pastaList),
+      }));
+    }
   };
   onSaladRecieved = (saladList) => {
-    this.setState((prevState) => ({
-      saladList: (prevState.saladList = saladList),
-    }));
+    if (this._isMounted) {
+      this.setState((prevState) => ({
+        saladList: (prevState.saladList = saladList),
+      }));
+    }
   };
   onEntreeRecieved = (entreeList) => {
-    this.setState((prevState) => ({
-      entreeList: (prevState.entreeList = entreeList),
-    }));
+    if (this._isMounted) {
+      this.setState((prevState) => ({
+        entreeList: (prevState.entreeList = entreeList),
+      }));
+    }
   };
   onDessertRecieved = (dessertList) => {
-    this.setState((prevState) => ({
-      dessertList: (prevState.dessertList = dessertList),
-    }));
+    if (this._isMounted) {
+      this.setState((prevState) => ({
+        dessertList: (prevState.dessertList = dessertList),
+      }));
+    }
   };
   onBeverageRecieved = (beverageList) => {
-    this.setState((prevState) => ({
-      beverageList: (prevState.beverageList = beverageList),
-    }));
+    if (this._isMounted) {
+      this.setState((prevState) => ({
+        beverageList: (prevState.beverageList = beverageList),
+      }));
+    }
   };
   onSpecialRecieved = (specialList) => {
-    this.setState((prevState) => ({
-      specialList: (prevState.specialList = specialList),
-    }));
+    if (this._isMounted) {
+      this.setState((prevState) => ({
+        specialList: (prevState.specialList = specialList),
+      }));
+    }
   };
 
   togglePickupInput = () => {
@@ -148,9 +173,11 @@ export default class HomeScreen extends React.Component {
           let x = doc.data();
 
           menuData = [...menuData, x];
-          this.setState({
-            data: menuData,
-          });
+          if (this._isMounted) {
+            this.setState({
+              data: menuData,
+            });
+          }
         });
       })
       .catch((e) => {
@@ -167,7 +194,9 @@ export default class HomeScreen extends React.Component {
           let placeWithCharge = [x, y];
           placesWithCharge = [...placesWithCharge, placeWithCharge];
           deliveryPlaces = [...deliveryPlaces, x];
-          this.setState({places: deliveryPlaces, placesWithCharge});
+          if (this._isMounted) {
+            this.setState({places: deliveryPlaces, placesWithCharge});
+          }
         });
       });
   }
@@ -197,7 +226,12 @@ export default class HomeScreen extends React.Component {
                   y = 0;
                 }
                 if (x === 1 && y === 1) {
-                  alert('You are eligible for a $10 discount. Yay!!!');
+                  Alert.alert(
+                    'Discount Alert',
+                    'You are eligible for a $10 discount on your first order. Yay!!!',
+                    [{text: 'OK'}],
+                    {cancelable: false},
+                  );
                   AsyncStorage.setItem('First Order', 'True');
                 } else {
                   AsyncStorage.setItem('First Order', 'False');
@@ -232,6 +266,8 @@ export default class HomeScreen extends React.Component {
   };
 
   componentDidMount() {
+    this._isMounted = true;
+
     this.getPreferenceData();
     //this.getBannerImage();
     this.getDeliveryPlaces();
@@ -286,7 +322,7 @@ export default class HomeScreen extends React.Component {
   }
 
   onRegister(token) {
-    // console.log('[Notification] Registered:', token);
+    //console.log('[Notification] Registered:', token);
     AsyncStorage.setItem('notifyToken', token);
   }
   onNotification(notify) {
@@ -331,11 +367,13 @@ export default class HomeScreen extends React.Component {
       const storedToken = await AsyncStorage.getItem('notifyToken');
 
       if (preferenceData !== null) {
-        this.setState({
-          preferenceData,
-          preferenceDataExists: true,
-          preferenceType,
-        });
+        if (this._isMounted) {
+          this.setState({
+            preferenceData,
+            preferenceDataExists: true,
+            preferenceType,
+          });
+        }
       }
       if (storedToken !== notifyToken && currentUserId !== null) {
         firestore().collection('Users').doc(currentUserId).update({
@@ -475,7 +513,6 @@ export default class HomeScreen extends React.Component {
               }}
             />
           </View>
-          {/* {checkDiscount && alert('You are elgigble for 10% discount')} */}
           {!this.state.preferenceDataExists && (
             <View style={styles.orderBtnsView}>
               <View
@@ -522,7 +559,9 @@ export default class HomeScreen extends React.Component {
                 Have an account?
               </Text>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Profile')}>
+                onPress={() =>
+                  this.props.navigation.navigate('Profile', {screen: 'Login'})
+                }>
                 <Text style={styles.btnLogin}>Login</Text>
               </TouchableOpacity>
               <Text
@@ -534,7 +573,11 @@ export default class HomeScreen extends React.Component {
                 or
               </Text>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Profile')}>
+                onPress={() =>
+                  this.props.navigation.navigate('Profile', {
+                    screen: 'Signup',
+                  })
+                }>
                 <Text style={styles.btnLogin}>Register</Text>
               </TouchableOpacity>
             </View>

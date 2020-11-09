@@ -13,7 +13,7 @@ class PlaceSearch extends Component {
     return (
       <View style={{flex: 1}}>
         <GooglePlacesAutocomplete
-          placeholder="Enter your full address"
+          placeholder="107 McEvoy Street, Alexandria NSW 2015"
           query={{
             key: 'AIzaSyCT1DuqZIQOfaeDTw1FcxdQUCUCELLJzwU',
             language: 'en',

@@ -35,7 +35,7 @@ class PhoneVerification extends Component {
       codeSent: false,
       isVerifying: false,
       credential: null,
-      isLoading: true,
+      isScreenLoading: true,
       isLoggingOut: false,
       notifyToken: null,
     };
@@ -136,11 +136,7 @@ class PhoneVerification extends Component {
 
     this.setState({isLoading: false});
   };
-  handleUpdateProfile2 = () => {
-    console.log(this.state.phone);
-    const checkValid = this.phoneInput.current?.isValidNumber();
-    console.log(checkValid);
-  };
+
   handleUpdateProfile = () => {
     Keyboard.dismiss();
     this.setState({isLoading: true});
@@ -327,7 +323,11 @@ class PhoneVerification extends Component {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                this.setState({codeSent: false, codeInput: ''});
+                this.setState({
+                  codeSent: false,
+                  codeInput: '',
+                  isLoading: false,
+                });
               }}>
               <LinearGrad
                 text="Change Phone Number"
@@ -342,16 +342,16 @@ class PhoneVerification extends Component {
     );
   }
   render() {
-    const {codeSent, isLoading} = this.state;
+    const {codeSent, isScreenLoading} = this.state;
     setTimeout(() => {
-      this.setState({isLoading: false});
-    }, 3000);
-    if (isLoading) {
+      this.setState({isScreenLoading: false});
+    }, 1000);
+    if (isScreenLoading) {
       return (
         <View style={styles.loaderContainer}>
           <ActivityIndicator
             size="large"
-            animating={this.state.isLoading}
+            animating={this.state.isScreenLoading}
             color="#EC942A"
           />
         </View>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Platform} from 'react-native';
+import {Platform, Alert} from 'react-native';
 import PushNotification from 'react-native-push-notification';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
@@ -11,7 +11,9 @@ class NotificationManager extends Component {
         onRegister(token.token);
       },
       onNotification: function (notification) {
-        alert(notification.message);
+        Alert.alert('Alert', `${notification.message}`, [{text: 'OK'}], {
+          cancelable: false,
+        });
         if (Platform.OS === 'ios') {
           if (notification.data.openedInForeground) {
             notification.userInteraction = true;

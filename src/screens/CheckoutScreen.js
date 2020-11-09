@@ -70,7 +70,7 @@ class CheckoutScreen extends Component {
         isPayPalLoading: true,
         orderId,
       });
-      paymentType = 'Paypal';
+      paymentType = 'Paypal App';
       paymentStatus = 'Paid';
     }
     if (type === 'COD') {

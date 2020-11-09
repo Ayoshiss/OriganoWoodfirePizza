@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Alert} from 'react-native';
 import messaging from '@react-native-firebase/messaging';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
@@ -118,7 +119,14 @@ const RootStack = () => {
     // Assume a message-notification contains a "type" property in the data payload of the screen to open
 
     messaging().onNotificationOpenedApp((remoteMessage) => {
-      alert(remoteMessage.notification.body);
+      Alert.alert(
+        'Alert',
+        `${remoteMessage.notification.body}`,
+        [{text: 'OK'}],
+        {
+          cancelable: false,
+        },
+      );
     });
 
     // Check whether an initial notification is available

@@ -7,6 +7,7 @@ import {
   FlatList,
   SafeAreaView,
   ScrollView,
+  Alert,
 } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import Checkbox from './Checkbox';
@@ -299,7 +300,10 @@ class EditIngredients extends Component {
   onSubmitCart = () => {
     const {sizePrice} = this.state;
     if (sizePrice === 0) {
-      alert('Select a Pizza size');
+      Alert.alert('Alert', 'Please select pizza size', [{text: 'OK'}], {
+        cancelable: false,
+      });
+
       return;
     }
     let finalDesc = [];
@@ -346,10 +350,15 @@ class EditIngredients extends Component {
         }
         this.props.props.closeRB();
         this.props.props.badgeCount();
-        alert('Item added to Cart');
+        Alert.alert('Success', 'Item added to Cart', [{text: 'OK'}], {
+          cancelable: false,
+        });
       })
       .catch((error) => {
-        alert(error);
+        Alert.alert('Error', `${error}`, [{text: 'OK'}], {
+          cancelable: false,
+        });
+        return;
       });
   };
   render() {

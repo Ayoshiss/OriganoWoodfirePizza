@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   SafeAreaView,
+  Alert,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -80,7 +81,9 @@ export class HalfPizzaDetailScreen extends Component {
 
     const {sizePrice} = this.state;
     if (sizePrice === 0) {
-      alert('Select a Pizza size');
+      Alert.alert('Alert', 'Please Select Pizza Size', [{text: 'OK'}], {
+        cancelable: false,
+      });
       return;
     }
     let finalDesc = [];
@@ -117,10 +120,16 @@ export class HalfPizzaDetailScreen extends Component {
         }
         this.props.closeRB();
         this.props.badgeCount();
-        alert('Item added to Cart');
+
+        Alert.alert('Success', 'Item Cdded to Cart', [{text: 'OK'}], {
+          cancelable: false,
+        });
       })
       .catch((error) => {
-        alert(error);
+        Alert.alert('Error', `${error}`, [{text: 'OK'}], {
+          cancelable: false,
+        });
+        return;
       });
   };
   renderIngredients = () => {
