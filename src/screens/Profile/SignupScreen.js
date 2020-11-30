@@ -191,7 +191,7 @@ export class SignupScreen extends Component {
           }}>
           <Text
             style={{
-              fontFamily: 'Lato-Regular',
+          
               fontSize: hp('2%'),
               color: '#ABB4BD',
               textAlign: 'center',
@@ -202,7 +202,7 @@ export class SignupScreen extends Component {
             onPress={() => {
               this.props.navigation.navigate('Login');
             }}>
-            <Text style={{color: '#EC942A',fontSize: hp('2%'), fontFamily: 'Lato-Regular'}}>
+            <Text style={{color: '#EC942A',fontSize: hp('2%')}}>
               {' '}
               Back to Login
             </Text>
@@ -227,7 +227,7 @@ var styles = StyleSheet.create({
   },
   loginText: {
     fontSize: hp('5%'),
-    fontFamily: 'Lato-Black',
+   
     color: '#fbfbfb',
   },
   cardView: {
@@ -245,7 +245,7 @@ var styles = StyleSheet.create({
     marginBottom: hp('4%'),
   },
   errorMessage: {
-    fontFamily: 'Lato-Regular',
+    
     color: 'red',
     fontSize: hp('2%'),
     textAlign: 'center',

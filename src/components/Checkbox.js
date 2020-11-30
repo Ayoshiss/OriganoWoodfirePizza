@@ -43,7 +43,7 @@ const Checkbox = ({ingredient, addIngredient, checkValue, price}) => {
 
       <View style={{flexDirection: 'row', width: wp('60%')}}>
         <TouchableOpacity onPress={() => addIngredient()}>
-          <Text style={{fontSize: hp('2.3%'), fontFamily: 'Lato-Regular'}}>
+          <Text style={{fontSize: hp('2.3%')}}>
             {ingredient}
           </Text>
         </TouchableOpacity>

@@ -123,7 +123,7 @@ export default class DetailScreen extends React.Component {
                   color: '#fbfbfb',
                   textAlign: 'center',
                   fontSize: wp('3.5%'),
-                  fontFamily: 'Lato-Regular',
+                  
                 }}>
                 {this.state.badgeCount}
               </Text>
@@ -134,13 +134,13 @@ export default class DetailScreen extends React.Component {
         <ScrollView style={[styles.footer]}>
           {this.state.isAvailable === 'Yes' ? (
             <View style={[styles.status, {borderColor: '#EC942A'}]}>
-              <Text style={{color: '#EC942A', fontFamily: 'Lato-Regular'}}>
+              <Text style={{color: '#EC942A'}}>
                 AVALIABLE
               </Text>
             </View>
           ) : (
             <View style={[styles.status, {borderColor: 'red'}]}>
-              <Text style={{color: 'red', fontFamily: 'Lato-Regular'}}>
+              <Text style={{color: 'red'}}>
                 Out of Stock
               </Text>
             </View>
@@ -204,16 +204,16 @@ var styles = StyleSheet.create({
   },
   textPrice: {
     color: '#EC942A',
-    fontFamily: 'Lato-Bold',
+  
     fontSize: hp('4%'),
   },
   textName: {
     color: '#3E3C3E',
-    fontFamily: 'Lato-Bold',
+    
     fontSize: hp('6%'),
   },
   textDetail: {
-    fontFamily: 'Lato-Regular',
+   
     color: 'gray',
     marginVertical: hp('3%'),
     lineHeight: hp('2.5%'),

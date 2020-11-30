@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@invertase/react-native-apple-authentication": "^2.1.0",
     "@react-native-community/async-storage": "^1.10.3",
     "@react-native-community/google-signin": "^4.0.3",
     "@react-native-community/masked-view": "^0.1.10",
@@ -28,6 +29,7 @@
     "react": "16.11.0",
     "react-native": "^0.63.2",
     "react-native-app-intro-slider": "^4.0.4",
+    "react-native-apple-authentication": "^1.0.8",
     "react-native-check-box": "^2.1.7",
     "react-native-date-picker": "^2.7.11",
     "react-native-dotenv": "^2.4.1",

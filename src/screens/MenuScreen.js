@@ -75,7 +75,7 @@ class MenuScreen extends Component {
             style={{
               textAlign: 'center',
               fontSize: hp('3.5%'),
-              fontFamily: 'Lato-Black',
+             
               color: '#EC942A',
             }}>
             Menu
@@ -88,7 +88,7 @@ class MenuScreen extends Component {
             <View style={styles.badge}>
               <Text
                 style={{
-                  fontFamily: 'Lato-Regular',
+                 
                   color: '#fbfbfb',
                   textAlign: 'center',
                   fontSize: wp('3.5%'),
@@ -103,7 +103,7 @@ class MenuScreen extends Component {
           <ScrollableTabView
             initialPage={this.props.route.params.initialPage}
             tabBarActiveTextColor="#EC942A"
-            tabBarTextStyle={{fontFamily: 'Lato-Bold'}}
+            
             renderTabBar={() => (
               <ScrollableTabBar
                 underlineStyle={{

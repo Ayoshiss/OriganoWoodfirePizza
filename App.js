@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: hp('2.5%'),
     textAlign: 'center',
-    fontFamily: 'Lato-Bold',
+  
   },
 
   image: {
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     fontSize: hp('4%'),
     color: 'white',
     textAlign: 'center',
-    fontFamily: 'Lato-Black',
+   
   },
 });
 

@@ -196,7 +196,6 @@ export class MyOrdersScreen extends Component {
       <SafeAreaView style={{flex: 1}}>
         <ScrollableTabView
           tabBarActiveTextColor="#EC942A"
-          tabBarTextStyle={{fontFamily: 'Lato-Bold'}}
           renderTabBar={() => (
             <ScrollableTabBar
               underlineStyle={{
@@ -232,7 +231,7 @@ export class MyOrdersScreen extends Component {
             style={{
               fontSize: hp('2.5%'),
               textAlign: 'center',
-              fontFamily: 'Lato-Bold',
+           
               color: '#B6B6B6',
             }}>
             No Orders History. Start Ordering.
@@ -253,7 +252,7 @@ export class MyOrdersScreen extends Component {
             style={{
               fontSize: hp('2.5%'),
               textAlign: 'center',
-              fontFamily: 'Lato-Bold',
+             
               color: '#B6B6B6',
             }}>
             Please Login to view your orders
@@ -277,7 +276,7 @@ export class MyOrdersScreen extends Component {
             style={{
               textAlign: 'center',
               fontSize: hp('3.5%'),
-              fontFamily: 'Lato-Black',
+            
               color: '#EC942A',
             }}>
             My Orders

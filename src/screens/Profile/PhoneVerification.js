@@ -146,6 +146,8 @@ class PhoneVerification extends Component {
       return;
     }
 
+    auth().settings.isAppVerificationDisabledForTesting = true
+
     auth()
       .verifyPhoneNumber(phone)
       .on(
@@ -171,6 +173,7 @@ class PhoneVerification extends Component {
               });
 
               break;
+              
             case auth.PhoneAuthState.AUTO_VERIFY_TIMEOUT:
               break;
             case auth.PhoneAuthState.AUTO_VERIFIED:

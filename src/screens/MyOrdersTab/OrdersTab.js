@@ -25,7 +25,7 @@ class OrdersTab extends Component {
           style={{
             paddingHorizontal: wp('10%'),
             paddingVertical: hp('2%'),
-            fontFamily: 'Lato-Black',
+        
             color: '#B6B6B6',
           }}>
           No Active Orders
@@ -38,7 +38,6 @@ class OrdersTab extends Component {
           style={{
             paddingHorizontal: wp('10%'),
             paddingVertical: hp('2%'),
-            fontFamily: 'Lato-Black',
             color: '#B6B6B6',
           }}>
           No Completed Orders Yet
@@ -68,11 +67,11 @@ class OrdersTab extends Component {
                 <View style={styles.orderContentView}>
                   <Text style={styles.simpleText}>
                     Items :
-                    <Text style={{fontFamily: 'Lato-Black'}}> {quantity}</Text>
+                    <Text> {quantity}</Text>
                   </Text>
                   <Text style={styles.simpleText}>
                     Total Amount:{' '}
-                    <Text style={{fontFamily: 'Lato-Black'}}>${item[9]}</Text>
+                    <Text>${item[9]}</Text>
                   </Text>
                 </View>
                 <View style={styles.orderContentView}>
@@ -88,7 +87,7 @@ class OrdersTab extends Component {
                     }}>
                     <View style={styles.detailBtn}>
                       <Text
-                        style={{fontFamily: 'Lato-Black', color: '#EC942A'}}>
+                        style={{color: '#EC942A'}}>
                         Details
                       </Text>
                     </View>
@@ -139,14 +138,13 @@ const styles = StyleSheet.create({
     marginVertical: hp('1%'),
   },
   boldText: {
-    fontFamily: 'Lato-Black',
     color: '#B6B6B6',
     fontSize: hp('2%'),
     color: 'grey',
   },
   simpleText: {
     fontSize: hp('2%'),
-    fontFamily: 'Lato-Bold',
+   
     color: '#B6B6B6',
   },
   orderContentView: {
@@ -166,7 +164,7 @@ const styles = StyleSheet.create({
   },
   statusText: {
     color: '#EC942A',
-    fontFamily: 'Lato-Black',
+    
     fontSize: hp('2%'),
   },
 });

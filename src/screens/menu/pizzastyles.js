@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   name: {
     color: 'white',
-    fontFamily: 'Lato-Black',
+    
     fontSize: hp('2.5%'),
   },
   rating: {
@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
   },
   textPrice: {
     color: '#F89919',
-    fontFamily: 'Lato-Black',
   },
 
   popularImg: {

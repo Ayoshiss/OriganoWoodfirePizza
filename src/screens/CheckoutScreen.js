@@ -162,7 +162,7 @@ class CheckoutScreen extends Component {
           </Modal>
           <Text
             style={{
-              fontFamily: 'Lato-Bold',
+              
               textAlign: 'center',
               marginTop: hp('5%'),
               alignSelf: 'center',
@@ -184,7 +184,7 @@ class CheckoutScreen extends Component {
             <Text
               style={{
                 fontSize: hp('2.5%'),
-                fontFamily: 'Lato-Bold',
+                
                 color: '#EC942A',
               }}>
               Pay with PayPal
@@ -220,7 +220,7 @@ class CheckoutScreen extends Component {
             <Text
               style={{
                 fontSize: hp('2.5%'),
-                fontFamily: 'Lato-Bold',
+               
                 color: '#EC942A',
               }}>
               Pay with Card

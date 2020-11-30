@@ -74,7 +74,7 @@ class EditIngredients extends Component {
             style={{
               fontSize: hp('3%'),
               marginVertical: 14,
-              fontFamily: 'Lato-Black',
+          
               alignSelf: 'center',
             }}>
             Pizza Ingredients
@@ -121,7 +121,8 @@ class EditIngredients extends Component {
                 fontSize: hp('2.2%'),
                 textAlign: 'left',
                 color: '#000',
-                fontFamily: 'Lato-Regular',
+            
+
               }}
               containerStyle={{
                 height: hp('6%'),
@@ -167,7 +168,7 @@ class EditIngredients extends Component {
                     <Text
                       style={{
                         fontSize: hp('2.2%'),
-                        fontFamily: 'Lato-Regular',
+                     
                       }}>
                       {item.item}
                     </Text>
@@ -187,7 +188,7 @@ class EditIngredients extends Component {
                     </TouchableOpacity>
                     <Text
                       style={{
-                        fontFamily: 'Lato-Bold',
+                        
                         paddingHorizontal: wp('4%'),
                       }}>
                       {item.quantity}
@@ -224,7 +225,8 @@ class EditIngredients extends Component {
               fontSize: hp('2.5%'),
               paddingHorizontal: wp('5%'),
               paddingVertical: hp('2.5%'),
-              fontFamily: 'Lato-Black',
+              
+
             }}>
             Add More Toppings
           </Text>
@@ -252,7 +254,7 @@ class EditIngredients extends Component {
             style={{
               fontSize: hp('3%'),
               marginVertical: 14,
-              fontFamily: 'Lato-Black',
+    
               alignSelf: 'center',
             }}>
             Add More Toppings
@@ -371,10 +373,10 @@ class EditIngredients extends Component {
             style={{
               fontSize: hp('2.5%'),
               paddingVertical: hp('1%'),
-              fontFamily: 'Lato-Regular',
+             
             }}>
             Total :
-            <Text style={{color: 'green', fontFamily: 'Lato-Black'}}>
+            <Text style={{color: 'green'}}>
               {' '}
               {'$'}
               {this.state.ingredientPrice + this.state.sizePrice}{' '}
@@ -411,7 +413,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   price: {
-    fontFamily: 'Lato-Bold',
     fontSize: hp('2.2%'),
   },
   checkOutButtontext: {

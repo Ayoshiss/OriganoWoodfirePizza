@@ -6,6 +6,7 @@ import {
   FlatList,
   TouchableWithoutFeedback,
   SafeAreaView,
+  Platform, 
   ScrollView,
   TouchableOpacity,
   ActivityIndicator,
@@ -513,7 +514,7 @@ export default class HomeScreen extends React.Component {
                   fontSize: hp('2.2%'),
                   marginTop: hp('2%'),
                   color: 'grey',
-                  fontFamily: 'Lato-Italic',
+                  
                 }}>
                 Have an account?
               </Text>
@@ -525,7 +526,7 @@ export default class HomeScreen extends React.Component {
                 style={{
                   marginTop: hp('2%'),
                   color: 'grey',
-                  fontFamily: 'Lato-Italic',
+                  
                 }}>
                 or
               </Text>
@@ -641,12 +642,21 @@ export default class HomeScreen extends React.Component {
                 />
               </View>
             )}
-            {this.state.showPickupInput && (
+            {this.state.showPickupInput && ( 
               <View
-                style={{
+            style={{
+              ...(Platform.OS !== 'android'
+                ? {
                   marginHorizontal: wp('5%'),
                   marginVertical: hp('1%'),
-                }}>
+                  zIndex: 10,
+                  }
+                : {
+                  marginHorizontal: wp('5%'),
+                  marginVertical: hp('1%'),
+                  }),
+            }}>
+              
                 <StorePicker
                   onChangeItem={(item) => this.handlePickupBtn(item)}
                 />
@@ -687,7 +697,7 @@ export default class HomeScreen extends React.Component {
                   )}
                   <Text
                     style={{
-                      fontFamily: 'Lato-Bold',
+                      
                       textDecorationLine: 'underline',
                       fontSize: hp('2%'),
                     }}>
@@ -733,7 +743,7 @@ var styles = StyleSheet.create({
     marginVertical: hp('1%'),
   },
   bestMenuText: {
-    fontFamily: 'Lato-Black',
+    
     fontSize: hp('3.5%'),
     color: '#EC942A',
     marginVertical: hp('2%'),
@@ -763,13 +773,13 @@ var styles = StyleSheet.create({
     paddingHorizontal: wp('3%'),
   },
   name: {
-    fontFamily: 'Lato-Black',
+   
     color: 'white',
     fontSize: wp('5%'),
     right: wp('3%'),
   },
   btnLogin: {
-    fontFamily: 'Lato-Regular',
+   
     paddingHorizontal: wp('1%'),
     textDecorationLine: 'underline',
     fontSize: hp('2.2%'),

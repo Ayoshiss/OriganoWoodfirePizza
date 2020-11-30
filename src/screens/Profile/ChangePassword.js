@@ -178,7 +178,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#EC942A',
   },
   loginText: {
-    fontFamily: 'Lato-Black',
+    
     fontSize: hp('4.5%'),
     fontWeight: 'bold',
     color: '#fbfbfb',
@@ -203,7 +203,7 @@ var styles = StyleSheet.create({
     marginBottom: hp('4%'),
   },
   errorMessage: {
-    fontFamily: 'Lato-Regular',
+    
     color: 'red',
     fontSize: hp('2%'),
     textAlign: 'center',

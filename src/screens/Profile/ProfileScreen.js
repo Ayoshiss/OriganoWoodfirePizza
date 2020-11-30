@@ -108,7 +108,7 @@ export class ProfileScreen extends Component {
               displayName !== null && (
                 <Text
                   style={{
-                    fontFamily: 'Lato-Bold',
+                   
                     color: '#EC942A',
                     fontSize: hp('3%'),
                   }}>
@@ -139,7 +139,7 @@ export class ProfileScreen extends Component {
               />
               <Text
                 style={{
-                  fontFamily: 'Lato-Regular',
+          
                   color: '#EC942A',
                   paddingHorizontal: wp('1%'),
                   paddingVertical: hp('0.2%'),
@@ -165,7 +165,7 @@ export class ProfileScreen extends Component {
 
               <Text
                 style={{
-                  fontFamily: 'Lato-Regular',
+                  
                   color: '#EC942A',
                   paddingHorizontal: wp('1%'),
                   paddingVertical: hp('0.2%'),
@@ -196,7 +196,7 @@ export class ProfileScreen extends Component {
           <Text
             style={{
               fontSize: hp('3.5%'),
-              fontFamily: 'Lato-Black',
+            
               marginTop: hp('1%'),
               marginBottom: hp('0.5%'),
               color: '#fbfbfb',
@@ -208,7 +208,7 @@ export class ProfileScreen extends Component {
               marginBottom: hp('6%'),
               color: '#fbfbfb',
               fontSize: hp('2%'),
-              fontFamily: 'Lato-Bold',
+          
             }}>
             {this.state.phoneNumber}
           </Text>

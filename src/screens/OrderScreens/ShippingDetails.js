@@ -196,7 +196,7 @@ var styles = StyleSheet.create({
   loginText: {
     fontSize: hp('5%'),
     color: '#FBFBFB',
-    fontFamily: 'Lato-Black',
+  
   },
   cardView: {
     height: hp('74%'),
@@ -224,7 +224,7 @@ var styles = StyleSheet.create({
     paddingHorizontal: wp('1%'),
     paddingVertical: hp('1%'),
     fontSize: hp('2%'),
-    fontFamily: 'Lato-Black',
+  
     color: 'grey',
   },
 });

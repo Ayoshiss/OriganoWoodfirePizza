@@ -125,7 +125,8 @@ class HalfPizzaScreen extends Component {
                   color: '#fbfbfb',
                   textAlign: 'center',
                   fontSize: wp('3.5%'),
-                  fontFamily: 'Lato-Regular',
+                  
+
                 }}>
                 {this.state.badgeCount}
               </Text>
@@ -162,7 +163,7 @@ class HalfPizzaScreen extends Component {
                     fontSize: hp('2.2%'),
                     textAlign: 'left',
                     color: '#000',
-                    fontFamily: 'Lato-Regular',
+                   
                   }}
                   containerStyle={{
                     height: hp('6%'),
@@ -203,7 +204,7 @@ class HalfPizzaScreen extends Component {
                     fontSize: hp('2.2%'),
                     textAlign: 'left',
                     color: '#000',
-                    fontFamily: 'Lato-Regular',
+                    
                   }}
                   containerStyle={{
                     height: hp('6%'),
@@ -306,12 +307,12 @@ var styles = StyleSheet.create({
   },
   textPrice: {
     color: '#EC942A',
-    fontFamily: 'Lato-Bold',
+    
     fontSize: hp('4%'),
   },
   textName: {
     color: '#3E3C3E',
-    fontFamily: 'Lato-Bold',
+
     fontSize: hp('6%'),
     paddingVertical: hp('2%'),
   },
@@ -327,7 +328,7 @@ var styles = StyleSheet.create({
   },
   textOrder: {
     color: 'white',
-    fontFamily: 'Lato-Black',
+    
     fontSize: hp('2.5%'),
   },
   badge: {

@@ -5,17 +5,26 @@ platform :ios, '13.5'
 
 
 target 'origano' do
+
   config = use_native_modules!
   use_react_native!(:path => config["reactNativePath"])
+
+pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+target 'OriganoWoodfirePizzaAppClip' do
+	inherit! :complete
+	#Pods for OriganoWoodfirePizzaAppClip 
+end
 
   target 'origanoTests' do
     inherit! :complete
     # Pods for testing
   end
 
-pod 'RNPaypal', :path => '../node_modules/react-native-paypal-lib/ios'
+
 pod 'Firebase/Analytics'
 pod 'Firebase/DynamicLinks'
+pod 'FirebaseUI'
 
 # add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
@@ -35,6 +44,8 @@ end
 
 target 'origano-tvOS' do
   # Pods for origano-tvOS
+
+
 
   target 'origano-tvOSTests' do
     inherit! :search_paths

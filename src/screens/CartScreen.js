@@ -212,7 +212,7 @@ export class CartScreen extends Component {
             <Icon name={'ios-cart'} style={[{color: '#ddd'}]} size={200} />
             <Text
               style={{
-                fontFamily: 'Lato-Bold',
+                
                 fontSize: hp('3.5%'),
                 color: '#B6B6B6',
                 marginHorizontal: wp('3%'),
@@ -298,19 +298,19 @@ export class CartScreen extends Component {
                   }}>
                   <View style={{marginBottom: hp('1.5%')}}>
                     <Text
-                      style={{fontSize: hp('2.5%'), fontFamily: 'Lato-Bold'}}>
+                      style={{fontSize: hp('2.5%')}}>
                       {item.food.name}
                     </Text>
                     {item.food.size && (
                       <TouchableOpacity
                         onPress={() => this[RBSheet + i].open()}>
-                        <Text style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                        <Text style={{color: 'grey'}}>
                           View Details
                         </Text>
                       </TouchableOpacity>
                     )}
                     {!item.food.size && (
-                      <Text style={{color: 'white', fontFamily: 'Lato-Bold'}}>
+                      <Text style={{color: 'white'}}>
                         View Details
                       </Text>
                     )}
@@ -337,12 +337,11 @@ export class CartScreen extends Component {
                       }}>
                       <Text
                         style={{
-                          fontFamily: 'Lato-Black',
                           fontSize: hp('2.2%'),
                           paddingVertical: hp('1%'),
                         }}>
                         Size :{' '}
-                        <Text style={{color: 'grey', fontFamily: 'Lato-Bold'}}>
+                        <Text style={{color: 'grey'}}>
                           {item.food.size}
                         </Text>
                       </Text>
@@ -350,7 +349,7 @@ export class CartScreen extends Component {
                         <Text
                           style={{
                             fontSize: hp('2.2%'),
-                            fontFamily: 'Lato-Black',
+                            
                           }}>
                           Toppings :
                           {item.ingredients.map((ingredient, i) => {
@@ -366,7 +365,7 @@ export class CartScreen extends Component {
                                 key={i}
                                 style={{
                                   color: 'grey',
-                                  fontFamily: 'Lato-Bold',
+
                                 }}>
                                 {' '}
                                 {ingredient.name}
@@ -381,7 +380,7 @@ export class CartScreen extends Component {
                         <Text
                           style={{
                             fontSize: hp('2.2%'),
-                            fontFamily: 'Lato-Black',
+                            
                           }}>
                           Don't Include :
                           {item.finalDesc.map((finalDes, i) => {
@@ -397,7 +396,6 @@ export class CartScreen extends Component {
                                 key={i}
                                 style={{
                                   color: 'grey',
-                                  fontFamily: 'Lato-Bold',
                                 }}>
                                 {' '}
                                 {finalDes}
@@ -428,7 +426,7 @@ export class CartScreen extends Component {
 
                     <Text
                       style={{
-                        fontFamily: 'Lato-Black',
+                       
                         paddingHorizontal: wp('2%'),
                         color: 'grey',
                         fontSize: hp('2.3'),
@@ -449,7 +447,7 @@ export class CartScreen extends Component {
                 <View style={{alignSelf: 'flex-end'}}>
                   <Text
                     style={{
-                      fontFamily: 'Lato-Black',
+                     
                       color: '#EC942A',
                       fontSize: hp('2.5%'),
                     }}>
@@ -493,7 +491,7 @@ export class CartScreen extends Component {
               }}>
               <Text
                 style={{
-                  fontFamily: 'Lato-Bold',
+                  
                   color: 'grey',
                   fontSize: hp('2.2%'),
                 }}>
@@ -503,7 +501,7 @@ export class CartScreen extends Component {
             <View style={{width: wp('18%'), paddingTop: hp('1%')}}>
               <Text
                 style={{
-                  fontFamily: 'Lato-Black',
+                  
                   color: '#EC942A',
                   fontSize: hp('2.3%'),
                 }}>
@@ -524,7 +522,7 @@ export class CartScreen extends Component {
                 style={{
                   color: 'grey',
                   fontSize: hp('2.2%'),
-                  fontFamily: 'Lato-Bold',
+                  
                 }}>
                 Delivery Charge
               </Text>
@@ -534,7 +532,7 @@ export class CartScreen extends Component {
                 style={{
                   color: '#EC942A',
                   fontSize: hp('2.3%'),
-                  fontFamily: 'Lato-Black',
+                 
                 }}>
                 ${deliveryCharge}
               </Text>
@@ -552,7 +550,7 @@ export class CartScreen extends Component {
                 style={{
                   color: 'grey',
                   fontSize: hp('2.2%'),
-                  fontFamily: 'Lato-Bold',
+               
                 }}>
                 First Order Discount
               </Text>
@@ -562,7 +560,7 @@ export class CartScreen extends Component {
                 style={{
                   color: '#EC942A',
                   fontSize: hp('2.3%'),
-                  fontFamily: 'Lato-Black',
+                  
                 }}>
                 ${10}
               </Text>
@@ -585,7 +583,7 @@ export class CartScreen extends Component {
                 <Text
                   style={{
                     fontSize: hp('2.3%'),
-                    fontFamily: 'Lato-Black',
+                    
                     color: 'white',
                   }}>
                   $
@@ -598,7 +596,7 @@ export class CartScreen extends Component {
                 <Text
                   style={{
                     fontSize: hp('2.3%'),
-                    fontFamily: 'Lato-Black',
+                    
                     color: 'white',
                   }}>
                   ${Math.round(this.onCartTotal() * 100 + Number.EPSILON) / 100}
@@ -608,7 +606,7 @@ export class CartScreen extends Component {
                 <Text
                   style={{
                     fontSize: hp('2.3%'),
-                    fontFamily: 'Lato-Black',
+                    
                     color: 'white',
                   }}>
                   $
@@ -622,7 +620,7 @@ export class CartScreen extends Component {
                 <Text
                   style={{
                     fontSize: hp('2.3%'),
-                    fontFamily: 'Lato-Black',
+                    
                     color: 'white',
                   }}>
                   $
@@ -660,7 +658,7 @@ var styles = StyleSheet.create({
   },
 
   title: {
-    fontFamily: 'Lato-Black',
+   
     fontSize: hp('3.5%'),
     color: '#EC942A',
   },
@@ -668,7 +666,7 @@ var styles = StyleSheet.create({
     alignContent: 'space-between',
   },
   textOrder: {
-    fontFamily: 'Lato-Bold',
+   
     color: 'white',
     fontWeight: 'bold',
     fontSize: hp('2.5%'),

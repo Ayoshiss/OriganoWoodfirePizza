@@ -10,13 +10,22 @@
 		00E356F31AD99517003FC87E /* origanoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* origanoTests.m */; };
 		0CB745A70E7DCB389790F96D /* libPods-origano-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF13E5B4C9CB067CB3443AC2 /* libPods-origano-tvOSTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* origanoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* origanoTests.m */; };
+		462FE72E2552A389009DE64F /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F252510DA92009CCA86 /* Lato-Black.ttf */; };
+		462FE72F2552A389009DE64F /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F2C2510DA92009CCA86 /* Lato-BlackItalic.ttf */; };
+		462FE7302552A389009DE64F /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F282510DA92009CCA86 /* Lato-Bold.ttf */; };
+		462FE7312552A389009DE64F /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F232510DA91009CCA86 /* Lato-BoldItalic.ttf */; };
+		462FE7322552A389009DE64F /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F242510DA92009CCA86 /* Lato-Italic.ttf */; };
+		462FE7332552A389009DE64F /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F262510DA92009CCA86 /* Lato-Light.ttf */; };
+		462FE7342552A389009DE64F /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F292510DA92009CCA86 /* Lato-LightItalic.ttf */; };
+		462FE7352552A389009DE64F /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F2D2510DA93009CCA86 /* Lato-Regular.ttf */; };
+		462FE7362552A389009DE64F /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F272510DA92009CCA86 /* Lato-Thin.ttf */; };
+		462FE7372552A389009DE64F /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F2A2510DA92009CCA86 /* Lato-ThinItalic.ttf */; };
+		462FE7382552A389009DE64F /* OSWALD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F2B2510DA92009CCA86 /* OSWALD.otf */; };
+		462FE7F22553E9AF009DE64F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462FE79F2552CB20009DE64F /* ViewController.m */; };
 		465D9F222510D01E009CCA86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F212510D01D009CCA86 /* GoogleService-Info.plist */; };
 		465D9F2E2510DA93009CCA86 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F232510DA91009CCA86 /* Lato-BoldItalic.ttf */; };
 		465D9F2F2510DA93009CCA86 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F242510DA92009CCA86 /* Lato-Italic.ttf */; };
@@ -29,7 +38,19 @@
 		465D9F362510DA93009CCA86 /* OSWALD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F2B2510DA92009CCA86 /* OSWALD.otf */; };
 		465D9F372510DA93009CCA86 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F2C2510DA92009CCA86 /* Lato-BlackItalic.ttf */; };
 		465D9F382510DA93009CCA86 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465D9F2D2510DA93009CCA86 /* Lato-Regular.ttf */; };
+		46B2801D253EAC2D004771A8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B2801B253EAC2D004771A8 /* LaunchScreen.xib */; };
+		46BC45672557E3F400F052B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		46D48269254A8E400003D343 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D48268254A8E400003D343 /* File.swift */; };
+		46D482FB254A94470003D343 /* OriganoWoodfirePizzaAppClipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D482FA254A94470003D343 /* OriganoWoodfirePizzaAppClipTests.m */; };
+		46D48306254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D48305254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests.m */; };
+		46D4830A254A94470003D343 /* OriganoWoodfirePizzaAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 46D482DB254A94420003D343 /* OriganoWoodfirePizzaAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		46D6BB0F2550045A0079D27E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B2801B253EAC2D004771A8 /* LaunchScreen.xib */; };
+		46D6BB17255004730079D27E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		46D6BB27255004B50079D27E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		46D6BB3025500B0A0079D27E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D48268254A8E400003D343 /* File.swift */; };
+		46D6BD3D2551437F0079D27E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46D6BD3C2551437F0079D27E /* GoogleService-Info.plist */; };
 		6529A576FBDC3004799AF4C2 /* libPods-origano-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EE28E845E6FF2D62CD6CFD /* libPods-origano-tvOS.a */; };
+		8495D77C6B0D41DC3A252B25 /* libPods-origano-OriganoWoodfirePizzaAppClip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E19EEF958031E64A7069C43 /* libPods-origano-OriganoWoodfirePizzaAppClip.a */; };
 		93B77CC021C48B2F87391ABC /* libPods-origano-origanoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E64CCCD71D3B618C1B042A54 /* libPods-origano-origanoTests.a */; };
 		A485812DF351B2D652FBE76D /* libPods-origano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C893F4127157DDB838085EEA /* libPods-origano.a */; };
 /* End PBXBuildFile section */
@@ -49,7 +70,42 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "origano-tvOS";
 		};
+		46D482F7254A94470003D343 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46D482DA254A94420003D343;
+			remoteInfo = OriganoWoodfirePizzaAppClip;
+		};
+		46D48302254A94470003D343 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46D482DA254A94420003D343;
+			remoteInfo = OriganoWoodfirePizzaAppClip;
+		};
+		46D48308254A94470003D343 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46D482DA254A94420003D343;
+			remoteInfo = OriganoWoodfirePizzaAppClip;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4690ACBC25441ADA00DDB1FF /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				46D4830A254A94470003D343 /* OriganoWoodfirePizzaAppClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -60,10 +116,9 @@
 		07799915DA614480B069D0C9 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		102767B5278E484A8EE939D1 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = ../src/assets/fonts/Entypo.ttf; sourceTree = "<group>"; };
 		109C35E1B010471C8722E12D /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* origano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = origano.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Origano Woodfire Pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Origano Woodfire Pizza.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = origano/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = origano/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = origano/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = origano/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = origano/main.m; sourceTree = "<group>"; };
@@ -80,6 +135,8 @@
 		3F98AED61E9347B7AA3E1D0C /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = ../src/assets/fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 		4417F20B31604519B8CE242C /* Lato-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Black.ttf"; path = "../src/assets/fonts/Lato-Black.ttf"; sourceTree = "<group>"; };
 		4460C1E4DE50411CA2BBDE44 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = ../src/assets/fonts/Ionicons.ttf; sourceTree = "<group>"; };
+		462FE79E2552CB20009DE64F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		462FE79F2552CB20009DE64F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		465D9F212510D01D009CCA86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		465D9F232510DA91009CCA86 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
 		465D9F242510DA92009CCA86 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
@@ -92,6 +149,30 @@
 		465D9F2B2510DA92009CCA86 /* OSWALD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OSWALD.otf; sourceTree = "<group>"; };
 		465D9F2C2510DA92009CCA86 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		465D9F2D2510DA93009CCA86 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		468610472524A43700E3BD9F /* Origano Woodfire Pizza.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Origano Woodfire Pizza.entitlements"; path = "origano/Origano Woodfire Pizza.entitlements"; sourceTree = "<group>"; };
+		46B2801C253EAC2D004771A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = origano/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		46BC451C255403C600F052B7 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		46BC451D255403C600F052B7 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		46BC451E255403C700F052B7 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = SOURCE_ROOT; };
+		46BC451F255403C700F052B7 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = SOURCE_ROOT; };
+		46BC4520255403C700F052B7 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		46BC4521255403C700F052B7 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		46BC4522255403C700F052B7 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		46BC4523255403C700F052B7 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = SOURCE_ROOT; };
+		46BC4524255403C700F052B7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		46BC4525255403C700F052B7 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		46D48267254A8E400003D343 /* origano-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "origano-Bridging-Header.h"; sourceTree = "<group>"; };
+		46D48268254A8E400003D343 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		46D482DB254A94420003D343 /* OriganoWoodfirePizzaAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriganoWoodfirePizzaAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46D482EE254A94470003D343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46D482F1254A94470003D343 /* OriganoWoodfirePizzaAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OriganoWoodfirePizzaAppClip.entitlements; sourceTree = "<group>"; };
+		46D482F6254A94470003D343 /* OriganoWoodfirePizzaAppClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OriganoWoodfirePizzaAppClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46D482FA254A94470003D343 /* OriganoWoodfirePizzaAppClipTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OriganoWoodfirePizzaAppClipTests.m; sourceTree = "<group>"; };
+		46D482FC254A94470003D343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46D48301254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OriganoWoodfirePizzaAppClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46D48305254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OriganoWoodfirePizzaAppClipUITests.m; sourceTree = "<group>"; };
+		46D48307254A94470003D343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46D6BD3C2551437F0079D27E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		49E53ED71B0249A4AF27195F /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = ../src/assets/fonts/FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
 		4B5AE003E595422E8E8535CA /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = ../src/assets/fonts/Zocial.ttf; sourceTree = "<group>"; };
 		4E3F63576F2C987CB9307ECC /* Pods-origano-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-origano-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-origano-tvOS/Pods-origano-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,11 +186,14 @@
 		7A86A80BD24D4CF58640ABFE /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = ../src/assets/fonts/FontAwesome.ttf; sourceTree = "<group>"; };
 		7B26C4A8F00F4FE595FBAFAD /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		7B6C211DF08947979AFC3197 /* Lato-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Italic.ttf"; path = "../src/assets/fonts/Lato-Italic.ttf"; sourceTree = "<group>"; };
+		7E19EEF958031E64A7069C43 /* libPods-origano-OriganoWoodfirePizzaAppClip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-origano-OriganoWoodfirePizzaAppClip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F00C9E24E174F1F95121D19 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		7F286F5711B6E32732B541B8 /* Pods-origano-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-origano-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-origano-tvOSTests/Pods-origano-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		807F2BA0489C463AACE7EBB7 /* OSWALD.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = OSWALD.otf; path = ../src/assets/fonts/OSWALD.otf; sourceTree = "<group>"; };
 		8493B9BEE736491A83C9F27F /* Lato-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Light.ttf"; path = "../src/assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
 		84BB2F63235F407DB35DDFBF /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		856D548D9D144F7796266D34 /* Pods-origano-OriganoWoodfirePizzaAppClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-origano-OriganoWoodfirePizzaAppClip.debug.xcconfig"; path = "Target Support Files/Pods-origano-OriganoWoodfirePizzaAppClip/Pods-origano-OriganoWoodfirePizzaAppClip.debug.xcconfig"; sourceTree = "<group>"; };
+		A227B0617A26C8254B1E5A0E /* Pods-origano-OriganoWoodfirePizzaAppClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-origano-OriganoWoodfirePizzaAppClip.release.xcconfig"; path = "Target Support Files/Pods-origano-OriganoWoodfirePizzaAppClip/Pods-origano-OriganoWoodfirePizzaAppClip.release.xcconfig"; sourceTree = "<group>"; };
 		A3754216E4D8AEBAFEC37D46 /* Pods-origano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-origano.release.xcconfig"; path = "Target Support Files/Pods-origano/Pods-origano.release.xcconfig"; sourceTree = "<group>"; };
 		A48F5CBF5BB3442A84BA04DB /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = ../src/assets/fonts/Fontisto.ttf; sourceTree = "<group>"; };
 		A50106EED2004C2C8E4A98AA /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -169,6 +253,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46D482D8254A94420003D343 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8495D77C6B0D41DC3A252B25 /* libPods-origano-OriganoWoodfirePizzaAppClip.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46D482F3254A94470003D343 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46D482FE254A94470003D343 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -192,11 +298,11 @@
 		13B07FAE1A68108700A75B9A /* origano */ = {
 			isa = PBXGroup;
 			children = (
+				468610472524A43700E3BD9F /* Origano Woodfire Pizza.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = origano;
@@ -211,8 +317,49 @@
 				E64CCCD71D3B618C1B042A54 /* libPods-origano-origanoTests.a */,
 				B2EE28E845E6FF2D62CD6CFD /* libPods-origano-tvOS.a */,
 				FF13E5B4C9CB067CB3443AC2 /* libPods-origano-tvOSTests.a */,
+				7E19EEF958031E64A7069C43 /* libPods-origano-OriganoWoodfirePizzaAppClip.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46D482DC254A94420003D343 /* OriganoWoodfirePizzaAppClip */ = {
+			isa = PBXGroup;
+			children = (
+				46BC451E255403C700F052B7 /* Lato-Black.ttf */,
+				46BC4520255403C700F052B7 /* Lato-BlackItalic.ttf */,
+				46BC4524255403C700F052B7 /* Lato-Bold.ttf */,
+				46BC4522255403C700F052B7 /* Lato-BoldItalic.ttf */,
+				46BC451F255403C700F052B7 /* Lato-Italic.ttf */,
+				46BC4525255403C700F052B7 /* Lato-Light.ttf */,
+				46BC4521255403C700F052B7 /* Lato-LightItalic.ttf */,
+				46BC451C255403C600F052B7 /* Lato-Regular.ttf */,
+				46BC4523255403C700F052B7 /* Lato-Thin.ttf */,
+				46BC451D255403C600F052B7 /* Lato-ThinItalic.ttf */,
+				462FE79E2552CB20009DE64F /* ViewController.h */,
+				462FE79F2552CB20009DE64F /* ViewController.m */,
+				46D6BD3C2551437F0079D27E /* GoogleService-Info.plist */,
+				46D482EE254A94470003D343 /* Info.plist */,
+				46D482F1254A94470003D343 /* OriganoWoodfirePizzaAppClip.entitlements */,
+			);
+			path = OriganoWoodfirePizzaAppClip;
+			sourceTree = "<group>";
+		};
+		46D482F9254A94470003D343 /* OriganoWoodfirePizzaAppClipTests */ = {
+			isa = PBXGroup;
+			children = (
+				46D482FA254A94470003D343 /* OriganoWoodfirePizzaAppClipTests.m */,
+				46D482FC254A94470003D343 /* Info.plist */,
+			);
+			path = OriganoWoodfirePizzaAppClipTests;
+			sourceTree = "<group>";
+		};
+		46D48304254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46D48305254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests.m */,
+				46D48307254A94470003D343 /* Info.plist */,
+			);
+			path = OriganoWoodfirePizzaAppClipUITests;
 			sourceTree = "<group>";
 		};
 		50E8C539FD97D31526F64884 /* Pods */ = {
@@ -226,6 +373,8 @@
 				366EBB9002C6117F12F2048B /* Pods-origano-tvOS.release.xcconfig */,
 				7F286F5711B6E32732B541B8 /* Pods-origano-tvOSTests.debug.xcconfig */,
 				C1DF0D29EDD7CDFE22F6FD8B /* Pods-origano-tvOSTests.release.xcconfig */,
+				856D548D9D144F7796266D34 /* Pods-origano-OriganoWoodfirePizzaAppClip.debug.xcconfig */,
+				A227B0617A26C8254B1E5A0E /* Pods-origano-OriganoWoodfirePizzaAppClip.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -240,6 +389,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				46D48268254A8E400003D343 /* File.swift */,
+				46B2801B253EAC2D004771A8 /* LaunchScreen.xib */,
 				465D9F252510DA92009CCA86 /* Lato-Black.ttf */,
 				465D9F2C2510DA92009CCA86 /* Lato-BlackItalic.ttf */,
 				465D9F282510DA92009CCA86 /* Lato-Bold.ttf */,
@@ -256,10 +407,14 @@
 				13B07FAE1A68108700A75B9A /* origano */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* origanoTests */,
+				46D482DC254A94420003D343 /* OriganoWoodfirePizzaAppClip */,
+				46D482F9254A94470003D343 /* OriganoWoodfirePizzaAppClipTests */,
+				46D48304254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				EA0480C95E314AC3B42C0141 /* Resources */,
 				50E8C539FD97D31526F64884 /* Pods */,
+				46D48267254A8E400003D343 /* origano-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -269,10 +424,13 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* origano.app */,
+				13B07F961A680F5B00A75B9A /* Origano Woodfire Pizza.app */,
 				00E356EE1AD99517003FC87E /* origanoTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* origano-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* origano-tvOSTests.xctest */,
+				46D482DB254A94420003D343 /* OriganoWoodfirePizzaAppClip.app */,
+				46D482F6254A94470003D343 /* OriganoWoodfirePizzaAppClipTests.xctest */,
+				46D48301254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -362,14 +520,16 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				BB712FD17212739408FD4B9C /* [CP] Copy Pods Resources */,
 				87CB2C6C9C6DA476657AEF4D /* [CP-User] [RNFB] Core Configuration */,
+				4690ACBC25441ADA00DDB1FF /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				46D48309254A94470003D343 /* PBXTargetDependency */,
 			);
 			name = origano;
 			productName = origano;
-			productReference = 13B07F961A680F5B00A75B9A /* origano.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Origano Woodfire Pizza.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E47A1E0B4A5D006451C7 /* origano-tvOS */ = {
@@ -411,21 +571,80 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* origano-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		46D482DA254A94420003D343 /* OriganoWoodfirePizzaAppClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46D4830B254A94470003D343 /* Build configuration list for PBXNativeTarget "OriganoWoodfirePizzaAppClip" */;
+			buildPhases = (
+				ACDFF7F627512EFAC64FDC84 /* [CP] Check Pods Manifest.lock */,
+				46D6BDCD255154EB0079D27E /* Start Packager */,
+				46D482D7254A94420003D343 /* Sources */,
+				46D482D8254A94420003D343 /* Frameworks */,
+				46D482D9254A94420003D343 /* Resources */,
+				46D6BDCE255155430079D27E /* Bundle React Native code and images */,
+				11D76B3E9EA30393FEA7CA6E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OriganoWoodfirePizzaAppClip;
+			productName = OriganoWoodfirePizzaAppClip;
+			productReference = 46D482DB254A94420003D343 /* OriganoWoodfirePizzaAppClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
+		46D482F5254A94470003D343 /* OriganoWoodfirePizzaAppClipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46D4830E254A94470003D343 /* Build configuration list for PBXNativeTarget "OriganoWoodfirePizzaAppClipTests" */;
+			buildPhases = (
+				46D482F2254A94470003D343 /* Sources */,
+				46D482F3254A94470003D343 /* Frameworks */,
+				46D482F4254A94470003D343 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46D482F8254A94470003D343 /* PBXTargetDependency */,
+			);
+			name = OriganoWoodfirePizzaAppClipTests;
+			productName = OriganoWoodfirePizzaAppClipTests;
+			productReference = 46D482F6254A94470003D343 /* OriganoWoodfirePizzaAppClipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		46D48300254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46D48311254A94470003D343 /* Build configuration list for PBXNativeTarget "OriganoWoodfirePizzaAppClipUITests" */;
+			buildPhases = (
+				46D482FD254A94470003D343 /* Sources */,
+				46D482FE254A94470003D343 /* Frameworks */,
+				46D482FF254A94470003D343 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46D48303254A94470003D343 /* PBXTargetDependency */,
+			);
+			name = OriganoWoodfirePizzaAppClipUITests;
+			productName = OriganoWoodfirePizzaAppClipUITests;
+			productReference = 46D48301254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1150;
+				DefaultBuildSystemTypeForWorkspace = Latest;
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 4QP48WVLU2;
-						LastSwiftMigration = 1120;
+						DevelopmentTeam = MJY56DYTQU;
+						LastSwiftMigration = 1210;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -435,6 +654,23 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+					};
+					46D482DA254A94420003D343 = {
+						CreatedOnToolsVersion = 12.1;
+						DevelopmentTeam = MJY56DYTQU;
+						ProvisioningStyle = Automatic;
+					};
+					46D482F5254A94470003D343 = {
+						CreatedOnToolsVersion = 12.1;
+						DevelopmentTeam = MJY56DYTQU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 46D482DA254A94420003D343;
+					};
+					46D48300254A94470003D343 = {
+						CreatedOnToolsVersion = 12.1;
+						DevelopmentTeam = MJY56DYTQU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 46D482DA254A94420003D343;
 					};
 				};
 			};
@@ -455,6 +691,9 @@
 				00E356ED1AD99517003FC87E /* origanoTests */,
 				2D02E47A1E0B4A5D006451C7 /* origano-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* origano-tvOSTests */,
+				46D482DA254A94420003D343 /* OriganoWoodfirePizzaAppClip */,
+				46D482F5254A94470003D343 /* OriganoWoodfirePizzaAppClipTests */,
+				46D48300254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -481,9 +720,9 @@
 				465D9F352510DA93009CCA86 /* Lato-ThinItalic.ttf in Resources */,
 				465D9F362510DA93009CCA86 /* OSWALD.otf in Resources */,
 				465D9F372510DA93009CCA86 /* Lato-BlackItalic.ttf in Resources */,
+				46B2801D253EAC2D004771A8 /* LaunchScreen.xib in Resources */,
 				465D9F382510DA93009CCA86 /* Lato-Regular.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				465D9F222510D01E009CCA86 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +736,41 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46D482D9254A94420003D343 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462FE72E2552A389009DE64F /* Lato-Black.ttf in Resources */,
+				462FE72F2552A389009DE64F /* Lato-BlackItalic.ttf in Resources */,
+				462FE7302552A389009DE64F /* Lato-Bold.ttf in Resources */,
+				462FE7312552A389009DE64F /* Lato-BoldItalic.ttf in Resources */,
+				462FE7322552A389009DE64F /* Lato-Italic.ttf in Resources */,
+				462FE7332552A389009DE64F /* Lato-Light.ttf in Resources */,
+				462FE7342552A389009DE64F /* Lato-LightItalic.ttf in Resources */,
+				462FE7352552A389009DE64F /* Lato-Regular.ttf in Resources */,
+				462FE7362552A389009DE64F /* Lato-Thin.ttf in Resources */,
+				462FE7372552A389009DE64F /* Lato-ThinItalic.ttf in Resources */,
+				462FE7382552A389009DE64F /* OSWALD.otf in Resources */,
+				46D6BB0F2550045A0079D27E /* LaunchScreen.xib in Resources */,
+				46D6BB17255004730079D27E /* Images.xcassets in Resources */,
+				46D6BD3D2551437F0079D27E /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46D482F4254A94470003D343 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46D482FF254A94470003D343 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -540,7 +814,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		0CFBABF716C3296A98D93E1A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -564,6 +838,78 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		11D76B3E9EA30393FEA7CA6E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-origano-OriganoWoodfirePizzaAppClip/Pods-origano-OriganoWoodfirePizzaAppClip-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseOAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Stripe/Stripe.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseOAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Stripe.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-origano-OriganoWoodfirePizzaAppClip/Pods-origano-OriganoWoodfirePizzaAppClip-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -577,6 +923,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		46D6BDCD255154EB0079D27E /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n\n";
+		};
+		46D6BDCE255155430079D27E /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n\n";
 		};
 		624774D0A5CCA78AE49A734E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -632,6 +1014,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ACDFF7F627512EFAC64FDC84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-origano-OriganoWoodfirePizzaAppClip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BB712FD17212739408FD4B9C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -640,6 +1044,13 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-origano/Pods-origano-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseOAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
@@ -664,6 +1075,13 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseOAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
@@ -698,6 +1116,13 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-origano-origanoTests/Pods-origano-origanoTests-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseOAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
@@ -722,6 +1147,13 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseOAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
@@ -802,6 +1234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				46D48269254A8E400003D343 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,8 +1243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
-				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,6 +1251,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DCD954D1E0B4F2C00145EB5 /* origanoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46D482D7254A94420003D343 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46BC45672557E3F400F052B7 /* AppDelegate.m in Sources */,
+				46D6BB27255004B50079D27E /* main.m in Sources */,
+				46D6BB3025500B0A0079D27E /* File.swift in Sources */,
+				462FE7F22553E9AF009DE64F /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46D482F2254A94470003D343 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46D482FB254A94470003D343 /* OriganoWoodfirePizzaAppClipTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46D482FD254A94470003D343 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46D48306254A94470003D343 /* OriganoWoodfirePizzaAppClipUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,16 +1294,30 @@
 			target = 2D02E47A1E0B4A5D006451C7 /* origano-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
+		46D482F8254A94470003D343 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46D482DA254A94420003D343 /* OriganoWoodfirePizzaAppClip */;
+			targetProxy = 46D482F7254A94470003D343 /* PBXContainerItemProxy */;
+		};
+		46D48303254A94470003D343 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46D482DA254A94420003D343 /* OriganoWoodfirePizzaAppClip */;
+			targetProxy = 46D48302254A94470003D343 /* PBXContainerItemProxy */;
+		};
+		46D48309254A94470003D343 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46D482DA254A94420003D343 /* OriganoWoodfirePizzaAppClip */;
+			targetProxy = 46D48308254A94470003D343 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
+		46B2801B253EAC2D004771A8 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				13B07FB21A68108700A75B9A /* Base */,
+				46B2801C253EAC2D004771A8 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = origano;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -862,7 +1334,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = origanoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -883,7 +1355,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = origanoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -900,10 +1372,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6245C0F24CCD7D6801CE9679 /* Pods-origano.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4QP48WVLU2;
+				CODE_SIGN_ENTITLEMENTS = "origano/Origano Woodfire Pizza.entitlements";
+				CURRENT_PROJECT_VERSION = 1.1.0;
+				DEVELOPMENT_TEAM = MJY56DYTQU;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -995,18 +1469,20 @@
 					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
 				);
 				INFOPLIST_FILE = origano/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = origano;
+				PRODUCT_BUNDLE_IDENTIFIER = "OriganoWoodfirePizza.Origano-Woodfire-Pizza";
+				PRODUCT_NAME = "Origano Woodfire Pizza";
+				SWIFT_OBJC_BRIDGING_HEADER = "origano-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1015,10 +1491,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A3754216E4D8AEBAFEC37D46 /* Pods-origano.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4QP48WVLU2;
+				CODE_SIGN_ENTITLEMENTS = "origano/Origano Woodfire Pizza.entitlements";
+				CURRENT_PROJECT_VERSION = 1.1.0;
+				DEVELOPMENT_TEAM = MJY56DYTQU;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1105,17 +1583,20 @@
 					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
 				);
 				INFOPLIST_FILE = origano/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = origano;
+				PRODUCT_BUNDLE_IDENTIFIER = "OriganoWoodfirePizza.Origano-Woodfire-Pizza";
+				PRODUCT_NAME = "Origano Woodfire Pizza";
+				SWIFT_OBJC_BRIDGING_HEADER = "origano-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1144,7 +1625,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -1172,7 +1653,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
@@ -1199,7 +1680,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/origano-tvOS.app/origano-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -1226,7 +1707,179 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/origano-tvOS.app/origano-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Release;
+		};
+		46D4830C254A94470003D343 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 856D548D9D144F7796266D34 /* Pods-origano-OriganoWoodfirePizzaAppClip.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OriganoWoodfirePizzaAppClip/OriganoWoodfirePizzaAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MJY56DYTQU;
+				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OriganoWoodfirePizzaAppClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "OriganoWoodfirePizza.Origano-Woodfire-Pizza.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "origano-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		46D4830D254A94470003D343 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A227B0617A26C8254B1E5A0E /* Pods-origano-OriganoWoodfirePizzaAppClip.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OriganoWoodfirePizzaAppClip/OriganoWoodfirePizzaAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.1.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MJY56DYTQU;
+				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OriganoWoodfirePizzaAppClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "OriganoWoodfirePizza.Origano-Woodfire-Pizza.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "origano-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		46D4830F254A94470003D343 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MJY56DYTQU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OriganoWoodfirePizzaAppClipTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "OriganoWoodfirePizza.Origano-Woodfire-Pizza.OriganoWoodfirePizzaAppClipTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OriganoWoodfirePizzaAppClip.app/OriganoWoodfirePizzaAppClip";
+			};
+			name = Debug;
+		};
+		46D48310254A94470003D343 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MJY56DYTQU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OriganoWoodfirePizzaAppClipTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "OriganoWoodfirePizza.Origano-Woodfire-Pizza.OriganoWoodfirePizzaAppClipTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OriganoWoodfirePizzaAppClip.app/OriganoWoodfirePizzaAppClip";
+			};
+			name = Release;
+		};
+		46D48312254A94470003D343 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MJY56DYTQU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OriganoWoodfirePizzaAppClipUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "OriganoWoodfirePizza.Origano-Woodfire-Pizza.OriganoWoodfirePizzaAppClipUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OriganoWoodfirePizzaAppClip;
+			};
+			name = Debug;
+		};
+		46D48313254A94470003D343 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MJY56DYTQU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OriganoWoodfirePizzaAppClipUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "OriganoWoodfirePizza.Origano-Woodfire-Pizza.OriganoWoodfirePizzaAppClipUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OriganoWoodfirePizzaAppClip;
 			};
 			name = Release;
 		};
@@ -1253,6 +1906,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1313,6 +1967,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1339,6 +1994,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1378,6 +2034,33 @@
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
 				2D02E49A1E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46D4830B254A94470003D343 /* Build configuration list for PBXNativeTarget "OriganoWoodfirePizzaAppClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46D4830C254A94470003D343 /* Debug */,
+				46D4830D254A94470003D343 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46D4830E254A94470003D343 /* Build configuration list for PBXNativeTarget "OriganoWoodfirePizzaAppClipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46D4830F254A94470003D343 /* Debug */,
+				46D48310254A94470003D343 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46D48311254A94470003D343 /* Build configuration list for PBXNativeTarget "OriganoWoodfirePizzaAppClipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46D48312254A94470003D343 /* Debug */,
+				46D48313254A94470003D343 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

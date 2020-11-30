@@ -233,7 +233,7 @@ class TrackOrder extends Component {
           <Text
             style={{
               fontSize: hp('2.8%'),
-              fontFamily: 'Lato-Black',
+            
               color: '#555',
             }}>
             Order ID : <Text> {this.state.orderId}</Text>
@@ -267,7 +267,7 @@ const styles = StyleSheet.create({
   headerText: {
     textAlign: 'center',
     fontSize: hp('3.5%'),
-    fontFamily: 'Lato-Black',
+ 
     color: '#EC942A',
     paddingVertical: hp('1%'),
   },
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
   statusText: {
     textAlign: 'left',
     fontSize: hp('2%'),
-    fontFamily: 'Lato-Bold',
+    
     paddingVertical: hp('0.5%'),
     textTransform: 'uppercase',
     color: 'grey',
@@ -312,7 +312,7 @@ const styles = StyleSheet.create({
   },
   textOrder: {
     color: 'white',
-    fontFamily: 'Lato-Black',
+  
     fontSize: hp('2.5%'),
   },
 });

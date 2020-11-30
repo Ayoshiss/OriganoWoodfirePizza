@@ -163,7 +163,6 @@ class OrderSuccess extends Component {
               style={{
                 textAlign: 'center',
                 fontSize: hp('3.5%'),
-                fontFamily: 'Lato-Black',
                 color: '#EC942A',
               }}>
               Order Details
@@ -177,7 +176,7 @@ class OrderSuccess extends Component {
               style={{
                 textAlign: 'center',
                 fontSize: hp('2.5%'),
-                fontFamily: 'Lato-Black',
+             
                 paddingVertical: hp('2%'),
                 color: '#555',
               }}>
@@ -219,7 +218,7 @@ class OrderSuccess extends Component {
                     <Text
                       style={{
                         fontSize: hp('2.5%'),
-                        fontFamily: 'Lato-Black',
+                        
                         color: '#555',
                       }}>
                       {item.food.name}
@@ -228,12 +227,12 @@ class OrderSuccess extends Component {
                       <Text
                         style={{
                           fontSize: hp('1.9%'),
-                          fontFamily: 'Lato-Black',
+                         
                           color: '#555',
                         }}>
                         Quantity :{' '}
                         <Text
-                          style={{fontFamily: 'Lato-Regular', color: 'grey'}}>
+                          style={{color: 'grey'}}>
                           {item.quantity}
                         </Text>
                       </Text>
@@ -241,12 +240,12 @@ class OrderSuccess extends Component {
                         <Text
                           style={{
                             fontSize: hp('1.9%'),
-                            fontFamily: 'Lato-Black',
+                          
                             color: '#555',
                           }}>
                           Size :
                           <Text
-                            style={{fontFamily: 'Lato-Regular', color: 'grey'}}>
+                            style={{color: 'grey'}}>
                             {' '}
                             {item.food.size}
                           </Text>
@@ -257,12 +256,12 @@ class OrderSuccess extends Component {
                       <Text
                         style={{
                           fontSize: hp('1.9%'),
-                          fontFamily: 'Lato-Black',
+                          
                           color: '#555',
                         }}>
                         Price :{' '}
                         <Text
-                          style={{fontFamily: 'Lato-Regular', color: 'grey'}}>
+                          style={{color: 'grey'}}>
                           ${item.price}
                         </Text>
                       </Text>
@@ -272,7 +271,7 @@ class OrderSuccess extends Component {
                         <Text
                           style={{
                             fontSize: hp('1.9%'),
-                            fontFamily: 'Lato-Black',
+                        
                             color: '#555',
                           }}>
                           Toppings :{' '}
@@ -288,7 +287,7 @@ class OrderSuccess extends Component {
                               <Text
                                 key={i}
                                 style={{
-                                  fontFamily: 'Lato-Regular',
+                                  
                                   color: 'grey',
                                 }}>
                                 {ingredient.name}
@@ -304,7 +303,7 @@ class OrderSuccess extends Component {
                         <Text
                           style={{
                             fontSize: hp('1.9%'),
-                            fontFamily: 'Lato-Black',
+                          
                             color: '#555',
                           }}>
                           Don't Include :{' '}
@@ -319,7 +318,7 @@ class OrderSuccess extends Component {
                             return (
                               <Text
                                 style={{
-                                  fontFamily: 'Lato-Regular',
+                                  
                                   color: 'grey',
                                 }}>
                                 {finalDes}
@@ -371,7 +370,7 @@ const styles = StyleSheet.create({
   },
   textOrder: {
     color: 'white',
-    fontFamily: 'Lato-Black',
+    
     fontSize: hp('2.5%'),
   },
 });

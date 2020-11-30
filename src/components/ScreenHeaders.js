@@ -22,7 +22,6 @@ const ScreenHeaders = ({name, props}) => {
         style={{
           textAlign: 'center',
           fontSize: hp('3.5%'),
-          fontFamily: 'Lato-Black',
           color: '#EC942A',
         }}>
         {name}

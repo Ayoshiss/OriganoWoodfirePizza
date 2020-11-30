@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   btnText: {
-    fontFamily: 'Lato-Black',
     color: 'white',
     fontSize: hp('2.5%'),
   },

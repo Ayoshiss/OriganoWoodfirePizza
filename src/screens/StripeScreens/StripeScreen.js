@@ -151,7 +151,7 @@ export default class StripeScreen extends PureComponent {
           <ScreenHeaders name="Checkout" props={this.props} />
           <Text
             style={{
-              fontFamily: 'Lato-Bold',
+            
               textAlign: 'center',
               marginTop: hp('5%'),
               alignSelf: 'center',
@@ -176,7 +176,7 @@ export default class StripeScreen extends PureComponent {
             <Text
               style={{
                 fontSize: hp('2.5%'),
-                fontFamily: 'Lato-Bold',
+              
                 color: '#EC942A',
               }}>
               {!token && 'Enter Card Details'}
@@ -198,7 +198,7 @@ export default class StripeScreen extends PureComponent {
               <Text
                 style={{
                   fontSize: hp('2.5%'),
-                  fontFamily: 'Lato-Bold',
+                 
                   color: '#EC942A',
                 }}>
                 Make Payment

@@ -138,7 +138,7 @@ export class HalfPizzaDetailScreen extends Component {
           <Text
             style={{
               fontSize: hp('3%'),
-              fontFamily: 'Lato-Black',
+        
               alignSelf: 'center',
             }}>
             Pizza Ingredients
@@ -177,7 +177,7 @@ export class HalfPizzaDetailScreen extends Component {
                 fontSize: hp('2.2%'),
                 textAlign: 'left',
                 color: '#000',
-                fontFamily: 'Lato-Regular',
+          
               }}
               containerStyle={{
                 height: hp('6%'),
@@ -216,7 +216,7 @@ export class HalfPizzaDetailScreen extends Component {
                     <Text
                       style={{
                         fontSize: hp('2.2%'),
-                        fontFamily: 'Lato-Regular',
+                       
                       }}>
                       {item.item}
                     </Text>
@@ -236,7 +236,7 @@ export class HalfPizzaDetailScreen extends Component {
                     </TouchableOpacity>
                     <Text
                       style={{
-                        fontFamily: 'Lato-Bold',
+                      
                         paddingHorizontal: wp('4%'),
                       }}>
                       {item.quantity}
@@ -306,10 +306,10 @@ export class HalfPizzaDetailScreen extends Component {
             style={{
               fontSize: hp('2.5%'),
               paddingVertical: hp('1%'),
-              fontFamily: 'Lato-Regular',
+             
             }}>
             Total :
-            <Text style={{color: 'green', fontFamily: 'Lato-Black'}}>
+            <Text style={{color: 'green'}}>
               {' '}
               {'$'}
               {this.state.ingredientPrice + this.state.sizePrice}{' '}
@@ -346,7 +346,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   price: {
-    fontFamily: 'Lato-Bold',
+  
     fontSize: hp('2.2%'),
   },
   checkOutButtontext: {

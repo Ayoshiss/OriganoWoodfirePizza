@@ -24,6 +24,10 @@ import {LoginManager, AccessToken} from 'react-native-fbsdk';
 import {GoogleSignin} from '@react-native-community/google-signin';
 import {RNToasty} from 'react-native-toasty';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { AppleButton } from '@invertase/react-native-apple-authentication';
+import { appleAuth } from '@invertase/react-native-apple-authentication';
+
+
 
 export class LoginScreen extends Component {
   constructor(props) {
@@ -98,6 +102,9 @@ export class LoginScreen extends Component {
         this.setState({isLoading: false});
       });
   };
+
+
+
   onFacebookButtonPress = async () => {
     this.setState({isFbLoading: true});
     const result = await LoginManager.logInWithPermissions([
@@ -165,6 +172,34 @@ export class LoginScreen extends Component {
         }
       });
   };
+
+onAppleButtonPress = async () => {
+    // Start the sign-in request
+    const appleAuthRequestResponse = await appleAuth.performRequest({
+      requestedOperation: appleAuth.Operation.LOGIN,
+      requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
+    });
+
+    // Ensure Apple returned a user identityToken
+    if (!appleAuthRequestResponse.identityToken) {
+      throw 'Apple Sign-In failed - no identify token returned';
+    }
+
+    // Create a Firebase credential from the response
+    const {identityToken, nonce} = appleAuthRequestResponse;
+    const appleCredential = auth.AppleAuthProvider.credential(
+      identityToken,
+      nonce,
+    );
+
+    // Sign the user in with the credential
+    return auth()
+      .signInWithCredential(appleCredential)
+      .then(() => {
+        console.log('Sign in with apple success');
+      });
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -184,7 +219,7 @@ export class LoginScreen extends Component {
               {this.state.errorMessage && (
                 <Text
                   style={{
-                    fontFamily: 'Lato-Regular',
+                    
                     color: 'red',
                     fontSize: hp('2%'),
                     textAlign: 'center',
@@ -224,7 +259,7 @@ export class LoginScreen extends Component {
               <Text
                 style={{
                   textAlign: 'right',
-                  fontFamily: 'Lato-Regular',
+                
                   color: '#EC942A',
                 }}>
                 Forgot Password?
@@ -262,6 +297,36 @@ export class LoginScreen extends Component {
                 style={{position: 'absolute', paddingLeft: wp('55%')}}
               />
             </TouchableOpacity>
+
+
+            <TouchableOpacity
+              onPress={this.onAppleButtonPress}
+              style={[
+                styles.button,
+                {
+                  backgroundColor: "#111",
+                  paddingRight: wp('2%'),
+                  paddingVertical: hp('2%'),
+                },
+              ]}>
+              <Icon
+                name="apple"
+                size={22}
+                color="white"
+                style={{paddingHorizontal: wp('3%')}}
+              />
+              <Text style={styles.socialButtonText}>Sign In With Apple</Text>
+              <ActivityIndicator
+                animating={this.state.isGoogleLoading}
+                size="small"
+                color="white"
+                style={{position: 'absolute', paddingLeft: wp('55%')}}
+              />
+            </TouchableOpacity>
+
+
+
+
             <TouchableOpacity
               onPress={this.onGoogleButtonPress}
               style={[
@@ -287,6 +352,10 @@ export class LoginScreen extends Component {
               />
             </TouchableOpacity>
           </Card>
+
+
+
+
           <View
             style={{
               flexDirection: 'row',
@@ -298,7 +367,7 @@ export class LoginScreen extends Component {
             }}>
             <Text
               style={{
-                fontFamily: 'Lato-Regular',
+              
                 fontSize: hp('2%'),
                 color: '#ABB4BD',
                 textAlign: 'center',
@@ -313,7 +382,7 @@ export class LoginScreen extends Component {
                 style={{
                   color: '#EC942A',
                   fontSize: hp('2%'),
-                  fontFamily: 'Lato-Regular',
+                  
                 }}>
                 {' '}
                 Register Now
@@ -337,7 +406,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#EC942A',
   },
   loginText: {
-    fontFamily: 'Lato-Black',
+   
     fontSize: hp('5%'),
     color: '#fbfbfb',
   },
@@ -360,7 +429,7 @@ var styles = StyleSheet.create({
     borderRadius: 100,
   },
   socialButtonText: {
-    fontFamily: 'Lato-Black',
+
     color: '#FBFBFB',
     fontSize: hp('2%'),
   },
